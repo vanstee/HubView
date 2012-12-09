@@ -17,8 +17,8 @@
 		10BCC4081675411900CCB5A9 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10BCC4071675411900CCB5A9 /* Default@2x.png */; };
 		10BCC40A1675411900CCB5A9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10BCC4091675411900CCB5A9 /* Default-568h@2x.png */; };
 		10BCC40D1675411900CCB5A9 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10BCC40B1675411900CCB5A9 /* MainStoryboard.storyboard */; };
-		10BCC4101675411900CCB5A9 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10BCC40F1675411900CCB5A9 /* MasterViewController.m */; };
 		10BCC4131675411900CCB5A9 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10BCC4121675411900CCB5A9 /* DetailViewController.m */; };
+		10BCC420167541CE00CCB5A9 /* UserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10BCC41F167541CE00CCB5A9 /* UserTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,10 +36,10 @@
 		10BCC4071675411900CCB5A9 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		10BCC4091675411900CCB5A9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		10BCC40C1675411900CCB5A9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		10BCC40E1675411900CCB5A9 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		10BCC40F1675411900CCB5A9 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		10BCC4111675411900CCB5A9 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		10BCC4121675411900CCB5A9 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		10BCC41E167541CE00CCB5A9 /* UserTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserTableViewController.h; sourceTree = "<group>"; };
+		10BCC41F167541CE00CCB5A9 /* UserTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,11 +89,11 @@
 				10BCC4021675411900CCB5A9 /* AppDelegate.h */,
 				10BCC4031675411900CCB5A9 /* AppDelegate.m */,
 				10BCC40B1675411900CCB5A9 /* MainStoryboard.storyboard */,
-				10BCC40E1675411900CCB5A9 /* MasterViewController.h */,
-				10BCC40F1675411900CCB5A9 /* MasterViewController.m */,
 				10BCC4111675411900CCB5A9 /* DetailViewController.h */,
 				10BCC4121675411900CCB5A9 /* DetailViewController.m */,
 				10BCC3FA1675411900CCB5A9 /* Supporting Files */,
+				10BCC41E167541CE00CCB5A9 /* UserTableViewController.h */,
+				10BCC41F167541CE00CCB5A9 /* UserTableViewController.m */,
 			);
 			path = HubView;
 			sourceTree = "<group>";
@@ -180,8 +180,8 @@
 			files = (
 				10BCC4001675411900CCB5A9 /* main.m in Sources */,
 				10BCC4041675411900CCB5A9 /* AppDelegate.m in Sources */,
-				10BCC4101675411900CCB5A9 /* MasterViewController.m in Sources */,
 				10BCC4131675411900CCB5A9 /* DetailViewController.m in Sources */,
+				10BCC420167541CE00CCB5A9 /* UserTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
