@@ -19,6 +19,7 @@
 		10BCC40D1675411900CCB5A9 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10BCC40B1675411900CCB5A9 /* MainStoryboard.storyboard */; };
 		10BCC4131675411900CCB5A9 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10BCC4121675411900CCB5A9 /* DetailViewController.m */; };
 		10BCC420167541CE00CCB5A9 /* UserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10BCC41F167541CE00CCB5A9 /* UserTableViewController.m */; };
+		10BCC4241675451000CCB5A9 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 10BCC4231675451000CCB5A9 /* User.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,8 @@
 		10BCC4121675411900CCB5A9 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		10BCC41E167541CE00CCB5A9 /* UserTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserTableViewController.h; sourceTree = "<group>"; };
 		10BCC41F167541CE00CCB5A9 /* UserTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTableViewController.m; sourceTree = "<group>"; };
+		10BCC4221675451000CCB5A9 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		10BCC4231675451000CCB5A9 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +97,8 @@
 				10BCC3FA1675411900CCB5A9 /* Supporting Files */,
 				10BCC41E167541CE00CCB5A9 /* UserTableViewController.h */,
 				10BCC41F167541CE00CCB5A9 /* UserTableViewController.m */,
+				10BCC4221675451000CCB5A9 /* User.h */,
+				10BCC4231675451000CCB5A9 /* User.m */,
 			);
 			path = HubView;
 			sourceTree = "<group>";
@@ -182,6 +187,7 @@
 				10BCC4041675411900CCB5A9 /* AppDelegate.m in Sources */,
 				10BCC4131675411900CCB5A9 /* DetailViewController.m in Sources */,
 				10BCC420167541CE00CCB5A9 /* UserTableViewController.m in Sources */,
+				10BCC4241675451000CCB5A9 /* User.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
