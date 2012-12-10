@@ -1,5 +1,4 @@
 #import "UserTableViewController.h"
-#import "User.h"
 
 @implementation UserTableViewController
 
@@ -17,31 +16,35 @@
 
 - (void)setSearch:(NSString *)search
 {
-    if (_search != search) {
+    if (_search != search && ![search isEqualToString:@""])
+    {
         _search = search;
-        // do the search
+        
+        [User searchUsers:search success:^(NSArray *users){
+            self.users = users;
+        }];
     }
 }
 
 #pragma mark - View lifecycle
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"Select User"]) {
-        User *user = [self.users objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
-        NSArray *organizations = ((AppDelegate *)[UIApplication sharedApplication].delegate).organizations;
-        Organization *organization = [Organization findUser:user inOrganizations:organizations];
-        
-        if (organization != NULL)
-        {
-            [segue.destinationViewController setOrganization:organization];
-        }
-        else
-        {
-            [segue.destinationViewController setUser:user];
-        }
-    }
-}
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+//{
+//    if ([segue.identifier isEqualToString:@"Select User"]) {
+//        User *user = [self.users objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
+//        NSArray *organizations = ((AppDelegate *)[UIApplication sharedApplication].delegate).organizations;
+//        Organization *organization = [Organization findUser:user inOrganizations:organizations];
+//        
+//        if (organization != NULL)
+//        {
+//            [segue.destinationViewController setOrganization:organization];
+//        }
+//        else
+//        {
+//            [segue.destinationViewController setUser:user];
+//        }
+//    }
+//}
 
 #pragma mark - UISearchBarDelegate methods
 
