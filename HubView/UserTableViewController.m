@@ -1,4 +1,5 @@
 #import "UserTableViewController.h"
+#import "RepositoryTableViewController.h"
 
 @implementation UserTableViewController
 
@@ -20,7 +21,7 @@
     {
         _search = search;
         
-        [User searchUsers:search success:^(NSArray *users){
+        [User searchUsers:search withCompletionBlock:^(NSArray *users){
             self.users = users;
         }];
     }
@@ -28,23 +29,13 @@
 
 #pragma mark - View lifecycle
 
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-//{
-//    if ([segue.identifier isEqualToString:@"Select User"]) {
-//        User *user = [self.users objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
-//        NSArray *organizations = ((AppDelegate *)[UIApplication sharedApplication].delegate).organizations;
-//        Organization *organization = [Organization findUser:user inOrganizations:organizations];
-//        
-//        if (organization != NULL)
-//        {
-//            [segue.destinationViewController setOrganization:organization];
-//        }
-//        else
-//        {
-//            [segue.destinationViewController setUser:user];
-//        }
-//    }
-//}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"Select User"]) {
+        User *user = [self.users objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
+        [segue.destinationViewController setUser:user];
+    }
+}
 
 #pragma mark - UISearchBarDelegate methods
 

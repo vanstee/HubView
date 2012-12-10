@@ -30,6 +30,11 @@
 		10BCC4A11675842A00CCB5A9 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 10BCC4971675842A00CCB5A9 /* AFXMLRequestOperation.m */; };
 		10BCC4A21675842A00CCB5A9 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 10BCC4991675842A00CCB5A9 /* UIImageView+AFNetworking.m */; };
 		10BCC4A51675893500CCB5A9 /* AFGitHubClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 10BCC4A41675893500CCB5A9 /* AFGitHubClient.m */; };
+		10CB25B21675B33200A33C32 /* Organization.m in Sources */ = {isa = PBXBuildFile; fileRef = 10CB25B11675B33200A33C32 /* Organization.m */; };
+		10CB25B61675B51D00A33C32 /* RepositoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10CB25B51675B51D00A33C32 /* RepositoryTableViewController.m */; };
+		10CB25B91675B55C00A33C32 /* Repository.m in Sources */ = {isa = PBXBuildFile; fileRef = 10CB25B81675B55C00A33C32 /* Repository.m */; };
+		10CB25BC16762FF500A33C32 /* BranchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10CB25BB16762FF500A33C32 /* BranchTableViewController.m */; };
+		10CB25BF1676309400A33C32 /* Branch.m in Sources */ = {isa = PBXBuildFile; fileRef = 10CB25BE1676309400A33C32 /* Branch.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +79,16 @@
 		10BCC4991675842A00CCB5A9 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		10BCC4A31675893500CCB5A9 /* AFGitHubClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFGitHubClient.h; sourceTree = "<group>"; };
 		10BCC4A41675893500CCB5A9 /* AFGitHubClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFGitHubClient.m; sourceTree = "<group>"; };
+		10CB25B01675B33200A33C32 /* Organization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Organization.h; path = ../Organization.h; sourceTree = "<group>"; };
+		10CB25B11675B33200A33C32 /* Organization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Organization.m; path = ../Organization.m; sourceTree = "<group>"; };
+		10CB25B41675B51D00A33C32 /* RepositoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepositoryTableViewController.h; sourceTree = "<group>"; };
+		10CB25B51675B51D00A33C32 /* RepositoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepositoryTableViewController.m; sourceTree = "<group>"; };
+		10CB25B71675B55C00A33C32 /* Repository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Repository.h; sourceTree = "<group>"; };
+		10CB25B81675B55C00A33C32 /* Repository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Repository.m; sourceTree = "<group>"; };
+		10CB25BA16762FF500A33C32 /* BranchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BranchTableViewController.h; sourceTree = "<group>"; };
+		10CB25BB16762FF500A33C32 /* BranchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BranchTableViewController.m; sourceTree = "<group>"; };
+		10CB25BD1676309400A33C32 /* Branch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Branch.h; sourceTree = "<group>"; };
+		10CB25BE1676309400A33C32 /* Branch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Branch.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +136,8 @@
 		10BCC3F91675411900CCB5A9 /* HubView */ = {
 			isa = PBXGroup;
 			children = (
+				10CB25B01675B33200A33C32 /* Organization.h */,
+				10CB25B11675B33200A33C32 /* Organization.m */,
 				10BCC4021675411900CCB5A9 /* AppDelegate.h */,
 				10BCC4031675411900CCB5A9 /* AppDelegate.m */,
 				10BCC40B1675411900CCB5A9 /* MainStoryboard.storyboard */,
@@ -133,6 +150,14 @@
 				10BCC4231675451000CCB5A9 /* User.m */,
 				10BCC4A31675893500CCB5A9 /* AFGitHubClient.h */,
 				10BCC4A41675893500CCB5A9 /* AFGitHubClient.m */,
+				10CB25B41675B51D00A33C32 /* RepositoryTableViewController.h */,
+				10CB25B51675B51D00A33C32 /* RepositoryTableViewController.m */,
+				10CB25B71675B55C00A33C32 /* Repository.h */,
+				10CB25B81675B55C00A33C32 /* Repository.m */,
+				10CB25BA16762FF500A33C32 /* BranchTableViewController.h */,
+				10CB25BB16762FF500A33C32 /* BranchTableViewController.m */,
+				10CB25BD1676309400A33C32 /* Branch.h */,
+				10CB25BE1676309400A33C32 /* Branch.m */,
 			);
 			path = HubView;
 			sourceTree = "<group>";
@@ -259,6 +284,11 @@
 				10BCC4A11675842A00CCB5A9 /* AFXMLRequestOperation.m in Sources */,
 				10BCC4A21675842A00CCB5A9 /* UIImageView+AFNetworking.m in Sources */,
 				10BCC4A51675893500CCB5A9 /* AFGitHubClient.m in Sources */,
+				10CB25B21675B33200A33C32 /* Organization.m in Sources */,
+				10CB25B61675B51D00A33C32 /* RepositoryTableViewController.m in Sources */,
+				10CB25B91675B55C00A33C32 /* Repository.m in Sources */,
+				10CB25BC16762FF500A33C32 /* BranchTableViewController.m in Sources */,
+				10CB25BF1676309400A33C32 /* Branch.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

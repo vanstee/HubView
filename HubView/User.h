@@ -9,8 +9,8 @@
 
 + (User *)userFromDictionary:(NSDictionary *)attributes;
 
-+ (NSArray *)usersFromArray:(NSArray *)arrayOfAttributes;
++ (NSArray *)usersFromArray:(NSArray *)attributesArray;
 
-+ (void)searchUsers:(NSString *)keyword success:(void (^)(NSArray *users))success;
++ (void)searchUsers:(NSString *)keyword withCompletionBlock:(void (^)(NSArray *users))block;
 
 @end
