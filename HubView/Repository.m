@@ -2,31 +2,31 @@
 
 @implementation Repository
 
-@synthesize name = _name;
-
-+ (Repository *)repositoryFromDictionary:(NSDictionary *)attributes
++ (Repository *)initWithDictionary:(NSDictionary *)attributes
 {
     Repository *repository = [Repository new];
-    repository.name = [attributes objectForKey:@"name"];
+    repository.name = attributes[@"name"];
+    repository.updatedAt = [[NSDate dateFormatter] dateFromString:attributes[@"updated_at"]];
+    repository.owner = [User initWithDictionary:attributes[@"owner"]];
     return repository;
 }
 
-+ (NSArray *)repositoriesFromArray:(NSArray *)attributesArray
++ (NSArray *)initWithArrayOfDictionaries:(NSArray *)arrayOfDictionaries
 {
-    NSMutableArray *repositories = [NSMutableArray arrayWithCapacity:[attributesArray count]];
-    for (NSDictionary *attributes in attributesArray) {
-        [repositories addObject:[self repositoryFromDictionary:attributes]];
+    NSMutableArray *repositories = [NSMutableArray arrayWithCapacity:[arrayOfDictionaries count]];
+    for (NSDictionary *attributes in arrayOfDictionaries) {
+        [repositories addObject:[self initWithDictionary:attributes]];
     }
     return repositories;
 }
 
-+ (void)findRepositoriesForUser:(User *)user withCompletionBlock:(void (^)(NSArray *repositories))block
+- (void)branchesWithCompletionBlock:(void (^)(NSArray *branches))block
 {
     [[[AFGitHubClient sharedClient] operationQueue] cancelAllOperations];
-    [[AFGitHubClient sharedClient] getPath:[NSString stringWithFormat:@"/users/%@/repos", user.login] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSArray *responseArray = (NSArray *)responseObject;
-        NSArray *repositories = [self repositoriesFromArray:responseArray];
-        if (block) { block(repositories); }
+    [[AFGitHubClient sharedClient] getPath:[NSString stringWithFormat:@"/repos/%@/%@/branches", self.owner.login, self.name] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSArray *branches = [Branch initWithArrayOfDictionaries:responseObject];
+        for (Branch *branch in branches) { branch.repository = self; }
+        if (block) { block(branches); }
     } failure:nil];
 }
 

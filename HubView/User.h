@@ -1,16 +1,15 @@
 #import <Foundation/Foundation.h>
 
-#import "AFJSONRequestOperation.h"
-#import "AFGitHubClient.h"
+#import "AppDelegate.h"
 
 @interface User : NSObject
 
 @property (nonatomic, strong) NSString *login;
 
-+ (User *)userFromDictionary:(NSDictionary *)attributes;
++ (User *)initWithDictionary:(NSDictionary *)attributes;
 
-+ (NSArray *)usersFromArray:(NSArray *)attributesArray;
++ (NSArray *)initWithArrayOfDictionaries:(NSArray *)arrayOfDictionaries;
 
-+ (void)searchUsers:(NSString *)keyword withCompletionBlock:(void (^)(NSArray *users))block;
+- (void)repositoriesWithCompletionBlock:(void (^)(NSArray *repositories))block;
 
 @end

@@ -2,10 +2,6 @@
 
 @implementation BranchTableViewController
 
-@synthesize branches = _branches;
-@synthesize repository = _repository;
-@synthesize user = _user;
-
 - (void)setBranches:(NSArray *)branches
 {
     if (_branches != branches)
@@ -20,24 +16,7 @@
     if (_repository != repository)
     {
         _repository = repository;
-        
-        if (!!self.user)
-        {
-            [Branch findBranchesForRepository:self.repository ownedBy:self.user withCompletionBlock:^(NSArray *branches){ self.branches = branches; }];
-        }
-    }
-}
-
-- (void)setUser:(User *)user
-{
-    if (_user != user)
-    {
-        _user = user;
-        
-        if (!!self.repository)
-        {
-            [Branch findBranchesForRepository:self.repository ownedBy:self.user withCompletionBlock:^(NSArray *branches){ self.branches = branches; }];
-        }
+        [repository branchesWithCompletionBlock:^(NSArray *branches) { self.branches = branches; }];
     }
 }
 
@@ -47,9 +26,7 @@
 {
     if ([segue.identifier isEqualToString:@"Select Branch"]) {
         Branch *branch = [self.branches objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
-//        [segue.destinationViewController setBranch:branch];
-//        [segue.destinationViewController setRepository:repository];
-//        [segue.destinationViewController setUser:user];
+        [segue.destinationViewController setBranch:branch];
     }
 }
 

@@ -1,16 +1,18 @@
 #import <Foundation/Foundation.h>
 
-#import "Repository.h"
-#import "User.h"
+#import "AppDelegate.h"
+
+@class Repository;
 
 @interface Branch : NSObject
 
 @property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) Repository *repository;
 
-+ (Branch *)branchFromDictionary:(NSDictionary *)attributes;
++ (Branch *)initWithDictionary:(NSDictionary *)attributes;
 
-+ (NSArray *)branchesFromArray:(NSArray *)attributesArray;
++ (NSArray *)initWithArrayOfDictionaries:(NSArray *)arrayOfDictionaries;
 
-+ (void)findBranchesForRepository:(Repository *)repository ownedBy:(User *)user withCompletionBlock:(void (^)(NSArray *branches))block;
+- (void)commitsWithCompletionBlock:(void (^)(NSArray *commits))block;
 
 @end

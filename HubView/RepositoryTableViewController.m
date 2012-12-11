@@ -2,15 +2,12 @@
 
 @implementation RepositoryTableViewController
 
-@synthesize user = _user;
-@synthesize repositories = _repositories;
-
 - (void)setUser:(User *)user
 {
     if (_user != user)
     {
         _user = user;
-        [Repository findRepositoriesForUser:user withCompletionBlock:^(NSArray *repositories){ self.repositories = repositories; }];
+        [user repositoriesWithCompletionBlock:^(NSArray *repositories) { self.repositories = repositories; }];
     }
 }
 
@@ -27,12 +24,9 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    NSLog(@"segue.identifier: %@", segue.identifier);
     if ([segue.identifier isEqualToString:@"Select Repository"]) {
         Repository *repository = [self.repositories objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
-        NSLog(@"repository: %@", repository);
         [segue.destinationViewController setRepository:repository];
-        [segue.destinationViewController setUser:self.user];
     }
 }
 

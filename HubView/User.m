@@ -2,31 +2,29 @@
 
 @implementation User
 
-@synthesize login = _login;
-
-+ (User *)userFromDictionary:(NSDictionary *)attributes
++ (User *)initWithDictionary:(NSDictionary *)attributes
 {
     User *user = [User new];
     user.login = [attributes objectForKey:@"login"];
     return user;
 }
 
-+ (NSArray *)usersFromArray:(NSArray *)attributesArray
++ (NSArray *)initWithArrayOfDictionaries:(NSArray *)arrayOfDictionaries
 {
-    NSMutableArray *users = [NSMutableArray arrayWithCapacity:[attributesArray count]];
-    for (NSDictionary *attributes in attributesArray) {
-        [users addObject:[self userFromDictionary:attributes]];
+    NSMutableArray *users = [NSMutableArray arrayWithCapacity:[arrayOfDictionaries count]];
+    for (NSDictionary *attributes in arrayOfDictionaries) {
+        [users addObject:[self initWithDictionary:attributes]];
     }
     return users;
 }
 
-+ (void)searchUsers:(NSString *)keyword withCompletionBlock:(void (^)(NSArray *users))block
+- (void)repositoriesWithCompletionBlock:(void (^)(NSArray *repositories))block
 {
     [[[AFGitHubClient sharedClient] operationQueue] cancelAllOperations];
-    [[AFGitHubClient sharedClient] getPath:[NSString stringWithFormat:@"/legacy/user/search/%@", keyword] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSDictionary *responseDictionary = (NSDictionary *)responseObject;
-        NSArray *users = [self usersFromArray:[responseDictionary objectForKey:@"users"]];
-        if (block) { block(users); }
+    [[AFGitHubClient sharedClient] getPath:[NSString stringWithFormat:@"/users/%@/repos", self.login] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSArray *repositories = [Repository initWithArrayOfDictionaries:responseObject];
+        for (Repository *repository in repositories) { repository.owner = self; }
+        if (block) { block(repositories); }
     } failure:nil];
 }
 

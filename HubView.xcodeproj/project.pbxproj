@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1063DF351676994D00FA22EB /* Commit.m in Sources */ = {isa = PBXBuildFile; fileRef = 1063DF341676994D00FA22EB /* Commit.m */; };
+		1063DF451676DEA900FA22EB /* NSDate+Formatting.m in Sources */ = {isa = PBXBuildFile; fileRef = 1063DF3F1676BA6100FA22EB /* NSDate+Formatting.m */; };
+		1063DF481676E23500FA22EB /* CommitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1063DF471676E23500FA22EB /* CommitViewController.m */; };
+		1063DF4B1676EB6400FA22EB /* Search.m in Sources */ = {isa = PBXBuildFile; fileRef = 1063DF4A1676EB6300FA22EB /* Search.m */; };
 		10BCC3F41675411900CCB5A9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10BCC3F31675411900CCB5A9 /* UIKit.framework */; };
 		10BCC3F61675411900CCB5A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10BCC3F51675411900CCB5A9 /* Foundation.framework */; };
 		10BCC3F81675411900CCB5A9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10BCC3F71675411900CCB5A9 /* CoreGraphics.framework */; };
@@ -30,14 +34,22 @@
 		10BCC4A11675842A00CCB5A9 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 10BCC4971675842A00CCB5A9 /* AFXMLRequestOperation.m */; };
 		10BCC4A21675842A00CCB5A9 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 10BCC4991675842A00CCB5A9 /* UIImageView+AFNetworking.m */; };
 		10BCC4A51675893500CCB5A9 /* AFGitHubClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 10BCC4A41675893500CCB5A9 /* AFGitHubClient.m */; };
-		10CB25B21675B33200A33C32 /* Organization.m in Sources */ = {isa = PBXBuildFile; fileRef = 10CB25B11675B33200A33C32 /* Organization.m */; };
 		10CB25B61675B51D00A33C32 /* RepositoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10CB25B51675B51D00A33C32 /* RepositoryTableViewController.m */; };
 		10CB25B91675B55C00A33C32 /* Repository.m in Sources */ = {isa = PBXBuildFile; fileRef = 10CB25B81675B55C00A33C32 /* Repository.m */; };
 		10CB25BC16762FF500A33C32 /* BranchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10CB25BB16762FF500A33C32 /* BranchTableViewController.m */; };
 		10CB25BF1676309400A33C32 /* Branch.m in Sources */ = {isa = PBXBuildFile; fileRef = 10CB25BE1676309400A33C32 /* Branch.m */; };
+		10CB25C216763EDA00A33C32 /* CommitTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10CB25C116763EDA00A33C32 /* CommitTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1063DF331676994D00FA22EB /* Commit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Commit.h; sourceTree = "<group>"; };
+		1063DF341676994D00FA22EB /* Commit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Commit.m; sourceTree = "<group>"; };
+		1063DF3E1676BA6100FA22EB /* NSDate+Formatting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+Formatting.h"; sourceTree = "<group>"; };
+		1063DF3F1676BA6100FA22EB /* NSDate+Formatting.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Formatting.m"; sourceTree = "<group>"; };
+		1063DF461676E23500FA22EB /* CommitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommitViewController.h; sourceTree = "<group>"; };
+		1063DF471676E23500FA22EB /* CommitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommitViewController.m; sourceTree = "<group>"; };
+		1063DF491676EB6300FA22EB /* Search.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Search.h; sourceTree = "<group>"; };
+		1063DF4A1676EB6300FA22EB /* Search.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Search.m; sourceTree = "<group>"; };
 		10BCC3EF1675411900CCB5A9 /* HubView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HubView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10BCC3F31675411900CCB5A9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		10BCC3F51675411900CCB5A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -79,8 +91,6 @@
 		10BCC4991675842A00CCB5A9 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		10BCC4A31675893500CCB5A9 /* AFGitHubClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFGitHubClient.h; sourceTree = "<group>"; };
 		10BCC4A41675893500CCB5A9 /* AFGitHubClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFGitHubClient.m; sourceTree = "<group>"; };
-		10CB25B01675B33200A33C32 /* Organization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Organization.h; path = ../Organization.h; sourceTree = "<group>"; };
-		10CB25B11675B33200A33C32 /* Organization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Organization.m; path = ../Organization.m; sourceTree = "<group>"; };
 		10CB25B41675B51D00A33C32 /* RepositoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepositoryTableViewController.h; sourceTree = "<group>"; };
 		10CB25B51675B51D00A33C32 /* RepositoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepositoryTableViewController.m; sourceTree = "<group>"; };
 		10CB25B71675B55C00A33C32 /* Repository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Repository.h; sourceTree = "<group>"; };
@@ -89,6 +99,8 @@
 		10CB25BB16762FF500A33C32 /* BranchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BranchTableViewController.m; sourceTree = "<group>"; };
 		10CB25BD1676309400A33C32 /* Branch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Branch.h; sourceTree = "<group>"; };
 		10CB25BE1676309400A33C32 /* Branch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Branch.m; sourceTree = "<group>"; };
+		10CB25C016763EDA00A33C32 /* CommitTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommitTableViewController.h; sourceTree = "<group>"; };
+		10CB25C116763EDA00A33C32 /* CommitTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommitTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,8 +108,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10BCC3F41675411900CCB5A9 /* UIKit.framework in Frameworks */,
 				10BCC3F61675411900CCB5A9 /* Foundation.framework in Frameworks */,
+				10BCC3F41675411900CCB5A9 /* UIKit.framework in Frameworks */,
 				10BCC3F81675411900CCB5A9 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,8 +148,10 @@
 		10BCC3F91675411900CCB5A9 /* HubView */ = {
 			isa = PBXGroup;
 			children = (
-				10CB25B01675B33200A33C32 /* Organization.h */,
-				10CB25B11675B33200A33C32 /* Organization.m */,
+				1063DF461676E23500FA22EB /* CommitViewController.h */,
+				1063DF471676E23500FA22EB /* CommitViewController.m */,
+				1063DF3E1676BA6100FA22EB /* NSDate+Formatting.h */,
+				1063DF3F1676BA6100FA22EB /* NSDate+Formatting.m */,
 				10BCC4021675411900CCB5A9 /* AppDelegate.h */,
 				10BCC4031675411900CCB5A9 /* AppDelegate.m */,
 				10BCC40B1675411900CCB5A9 /* MainStoryboard.storyboard */,
@@ -158,6 +172,12 @@
 				10CB25BB16762FF500A33C32 /* BranchTableViewController.m */,
 				10CB25BD1676309400A33C32 /* Branch.h */,
 				10CB25BE1676309400A33C32 /* Branch.m */,
+				10CB25C016763EDA00A33C32 /* CommitTableViewController.h */,
+				10CB25C116763EDA00A33C32 /* CommitTableViewController.m */,
+				1063DF331676994D00FA22EB /* Commit.h */,
+				1063DF341676994D00FA22EB /* Commit.m */,
+				1063DF491676EB6300FA22EB /* Search.h */,
+				1063DF4A1676EB6300FA22EB /* Search.m */,
 			);
 			path = HubView;
 			sourceTree = "<group>";
@@ -269,6 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1063DF451676DEA900FA22EB /* NSDate+Formatting.m in Sources */,
 				10BCC4001675411900CCB5A9 /* main.m in Sources */,
 				10BCC4041675411900CCB5A9 /* AppDelegate.m in Sources */,
 				10BCC4131675411900CCB5A9 /* DetailViewController.m in Sources */,
@@ -284,11 +305,14 @@
 				10BCC4A11675842A00CCB5A9 /* AFXMLRequestOperation.m in Sources */,
 				10BCC4A21675842A00CCB5A9 /* UIImageView+AFNetworking.m in Sources */,
 				10BCC4A51675893500CCB5A9 /* AFGitHubClient.m in Sources */,
-				10CB25B21675B33200A33C32 /* Organization.m in Sources */,
 				10CB25B61675B51D00A33C32 /* RepositoryTableViewController.m in Sources */,
 				10CB25B91675B55C00A33C32 /* Repository.m in Sources */,
 				10CB25BC16762FF500A33C32 /* BranchTableViewController.m in Sources */,
 				10CB25BF1676309400A33C32 /* Branch.m in Sources */,
+				10CB25C216763EDA00A33C32 /* CommitTableViewController.m in Sources */,
+				1063DF351676994D00FA22EB /* Commit.m in Sources */,
+				1063DF481676E23500FA22EB /* CommitViewController.m in Sources */,
+				1063DF4B1676EB6400FA22EB /* Search.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

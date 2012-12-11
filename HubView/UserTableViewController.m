@@ -3,27 +3,12 @@
 
 @implementation UserTableViewController
 
-@synthesize users = _users;
-@synthesize search = _search;
-
 - (void)setUsers:(NSArray *)users
 {
     if (_users != users)
     {
         _users = users;
         [self.tableView reloadData];
-    }
-}
-
-- (void)setSearch:(NSString *)search
-{
-    if (_search != search && ![search isEqualToString:@""])
-    {
-        _search = search;
-        
-        [User searchUsers:search withCompletionBlock:^(NSArray *users){
-            self.users = users;
-        }];
     }
 }
 
@@ -41,7 +26,8 @@
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
-    self.search = searchText;
+    Search *search = [Search initWithDictionary:@{@"keyword" : searchText}];
+    [search usersWithCompletionBlock:^(NSArray *users) { self.users = users; }];
 }
 
 #pragma mark - Table view data source
@@ -56,9 +42,7 @@
     static NSString *CellIdentifier = @"User";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    }
+    if (!cell) { cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier]; }
     
     User *user = [self.users objectAtIndex:indexPath.row];
     cell.textLabel.text = user.login;

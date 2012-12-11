@@ -1,15 +1,19 @@
 #import <Foundation/Foundation.h>
 
-#import "User.h"
+#import "AppDelegate.h"
+
+@class User;
 
 @interface Repository : NSObject
 
 @property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSDate *updatedAt;
+@property (nonatomic, strong) User *owner;
 
-+ (Repository *)repositoryFromDictionary:(NSDictionary *)attributes;
++ (Repository *)initWithDictionary:(NSDictionary *)attributes;
 
-+ (NSArray *)repositoriesFromArray:(NSArray *)attributesArray;
++ (NSArray *)initWithArrayOfDictionaries:(NSArray *)arrayOfDictionaries;
 
-+ (void)findRepositoriesForUser:(User *)user withCompletionBlock:(void (^)(NSArray *repositories))block;
+- (void)branchesWithCompletionBlock:(void (^)(NSArray *branches))block;
 
 @end

@@ -2,31 +2,29 @@
 
 @implementation Branch
 
-@synthesize name = _name;
-
-+ (Branch *)branchFromDictionary:(NSDictionary *)attributes
++ (Branch *)initWithDictionary:(NSDictionary *)attributes
 {
     Branch *branch = [Branch new];
     branch.name = [attributes objectForKey:@"name"];
     return branch;
 }
 
-+ (NSArray *)branchesFromArray:(NSArray *)attributesArray
++ (NSArray *)initWithArrayOfDictionaries:(NSArray *)arrayOfDictionaries
 {
-    NSMutableArray *branches = [NSMutableArray arrayWithCapacity:[attributesArray count]];
-    for (NSDictionary *attributes in attributesArray) {
-        [branches addObject:[self branchFromDictionary:attributes]];
+    NSMutableArray *branches = [NSMutableArray arrayWithCapacity:[arrayOfDictionaries count]];
+    for (NSDictionary *attributes in arrayOfDictionaries) {
+        [branches addObject:[self initWithDictionary:attributes]];
     }
     return branches;
 }
 
-+ (void)findBranchesForRepository:(Repository *)repository ownedBy:(User *)user withCompletionBlock:(void (^)(NSArray *branches))block
+- (void)commitsWithCompletionBlock:(void (^)(NSArray *commits))block
 {
     [[[AFGitHubClient sharedClient] operationQueue] cancelAllOperations];
-    [[AFGitHubClient sharedClient] getPath:[NSString stringWithFormat:@"/repos/%@/%@/branches", user.login, repository.name] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSArray *responseArray = (NSArray *)responseObject;
-        NSArray *branches = [self branchesFromArray:responseArray];
-        if (block) { block(branches); }
+    [[AFGitHubClient sharedClient] getPath:[NSString stringWithFormat:@"/repos/%@/%@/commits", self.repository.owner.login, self.repository.name] parameters:@{@"sha" : self.name} success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSArray *commits = [Commit initWithArrayOfDictionaries:responseObject];
+        for (Commit *commit in commits) { commit.branch = self; }
+        if (block) { block(commits); }
     } failure:nil];
 }
 
