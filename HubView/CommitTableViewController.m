@@ -1,5 +1,7 @@
 #import "CommitTableViewController.h"
 
+@class CommitViewController;
+
 @implementation CommitTableViewController
 
 - (void)setCommits:(NSArray *)commits
@@ -20,7 +22,17 @@
     }
 }
 
-#pragma mark - View lifecycle
+- (void)updateBarButtonItem
+{
+    UINavigationController *detailController = [self.splitViewController.viewControllers objectAtIndex:1];
+    CommitViewController *commitViewController = [detailController.viewControllers objectAtIndex:0];
+    commitViewController.navigationItem.leftBarButtonItem.title = @"Commits";
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self updateBarButtonItem];
+}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -29,8 +41,6 @@
         //[segue.destinationViewController setCommit:commit];
     }
 }
-
-#pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -60,31 +70,14 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     Commit *commit = [self.commits objectAtIndex:indexPath.row];
-    NSString *text = commit.message;
-    NSString *detailText = commit.detail;
     
     NSInteger padding = 20;
     
-    CGSize lineSize = [@" "  sizeWithFont:[UIFont boldSystemFontOfSize:18]
-                        constrainedToSize:CGSizeMake([cell.contentView frame].size.width - padding, 500)
-                            lineBreakMode:NSLineBreakByTruncatingTail];
+    CGSize lineSize =       [@" "           sizeWithFont:[UIFont boldSystemFontOfSize:18] constrainedToSize:CGSizeMake([cell.contentView frame].size.width - padding, 500) lineBreakMode:NSLineBreakByTruncatingTail];
+    CGSize textSize =       [commit.message sizeWithFont:[UIFont boldSystemFontOfSize:18] constrainedToSize:CGSizeMake([cell.contentView frame].size.width - padding, 500) lineBreakMode:NSLineBreakByTruncatingTail];
+    CGSize detailTextSize = [commit.detail  sizeWithFont:[UIFont systemFontOfSize:14]     constrainedToSize:CGSizeMake([cell.contentView frame].size.width - padding, 500) lineBreakMode:NSLineBreakByTruncatingTail];
     
-    CGSize textSize = [commit.message sizeWithFont:[UIFont boldSystemFontOfSize:18]
-                                 constrainedToSize:CGSizeMake([cell.contentView frame].size.width - padding, 500)
-                                     lineBreakMode:NSLineBreakByTruncatingTail];
-    
-    CGSize detailTextSize = [commit.detail sizeWithFont:[UIFont systemFontOfSize:14]
-                                      constrainedToSize:CGSizeMake([cell.contentView frame].size.width - padding, 500)
-                                          lineBreakMode:NSLineBreakByTruncatingTail];
-    
-    if (lineSize.height * 3 < textSize.height)
-    {
-        return (lineSize.height * 3) + detailTextSize.height + padding;
-    }
-    else
-    {
-        return textSize.height + detailTextSize.height + padding;
-    }
+    return MIN(lineSize.height * 3, textSize.height) + detailTextSize.height + padding;
 }
 
 @end

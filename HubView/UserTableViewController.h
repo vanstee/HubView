@@ -1,6 +1,6 @@
 #import <UIKit/UIKit.h>
 
-#import "User.h"
+#import "AppDelegate.h"
 
 @interface UserTableViewController : UITableViewController <UISearchBarDelegate>
 

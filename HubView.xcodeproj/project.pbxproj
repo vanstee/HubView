@@ -21,7 +21,6 @@
 		10BCC4081675411900CCB5A9 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10BCC4071675411900CCB5A9 /* Default@2x.png */; };
 		10BCC40A1675411900CCB5A9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10BCC4091675411900CCB5A9 /* Default-568h@2x.png */; };
 		10BCC40D1675411900CCB5A9 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10BCC40B1675411900CCB5A9 /* MainStoryboard.storyboard */; };
-		10BCC4131675411900CCB5A9 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10BCC4121675411900CCB5A9 /* DetailViewController.m */; };
 		10BCC420167541CE00CCB5A9 /* UserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10BCC41F167541CE00CCB5A9 /* UserTableViewController.m */; };
 		10BCC4241675451000CCB5A9 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 10BCC4231675451000CCB5A9 /* User.m */; };
 		10BCC49A1675842A00CCB5A9 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 10BCC4881675842A00CCB5A9 /* AFHTTPClient.m */; };
@@ -64,8 +63,6 @@
 		10BCC4071675411900CCB5A9 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		10BCC4091675411900CCB5A9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		10BCC40C1675411900CCB5A9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		10BCC4111675411900CCB5A9 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		10BCC4121675411900CCB5A9 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		10BCC41E167541CE00CCB5A9 /* UserTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserTableViewController.h; sourceTree = "<group>"; };
 		10BCC41F167541CE00CCB5A9 /* UserTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTableViewController.m; sourceTree = "<group>"; };
 		10BCC4221675451000CCB5A9 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -148,36 +145,34 @@
 		10BCC3F91675411900CCB5A9 /* HubView */ = {
 			isa = PBXGroup;
 			children = (
-				1063DF461676E23500FA22EB /* CommitViewController.h */,
-				1063DF471676E23500FA22EB /* CommitViewController.m */,
-				1063DF3E1676BA6100FA22EB /* NSDate+Formatting.h */,
-				1063DF3F1676BA6100FA22EB /* NSDate+Formatting.m */,
-				10BCC4021675411900CCB5A9 /* AppDelegate.h */,
-				10BCC4031675411900CCB5A9 /* AppDelegate.m */,
-				10BCC40B1675411900CCB5A9 /* MainStoryboard.storyboard */,
-				10BCC4111675411900CCB5A9 /* DetailViewController.h */,
-				10BCC4121675411900CCB5A9 /* DetailViewController.m */,
-				10BCC3FA1675411900CCB5A9 /* Supporting Files */,
-				10BCC41E167541CE00CCB5A9 /* UserTableViewController.h */,
-				10BCC41F167541CE00CCB5A9 /* UserTableViewController.m */,
-				10BCC4221675451000CCB5A9 /* User.h */,
-				10BCC4231675451000CCB5A9 /* User.m */,
 				10BCC4A31675893500CCB5A9 /* AFGitHubClient.h */,
 				10BCC4A41675893500CCB5A9 /* AFGitHubClient.m */,
-				10CB25B41675B51D00A33C32 /* RepositoryTableViewController.h */,
-				10CB25B51675B51D00A33C32 /* RepositoryTableViewController.m */,
-				10CB25B71675B55C00A33C32 /* Repository.h */,
-				10CB25B81675B55C00A33C32 /* Repository.m */,
-				10CB25BA16762FF500A33C32 /* BranchTableViewController.h */,
-				10CB25BB16762FF500A33C32 /* BranchTableViewController.m */,
+				10BCC4021675411900CCB5A9 /* AppDelegate.h */,
+				10BCC4031675411900CCB5A9 /* AppDelegate.m */,
 				10CB25BD1676309400A33C32 /* Branch.h */,
 				10CB25BE1676309400A33C32 /* Branch.m */,
-				10CB25C016763EDA00A33C32 /* CommitTableViewController.h */,
-				10CB25C116763EDA00A33C32 /* CommitTableViewController.m */,
+				10CB25BA16762FF500A33C32 /* BranchTableViewController.h */,
+				10CB25BB16762FF500A33C32 /* BranchTableViewController.m */,
 				1063DF331676994D00FA22EB /* Commit.h */,
 				1063DF341676994D00FA22EB /* Commit.m */,
+				10CB25C016763EDA00A33C32 /* CommitTableViewController.h */,
+				10CB25C116763EDA00A33C32 /* CommitTableViewController.m */,
+				1063DF461676E23500FA22EB /* CommitViewController.h */,
+				1063DF471676E23500FA22EB /* CommitViewController.m */,
+				10BCC40B1675411900CCB5A9 /* MainStoryboard.storyboard */,
+				1063DF3E1676BA6100FA22EB /* NSDate+Formatting.h */,
+				1063DF3F1676BA6100FA22EB /* NSDate+Formatting.m */,
+				10CB25B71675B55C00A33C32 /* Repository.h */,
+				10CB25B81675B55C00A33C32 /* Repository.m */,
+				10CB25B41675B51D00A33C32 /* RepositoryTableViewController.h */,
+				10CB25B51675B51D00A33C32 /* RepositoryTableViewController.m */,
 				1063DF491676EB6300FA22EB /* Search.h */,
 				1063DF4A1676EB6300FA22EB /* Search.m */,
+				10BCC3FA1675411900CCB5A9 /* Supporting Files */,
+				10BCC4221675451000CCB5A9 /* User.h */,
+				10BCC4231675451000CCB5A9 /* User.m */,
+				10BCC41E167541CE00CCB5A9 /* UserTableViewController.h */,
+				10BCC41F167541CE00CCB5A9 /* UserTableViewController.m */,
 			);
 			path = HubView;
 			sourceTree = "<group>";
@@ -292,7 +287,6 @@
 				1063DF451676DEA900FA22EB /* NSDate+Formatting.m in Sources */,
 				10BCC4001675411900CCB5A9 /* main.m in Sources */,
 				10BCC4041675411900CCB5A9 /* AppDelegate.m in Sources */,
-				10BCC4131675411900CCB5A9 /* DetailViewController.m in Sources */,
 				10BCC420167541CE00CCB5A9 /* UserTableViewController.m in Sources */,
 				10BCC4241675451000CCB5A9 /* User.m in Sources */,
 				10BCC49A1675842A00CCB5A9 /* AFHTTPClient.m in Sources */,

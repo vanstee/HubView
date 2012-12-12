@@ -12,7 +12,17 @@
     }
 }
 
-#pragma mark - View lifecycle
+- (void)updateBarButtonItem
+{
+    UINavigationController *detailController = [self.splitViewController.viewControllers objectAtIndex:1];
+    CommitViewController *commitViewController = [detailController.viewControllers objectAtIndex:0];
+    commitViewController.navigationItem.leftBarButtonItem.title = @"Users";
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self updateBarButtonItem];
+}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -22,15 +32,11 @@
     }
 }
 
-#pragma mark - UISearchBarDelegate methods
-
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
     Search *search = [Search initWithDictionary:@{@"keyword" : searchText}];
     [search usersWithCompletionBlock:^(NSArray *users) { self.users = users; }];
 }
-
-#pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
