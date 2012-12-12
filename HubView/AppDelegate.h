@@ -7,6 +7,7 @@
 #import "Commit.h"
 #import "CommitTableViewController.h"
 #import "CommitViewController.h"
+#import "File.h"
 #import "NSDate+Formatting.h"
 #import "Repository.h"
 #import "RepositoryTableViewController.h"

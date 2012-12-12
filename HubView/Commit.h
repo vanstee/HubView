@@ -3,6 +3,7 @@
 #import "AppDelegate.h"
 
 @class Branch;
+@class File;
 @class User;
 
 @interface Commit : NSObject
@@ -11,6 +12,7 @@
 @property (nonatomic, strong) NSDate *date;
 @property (nonatomic, strong) User *author;
 @property (nonatomic, strong) Branch *branch;
+@property (nonatomic, strong) NSArray *files;
 
 + (NSDate *)parseDate:(NSString *)date;
 

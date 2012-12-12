@@ -24,4 +24,20 @@
     self.masterPopoverController = nil;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    self.view.autoresizesSubviews = YES;
+    self.view.backgroundColor = [UIColor underPageBackgroundColor];
+
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    scrollView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+
+    for (File *file in self.commit.files)
+    {
+        // display files and their patch content
+    }
+}
+
 @end

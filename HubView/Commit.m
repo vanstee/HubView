@@ -16,6 +16,7 @@
     commit.message = [[attributes[@"commit"][@"message"] componentsSeparatedByString: @"\n"] objectAtIndex:0];
     commit.date = [Commit parseDate:attributes[@"commit"][@"author"][@"date"]];
     commit.author = [User initWithDictionary:attributes[@"author"]];
+    commit.files = [File initWithArrayOfDictionaries:attributes[@"files"]];
     return commit;
 }
 

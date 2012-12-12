@@ -31,15 +31,16 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
     [self updateBarButtonItem];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([segue.identifier isEqualToString:@"Select Commit"]) {
-        Commit *commit = [self.commits objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
-        //[segue.destinationViewController setCommit:commit];
-    }
+    Commit *commit = [self.commits objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
+    UINavigationController *detailController = [self.splitViewController.viewControllers objectAtIndex:1];
+    CommitViewController *commitViewController = [detailController.viewControllers objectAtIndex:0];
+    [commitViewController setCommit:commit];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

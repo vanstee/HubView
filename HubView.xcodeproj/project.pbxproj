@@ -11,6 +11,7 @@
 		1063DF451676DEA900FA22EB /* NSDate+Formatting.m in Sources */ = {isa = PBXBuildFile; fileRef = 1063DF3F1676BA6100FA22EB /* NSDate+Formatting.m */; };
 		1063DF481676E23500FA22EB /* CommitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1063DF471676E23500FA22EB /* CommitViewController.m */; };
 		1063DF4B1676EB6400FA22EB /* Search.m in Sources */ = {isa = PBXBuildFile; fileRef = 1063DF4A1676EB6300FA22EB /* Search.m */; };
+		10ADE25A1678313100B887B5 /* File.m in Sources */ = {isa = PBXBuildFile; fileRef = 10ADE2591678313100B887B5 /* File.m */; };
 		10BCC3F41675411900CCB5A9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10BCC3F31675411900CCB5A9 /* UIKit.framework */; };
 		10BCC3F61675411900CCB5A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10BCC3F51675411900CCB5A9 /* Foundation.framework */; };
 		10BCC3F81675411900CCB5A9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10BCC3F71675411900CCB5A9 /* CoreGraphics.framework */; };
@@ -49,6 +50,8 @@
 		1063DF471676E23500FA22EB /* CommitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommitViewController.m; sourceTree = "<group>"; };
 		1063DF491676EB6300FA22EB /* Search.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Search.h; sourceTree = "<group>"; };
 		1063DF4A1676EB6300FA22EB /* Search.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Search.m; sourceTree = "<group>"; };
+		10ADE2581678313100B887B5 /* File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = File.h; sourceTree = "<group>"; };
+		10ADE2591678313100B887B5 /* File.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = File.m; sourceTree = "<group>"; };
 		10BCC3EF1675411900CCB5A9 /* HubView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HubView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10BCC3F31675411900CCB5A9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		10BCC3F51675411900CCB5A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -173,6 +176,8 @@
 				10BCC4231675451000CCB5A9 /* User.m */,
 				10BCC41E167541CE00CCB5A9 /* UserTableViewController.h */,
 				10BCC41F167541CE00CCB5A9 /* UserTableViewController.m */,
+				10ADE2581678313100B887B5 /* File.h */,
+				10ADE2591678313100B887B5 /* File.m */,
 			);
 			path = HubView;
 			sourceTree = "<group>";
@@ -307,6 +312,7 @@
 				1063DF351676994D00FA22EB /* Commit.m in Sources */,
 				1063DF481676E23500FA22EB /* CommitViewController.m in Sources */,
 				1063DF4B1676EB6400FA22EB /* Search.m in Sources */,
+				10ADE25A1678313100B887B5 /* File.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
