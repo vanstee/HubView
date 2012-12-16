@@ -1,5 +1,7 @@
 #import <Foundation/Foundation.h>
 
+#import "Commit.h"
+
 @class Commit;
 
 @interface File : NSObject

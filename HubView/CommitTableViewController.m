@@ -1,7 +1,5 @@
 #import "CommitTableViewController.h"
 
-@class CommitViewController;
-
 @implementation CommitTableViewController
 
 - (void)setCommits:(NSArray *)commits

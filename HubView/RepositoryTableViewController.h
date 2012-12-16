@@ -1,6 +1,8 @@
 #import <UIKit/UIKit.h>
 
-#import "AppDelegate.h"
+#import "CommitViewController.h"
+#import "Repository.h"
+#import "User.h"
 
 @interface RepositoryTableViewController : UITableViewController
 

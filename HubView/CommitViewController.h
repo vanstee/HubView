@@ -1,8 +1,7 @@
 #import <UIKit/UIKit.h>
 
-#import "AppDelegate.h"
-
-@class Commit;
+#import "Commit.h"
+#import "File.h"
 
 @interface CommitViewController : UIViewController
 

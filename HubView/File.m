@@ -12,11 +12,11 @@
 
 + (NSArray *)initWithArrayOfDictionaries:(NSArray *)arrayOfDictionaries
 {
-    NSMutableArray *commits = [NSMutableArray arrayWithCapacity:[arrayOfDictionaries count]];
+    NSMutableArray *files = [NSMutableArray arrayWithCapacity:[arrayOfDictionaries count]];
     for (NSDictionary *attributes in arrayOfDictionaries) {
-        [commits addObject:[self initWithDictionary:attributes]];
+        [files addObject:[self initWithDictionary:attributes]];
     }
-    return commits;
+    return files;
 }
 
 @end

@@ -1,9 +1,11 @@
 #import <Foundation/Foundation.h>
 
-#import "AppDelegate.h"
+#import "Branch.h"
+#import "Commit.h"
+#import "File.h"
+#import "User.h"
 
 @class Branch;
-@class File;
 @class User;
 
 @interface Commit : NSObject

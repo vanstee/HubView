@@ -1,6 +1,8 @@
 #import <UIKit/UIKit.h>
 
-#import "AppDelegate.h"
+#import "Branch.h"
+#import "Commit.h"
+#import "CommitViewController.h"
 
 @interface CommitTableViewController : UITableViewController
 

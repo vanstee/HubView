@@ -1,8 +1,8 @@
 #import <UIKit/UIKit.h>
 
-#import "AppDelegate.h"
-
-@class Repository;
+#import "Branch.h"
+#import "CommitViewController.h"
+#import "Repository.h"
 
 @interface BranchTableViewController : UITableViewController
 

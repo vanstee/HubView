@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1030296E167C28D80056B9AC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1030296D167C28D80056B9AC /* SystemConfiguration.framework */; };
+		10302970167C28DE0056B9AC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1030296F167C28DE0056B9AC /* MobileCoreServices.framework */; };
 		1063DF351676994D00FA22EB /* Commit.m in Sources */ = {isa = PBXBuildFile; fileRef = 1063DF341676994D00FA22EB /* Commit.m */; };
 		1063DF451676DEA900FA22EB /* NSDate+Formatting.m in Sources */ = {isa = PBXBuildFile; fileRef = 1063DF3F1676BA6100FA22EB /* NSDate+Formatting.m */; };
 		1063DF481676E23500FA22EB /* CommitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1063DF471676E23500FA22EB /* CommitViewController.m */; };
@@ -42,6 +44,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1030296D167C28D80056B9AC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		1030296F167C28DE0056B9AC /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		1063DF331676994D00FA22EB /* Commit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Commit.h; sourceTree = "<group>"; };
 		1063DF341676994D00FA22EB /* Commit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Commit.m; sourceTree = "<group>"; };
 		1063DF3E1676BA6100FA22EB /* NSDate+Formatting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+Formatting.h"; sourceTree = "<group>"; };
@@ -108,6 +112,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10302970167C28DE0056B9AC /* MobileCoreServices.framework in Frameworks */,
+				1030296E167C28D80056B9AC /* SystemConfiguration.framework in Frameworks */,
 				10BCC3F61675411900CCB5A9 /* Foundation.framework in Frameworks */,
 				10BCC3F41675411900CCB5A9 /* UIKit.framework in Frameworks */,
 				10BCC3F81675411900CCB5A9 /* CoreGraphics.framework in Frameworks */,
@@ -120,6 +126,8 @@
 		10BCC3E41675411900CCB5A9 = {
 			isa = PBXGroup;
 			children = (
+				1030296F167C28DE0056B9AC /* MobileCoreServices.framework */,
+				1030296D167C28D80056B9AC /* SystemConfiguration.framework */,
 				10BCC4861675842A00CCB5A9 /* AFNetworking */,
 				10BCC3F91675411900CCB5A9 /* HubView */,
 				10BCC3F21675411900CCB5A9 /* Frameworks */,
@@ -162,6 +170,8 @@
 				10CB25C116763EDA00A33C32 /* CommitTableViewController.m */,
 				1063DF461676E23500FA22EB /* CommitViewController.h */,
 				1063DF471676E23500FA22EB /* CommitViewController.m */,
+				10ADE2581678313100B887B5 /* File.h */,
+				10ADE2591678313100B887B5 /* File.m */,
 				10BCC40B1675411900CCB5A9 /* MainStoryboard.storyboard */,
 				1063DF3E1676BA6100FA22EB /* NSDate+Formatting.h */,
 				1063DF3F1676BA6100FA22EB /* NSDate+Formatting.m */,
@@ -176,8 +186,6 @@
 				10BCC4231675451000CCB5A9 /* User.m */,
 				10BCC41E167541CE00CCB5A9 /* UserTableViewController.h */,
 				10BCC41F167541CE00CCB5A9 /* UserTableViewController.m */,
-				10ADE2581678313100B887B5 /* File.h */,
-				10ADE2591678313100B887B5 /* File.m */,
 			);
 			path = HubView;
 			sourceTree = "<group>";

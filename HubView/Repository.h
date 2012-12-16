@@ -1,6 +1,8 @@
 #import <Foundation/Foundation.h>
 
-#import "AppDelegate.h"
+#import "AFGitHubClient.h"
+#import "Branch.h"
+#import "User.h"
 
 @class User;
 

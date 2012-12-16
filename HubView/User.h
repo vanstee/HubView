@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
 
-#import "AppDelegate.h"
+#import "AFGitHubClient.h"
+#import "Repository.h"
 
 @interface User : NSObject
 
