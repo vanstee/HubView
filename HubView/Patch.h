@@ -1,5 +1,4 @@
 #import <Foundation/Foundation.h>
-
 #import "File.h"
 
 @interface Patch : NSObject

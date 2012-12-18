@@ -21,8 +21,8 @@
 
 - (void)commitsWithCompletionBlock:(void (^)(NSArray *commits))block
 {
-    [[[AFGitHubClient sharedClient] operationQueue] cancelAllOperations];
-    [[AFGitHubClient sharedClient] getPath:[NSString stringWithFormat:@"/repos/%@/%@/commits", self.repository.owner.login, self.repository.name] parameters:@{@"sha" : self.name} success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [[[GitHubClient sharedClient] operationQueue] cancelAllOperations];
+    [[GitHubClient sharedClient] getPath:[NSString stringWithFormat:@"/repos/%@/%@/commits", self.repository.owner.login, self.repository.name] parameters:@{@"sha" : self.name} success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSArray *commits = [Commit initWithArrayOfDictionaries:responseObject];
         for (Commit *commit in commits) { commit.repository = (Repository *)self.repository; }
         if (block) { block(commits); }

@@ -22,8 +22,8 @@
 
 - (void)branchesWithCompletionBlock:(void (^)(NSArray *branches))block
 {
-    [[[AFGitHubClient sharedClient] operationQueue] cancelAllOperations];
-    [[AFGitHubClient sharedClient] getPath:[NSString stringWithFormat:@"/repos/%@/%@/branches", self.owner.login, self.name] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [[[GitHubClient sharedClient] operationQueue] cancelAllOperations];
+    [[GitHubClient sharedClient] getPath:[NSString stringWithFormat:@"/repos/%@/%@/branches", self.owner.login, self.name] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSArray *branches = [Branch initWithArrayOfDictionaries:responseObject];
         for (Branch *branch in branches) { branch.repository = self; }
         if (block) { block(branches); }

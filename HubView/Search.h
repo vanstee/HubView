@@ -1,6 +1,5 @@
 #import <Foundation/Foundation.h>
-
-#import "AFGitHubClient.h"
+#import "GitHubClient.h"
 #import "User.h"
 
 @interface Search : NSObject

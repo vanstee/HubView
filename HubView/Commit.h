@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
-
 #import "Commit.h"
 #import "File.h"
+#import "GitHubClient.h"
 #import "GitUser.h"
 #import "Repository.h"
 #import "User.h"

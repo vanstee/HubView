@@ -1,6 +1,5 @@
 #import <Foundation/Foundation.h>
-
-#import "AFGitHubClient.h"
+#import "GitHubClient.h"
 #import "Repository.h"
 
 @interface User : NSObject

@@ -20,8 +20,8 @@
 
 - (void)repositoriesWithCompletionBlock:(void (^)(NSArray *repositories))block
 {
-    [[[AFGitHubClient sharedClient] operationQueue] cancelAllOperations];
-    [[AFGitHubClient sharedClient] getPath:[NSString stringWithFormat:@"/users/%@/repos", self.login] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [[[GitHubClient sharedClient] operationQueue] cancelAllOperations];
+    [[GitHubClient sharedClient] getPath:[NSString stringWithFormat:@"/users/%@/repos", self.login] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSArray *repositories = [Repository initWithArrayOfDictionaries:responseObject];
         for (Repository *repository in repositories) { repository.owner = self; }
         if (block) { block(repositories); }

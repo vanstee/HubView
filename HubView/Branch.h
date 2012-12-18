@@ -1,7 +1,6 @@
 #import <Foundation/Foundation.h>
-
-#import "AFGitHubClient.h"
 #import "Commit.h"
+#import "GitHubClient.h"
 #import "Repository.h"
 
 @class Repository;

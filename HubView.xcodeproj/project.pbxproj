@@ -11,6 +11,7 @@
 		10302970167C28DE0056B9AC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1030296F167C28DE0056B9AC /* MobileCoreServices.framework */; };
 		10302973167E84CC0056B9AC /* Patch.m in Sources */ = {isa = PBXBuildFile; fileRef = 10302972167E84CC0056B9AC /* Patch.m */; };
 		10390736168003B400F9FE7C /* GitUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 10390735168003B400F9FE7C /* GitUser.m */; };
+		1039073E1680187E00F9FE7C /* GitHubClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1039073C1680187E00F9FE7C /* GitHubClient.m */; };
 		1063DF351676994D00FA22EB /* Commit.m in Sources */ = {isa = PBXBuildFile; fileRef = 1063DF341676994D00FA22EB /* Commit.m */; };
 		1063DF451676DEA900FA22EB /* NSDate+Formatting.m in Sources */ = {isa = PBXBuildFile; fileRef = 1063DF3F1676BA6100FA22EB /* NSDate+Formatting.m */; };
 		1063DF481676E23500FA22EB /* CommitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1063DF471676E23500FA22EB /* CommitViewController.m */; };
@@ -37,7 +38,6 @@
 		10BCC4A01675842A00CCB5A9 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 10BCC4951675842A00CCB5A9 /* AFURLConnectionOperation.m */; };
 		10BCC4A11675842A00CCB5A9 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 10BCC4971675842A00CCB5A9 /* AFXMLRequestOperation.m */; };
 		10BCC4A21675842A00CCB5A9 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 10BCC4991675842A00CCB5A9 /* UIImageView+AFNetworking.m */; };
-		10BCC4A51675893500CCB5A9 /* AFGitHubClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 10BCC4A41675893500CCB5A9 /* AFGitHubClient.m */; };
 		10CB25B61675B51D00A33C32 /* RepositoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10CB25B51675B51D00A33C32 /* RepositoryTableViewController.m */; };
 		10CB25B91675B55C00A33C32 /* Repository.m in Sources */ = {isa = PBXBuildFile; fileRef = 10CB25B81675B55C00A33C32 /* Repository.m */; };
 		10CB25BC16762FF500A33C32 /* BranchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10CB25BB16762FF500A33C32 /* BranchTableViewController.m */; };
@@ -52,6 +52,8 @@
 		10302972167E84CC0056B9AC /* Patch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Patch.m; sourceTree = "<group>"; };
 		10390734168003B400F9FE7C /* GitUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GitUser.h; sourceTree = "<group>"; };
 		10390735168003B400F9FE7C /* GitUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GitUser.m; sourceTree = "<group>"; };
+		10390737168017A800F9FE7C /* GitHubClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GitHubClient.h; sourceTree = "<group>"; };
+		1039073C1680187E00F9FE7C /* GitHubClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GitHubClient.m; sourceTree = "<group>"; };
 		1063DF331676994D00FA22EB /* Commit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Commit.h; sourceTree = "<group>"; };
 		1063DF341676994D00FA22EB /* Commit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Commit.m; sourceTree = "<group>"; };
 		1063DF3E1676BA6100FA22EB /* NSDate+Formatting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+Formatting.h"; sourceTree = "<group>"; };
@@ -99,8 +101,6 @@
 		10BCC4971675842A00CCB5A9 /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
 		10BCC4981675842A00CCB5A9 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		10BCC4991675842A00CCB5A9 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
-		10BCC4A31675893500CCB5A9 /* AFGitHubClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFGitHubClient.h; sourceTree = "<group>"; };
-		10BCC4A41675893500CCB5A9 /* AFGitHubClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFGitHubClient.m; sourceTree = "<group>"; };
 		10CB25B41675B51D00A33C32 /* RepositoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepositoryTableViewController.h; sourceTree = "<group>"; };
 		10CB25B51675B51D00A33C32 /* RepositoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepositoryTableViewController.m; sourceTree = "<group>"; };
 		10CB25B71675B55C00A33C32 /* Repository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Repository.h; sourceTree = "<group>"; };
@@ -162,8 +162,6 @@
 		10BCC3F91675411900CCB5A9 /* HubView */ = {
 			isa = PBXGroup;
 			children = (
-				10BCC4A31675893500CCB5A9 /* AFGitHubClient.h */,
-				10BCC4A41675893500CCB5A9 /* AFGitHubClient.m */,
 				10BCC4021675411900CCB5A9 /* AppDelegate.h */,
 				10BCC4031675411900CCB5A9 /* AppDelegate.m */,
 				10CB25BD1676309400A33C32 /* Branch.h */,
@@ -178,9 +176,15 @@
 				1063DF471676E23500FA22EB /* CommitViewController.m */,
 				10ADE2581678313100B887B5 /* File.h */,
 				10ADE2591678313100B887B5 /* File.m */,
+				10390737168017A800F9FE7C /* GitHubClient.h */,
+				1039073C1680187E00F9FE7C /* GitHubClient.m */,
+				10390734168003B400F9FE7C /* GitUser.h */,
+				10390735168003B400F9FE7C /* GitUser.m */,
 				10BCC40B1675411900CCB5A9 /* MainStoryboard.storyboard */,
 				1063DF3E1676BA6100FA22EB /* NSDate+Formatting.h */,
 				1063DF3F1676BA6100FA22EB /* NSDate+Formatting.m */,
+				10302971167E84CB0056B9AC /* Patch.h */,
+				10302972167E84CC0056B9AC /* Patch.m */,
 				10CB25B71675B55C00A33C32 /* Repository.h */,
 				10CB25B81675B55C00A33C32 /* Repository.m */,
 				10CB25B41675B51D00A33C32 /* RepositoryTableViewController.h */,
@@ -192,10 +196,6 @@
 				10BCC4231675451000CCB5A9 /* User.m */,
 				10BCC41E167541CE00CCB5A9 /* UserTableViewController.h */,
 				10BCC41F167541CE00CCB5A9 /* UserTableViewController.m */,
-				10302971167E84CB0056B9AC /* Patch.h */,
-				10302972167E84CC0056B9AC /* Patch.m */,
-				10390734168003B400F9FE7C /* GitUser.h */,
-				10390735168003B400F9FE7C /* GitUser.m */,
 			);
 			path = HubView;
 			sourceTree = "<group>";
@@ -321,7 +321,6 @@
 				10BCC4A01675842A00CCB5A9 /* AFURLConnectionOperation.m in Sources */,
 				10BCC4A11675842A00CCB5A9 /* AFXMLRequestOperation.m in Sources */,
 				10BCC4A21675842A00CCB5A9 /* UIImageView+AFNetworking.m in Sources */,
-				10BCC4A51675893500CCB5A9 /* AFGitHubClient.m in Sources */,
 				10CB25B61675B51D00A33C32 /* RepositoryTableViewController.m in Sources */,
 				10CB25B91675B55C00A33C32 /* Repository.m in Sources */,
 				10CB25BC16762FF500A33C32 /* BranchTableViewController.m in Sources */,
@@ -333,6 +332,7 @@
 				10ADE25A1678313100B887B5 /* File.m in Sources */,
 				10302973167E84CC0056B9AC /* Patch.m in Sources */,
 				10390736168003B400F9FE7C /* GitUser.m in Sources */,
+				1039073E1680187E00F9FE7C /* GitHubClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

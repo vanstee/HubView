@@ -60,14 +60,13 @@
 
 - (NSString *)detail
 {
-    NSLog(@"%@", self.date);
     return [NSString stringWithFormat:@"%@ authored %@", self.login, self.date.distanceOfTimeInWords];
 }
 
 - (void)commitWithCompletionBlock:(void (^)(Commit *commit))block
 {
-    [[[AFGitHubClient sharedClient] operationQueue] cancelAllOperations];
-    [[AFGitHubClient sharedClient] getPath:[NSString stringWithFormat:@"/repos/%@/%@/commits/%@", self.repository.owner.login, self.repository.name, self.sha] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [[[GitHubClient sharedClient] operationQueue] cancelAllOperations];
+    [[GitHubClient sharedClient] getPath:[NSString stringWithFormat:@"/repos/%@/%@/commits/%@", self.repository.owner.login, self.repository.name, self.sha] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         Commit *commit = [Commit initWithDictionary:responseObject];
         commit.repository = self.repository;
         if (block) { block(commit); }

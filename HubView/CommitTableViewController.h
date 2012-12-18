@@ -1,5 +1,4 @@
 #import <UIKit/UIKit.h>
-
 #import "Branch.h"
 #import "Commit.h"
 #import "CommitViewController.h"
