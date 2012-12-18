@@ -2,23 +2,17 @@
 
 @implementation Commit
 
-+ (NSDate *)parseDate:(NSString *)dateString
-{
-    [NSDateFormatter setDefaultFormatterBehavior:NSDateFormatterBehavior10_4];
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
-    return [dateFormatter dateFromString:dateString];
-}
-
 + (Commit *)initWithDictionary:(NSDictionary *)attributes
 {
     Commit *commit = [Commit new];
     commit.sha = attributes[@"sha"];
     commit.message = [[attributes[@"commit"][@"message"] componentsSeparatedByString: @"\n"] objectAtIndex:0];
-    commit.date = [Commit parseDate:attributes[@"commit"][@"author"][@"date"]];
-    commit.author = [User initWithDictionary:attributes[@"author"]];
+    commit.gitAuthor = [GitUser initWithDictionary:attributes[@"commit"][@"author"]];
+    commit.gitCommitter = [GitUser initWithDictionary:attributes[@"commit"][@"committer"]];
+    if (attributes[@"author"] != [NSNull null]) { commit.author = [User initWithDictionary:attributes[@"author"]]; }
+    if (attributes[@"committer"] != [NSNull null]) { commit.committer = [User initWithDictionary:attributes[@"committer"]]; }
     commit.repository = attributes[@"repository"];
-    commit.files = [File initWithArrayOfDictionaries:attributes[@"files"]];
+    if (attributes[@"files"] != [NSNull null]) { commit.files = [File initWithArrayOfDictionaries:attributes[@"files"]]; }
     return commit;
 }
 
@@ -31,11 +25,44 @@
     return commits;
 }
 
-- (NSString *)detail
+- (NSDate *)date
 {
-    return [NSString stringWithFormat:@"%@ authored %@", self.author.login, self.date.distanceOfTimeInWords];
+    NSDate *date;
+
+    for (NSString *attribute in @[@"gitAuthor", @"gitCommitter"]) {
+        GitUser *gitUser = [self valueForKey:attribute];
+        if (gitUser) {
+            date = gitUser.date;
+            break;
+        }
+    }
+
+    return date;
 }
 
+- (NSString *)login
+{
+    NSString *login = @"Unknown";
+
+    for (NSString *attribute in @[@"author", @"committer", @"gitAuthor", @"gitCommitter"]) {
+        id user = [self valueForKey:attribute];
+        if ([user respondsToSelector:@selector(login)]) {
+            login = [user login];
+            break;
+        } else if ([user respondsToSelector:@selector(name)]) {
+            login = [user name];
+            break;
+        }
+    }
+
+    return login;
+}
+
+- (NSString *)detail
+{
+    NSLog(@"%@", self.date);
+    return [NSString stringWithFormat:@"%@ authored %@", self.login, self.date.distanceOfTimeInWords];
+}
 
 - (void)commitWithCompletionBlock:(void (^)(Commit *commit))block
 {

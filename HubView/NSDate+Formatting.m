@@ -1,53 +1,55 @@
 #import "NSDate+Formatting.h"
 
+#define MINUTE 60
+#define HOUR 3600
+#define DAY 86400
+#define WEEK 604800
+#define MONTH 2592000
+#define YEAR 31557600
+
 @implementation NSDate (Formatting)
 
-+ (NSDateFormatter *)dateFormatter
++ (NSDate *)parseDate:(NSString *)dateString
 {
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
-    dateFormatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ss'Z'";
-    return dateFormatter;
+    [NSDateFormatter setDefaultFormatterBehavior:NSDateFormatterBehavior10_4];
+    NSDateFormatter *dateFormatter = [NSDateFormatter new];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
+    return [dateFormatter dateFromString:dateString];
 }
 
 - (NSString *)distanceOfTimeInWords
 {
-    double seconds = [self timeIntervalSinceNow];
-    seconds = seconds * -1;
+    double seconds = [self timeIntervalSinceNow] * -1;
 
-    if (seconds < 60) {
+    NSUInteger difference = 0;
+    BOOL pluralize = NO;
+    NSString *unit = @"";
+
+    if (seconds < MINUTE) {
         return @"just now";
+    } else if (seconds < HOUR) {
+        difference = round(seconds / MINUTE);
+        unit = @"minute";
+    } else if (seconds < DAY) {
+        difference = round(seconds / MINUTE);
+        unit = @"hour";
+    } else if (seconds < WEEK) {
+        difference = round(seconds / DAY);
+        unit = @"day";
+    } else if (seconds < MONTH) {
+        difference = round(seconds / WEEK);
+        unit = @"week";
+    } else if (seconds < YEAR) {
+        difference = round(seconds / MONTH);
+        unit = @"month";
     } else {
-        NSUInteger difference = 0;
-        BOOL pluralize = NO;
-        NSString* unit = @"";
-        
-        if (seconds < 3600) {
-            difference = round(seconds / 60);
-            unit = @"minute";
-        } else if (seconds < 86400) {
-            difference = round(seconds / 3600);
-            unit = @"hour";
-        } else if (seconds < 604800) {
-            difference = round(seconds / 86400);
-            unit = @"day";
-        } else if (seconds < 2592000) {
-            difference = round(seconds / 604800);
-            unit = @"week";
-        } else if (seconds < 31557600) {
-            difference = round(seconds / 2592000);
-            unit = @"month";
-        } else {
-            difference = round(seconds / 2592000);
-            unit = @"year";
-        }
-        
-        if (difference > 1) {
-            pluralize = YES;
-        }
-        
-        return [NSString stringWithFormat:@"%d %@%@ ago", difference, unit, (pluralize ? @"s" : @"")];
+        difference = round(seconds / YEAR);
+        unit = @"year";
     }
+
+    if (difference > 1) { pluralize = YES; }
+
+    return [NSString stringWithFormat:@"%d %@%@ ago", difference, unit, (pluralize ? @"s" : @"")];
 }
 
 @end

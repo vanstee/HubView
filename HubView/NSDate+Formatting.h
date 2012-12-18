@@ -2,7 +2,7 @@
 
 @interface NSDate (Formatting)
 
-+ (NSDateFormatter *)dateFormatter;
++ (NSDate *)parseDate:(NSString *)dateString;
 
 - (NSString *)distanceOfTimeInWords;
 

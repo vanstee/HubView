@@ -2,6 +2,7 @@
 
 #import "Commit.h"
 #import "File.h"
+#import "GitUser.h"
 #import "Repository.h"
 #import "User.h"
 
@@ -12,12 +13,12 @@
 
 @property (nonatomic, strong) NSString *sha;
 @property (nonatomic, strong) NSString *message;
-@property (nonatomic, strong) NSDate *date;
+@property (nonatomic, strong) GitUser *gitAuthor;
+@property (nonatomic, strong) GitUser *gitCommitter;
 @property (nonatomic, strong) User *author;
+@property (nonatomic, strong) User *committer;
 @property (nonatomic, strong) Repository *repository;
 @property (nonatomic, strong) NSArray *files;
-
-+ (NSDate *)parseDate:(NSString *)date;
 
 + (Commit *)initWithDictionary:(NSDictionary *)attributes;
 

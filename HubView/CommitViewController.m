@@ -48,7 +48,9 @@
     self.view.autoresizesSubviews = YES;
     self.view.backgroundColor = [UIColor underPageBackgroundColor];
 
-    self.diff.text = [[self.commit.files valueForKey:@"patch"] componentsJoinedByString:@"\n"];
+    if (self.commit.files) {
+        self.diff.text = [[self.commit.files valueForKey:@"patch"] componentsJoinedByString:@"\n"];
+    }
 }
 
 @end

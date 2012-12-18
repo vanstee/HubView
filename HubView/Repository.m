@@ -6,7 +6,7 @@
 {
     Repository *repository = [Repository new];
     repository.name = attributes[@"name"];
-    repository.updatedAt = [[NSDate dateFormatter] dateFromString:attributes[@"updated_at"]];
+    repository.updatedAt = [NSDate parseDate:attributes[@"updated_at"]];
     repository.owner = [User initWithDictionary:attributes[@"owner"]];
     return repository;
 }
