@@ -48,9 +48,10 @@
     self.view.autoresizesSubviews = YES;
     self.view.backgroundColor = [UIColor underPageBackgroundColor];
 
-    if (self.commit.files) {
-        self.diff.text = [[self.commit.files valueForKey:@"patch"] componentsJoinedByString:@"\n"];
-    }
+    NSArray *arrayOfArrays = [[[self.commit.files valueForKey:@"patch"] valueForKey:@"lines"] valueForKey:@"rawLine"];
+    NSMutableArray *lines = [NSMutableArray arrayWithCapacity:arrayOfArrays.count];
+    for (NSArray *array in arrayOfArrays) { [lines addObjectsFromArray:array]; }
+    self.diff.text = [lines componentsJoinedByString:@"\n"];
 }
 
 @end

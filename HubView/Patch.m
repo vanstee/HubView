@@ -2,21 +2,11 @@
 
 @implementation Patch
 
-+ (File *)initWithDictionary:(NSDictionary *)attributes
++ (Patch *)initWithRawPatch:(NSString *)rawPatch
 {
-    File *file = [File new];
-    file.filename = attributes[@"filename"];
-    file.patch = attributes[@"patch"];
-    return file;
-}
-
-+ (NSArray *)initWithArrayOfDictionaries:(NSArray *)arrayOfDictionaries
-{
-    NSMutableArray *commits = [NSMutableArray arrayWithCapacity:[arrayOfDictionaries count]];
-    for (NSDictionary *attributes in arrayOfDictionaries) {
-        [commits addObject:[self initWithDictionary:attributes]];
-    }
-    return commits;
+    Patch *patch = [Patch new];
+    patch.lines = [LineFactory createLinesWithRawLines:[rawPatch componentsSeparatedByString:@"\n"]];
+    return patch;
 }
 
 @end

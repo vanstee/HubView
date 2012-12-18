@@ -6,7 +6,7 @@
 {
     File *file = [File new];
     file.filename = attributes[@"filename"];
-    file.patch = attributes[@"patch"];
+    file.patch = [Patch initWithRawPatch:attributes[@"patch"]];
     return file;
 }
 
