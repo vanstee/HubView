@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "Line.h"
 #import "AdditionLine.h"
+#import "CommentLine.h"
 #import "ContextLine.h"
 #import "DeletionLine.h"
 #import "RangeLine.h"

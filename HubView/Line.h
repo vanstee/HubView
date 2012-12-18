@@ -9,4 +9,10 @@
 
 + (Line *)initWithRawLine:(NSString *)rawLine;
 
+- (NSNumber *)progressBeforeLineNumber;
+
+- (NSNumber *)progressAfterLineNumber;
+
+- (NSString *)formattedLine;
+
 @end

@@ -18,6 +18,7 @@
 		1039074A16801D9D00F9FE7C /* DeletionLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1039074916801D9D00F9FE7C /* DeletionLine.m */; };
 		1039074D16801DA700F9FE7C /* ContextLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1039074C16801DA600F9FE7C /* ContextLine.m */; };
 		1039075016801E2000F9FE7C /* LineFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1039074F16801E2000F9FE7C /* LineFactory.m */; };
+		103907531680474A00F9FE7C /* CommentLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 103907521680474900F9FE7C /* CommentLine.m */; };
 		1063DF351676994D00FA22EB /* Commit.m in Sources */ = {isa = PBXBuildFile; fileRef = 1063DF341676994D00FA22EB /* Commit.m */; };
 		1063DF451676DEA900FA22EB /* NSDate+Formatting.m in Sources */ = {isa = PBXBuildFile; fileRef = 1063DF3F1676BA6100FA22EB /* NSDate+Formatting.m */; };
 		1063DF481676E23500FA22EB /* CommitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1063DF471676E23500FA22EB /* CommitViewController.m */; };
@@ -72,6 +73,8 @@
 		1039074C16801DA600F9FE7C /* ContextLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContextLine.m; sourceTree = "<group>"; };
 		1039074E16801E1F00F9FE7C /* LineFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineFactory.h; sourceTree = "<group>"; };
 		1039074F16801E2000F9FE7C /* LineFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineFactory.m; sourceTree = "<group>"; };
+		103907511680474800F9FE7C /* CommentLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentLine.h; sourceTree = "<group>"; };
+		103907521680474900F9FE7C /* CommentLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentLine.m; sourceTree = "<group>"; };
 		1063DF331676994D00FA22EB /* Commit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Commit.h; sourceTree = "<group>"; };
 		1063DF341676994D00FA22EB /* Commit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Commit.m; sourceTree = "<group>"; };
 		1063DF3E1676BA6100FA22EB /* NSDate+Formatting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+Formatting.h"; sourceTree = "<group>"; };
@@ -180,29 +183,43 @@
 		10BCC3F91675411900CCB5A9 /* HubView */ = {
 			isa = PBXGroup;
 			children = (
+				1039074516801D9200F9FE7C /* AdditionLine.h */,
+				1039074616801D9300F9FE7C /* AdditionLine.m */,
 				10BCC4021675411900CCB5A9 /* AppDelegate.h */,
 				10BCC4031675411900CCB5A9 /* AppDelegate.m */,
 				10CB25BD1676309400A33C32 /* Branch.h */,
 				10CB25BE1676309400A33C32 /* Branch.m */,
 				10CB25BA16762FF500A33C32 /* BranchTableViewController.h */,
 				10CB25BB16762FF500A33C32 /* BranchTableViewController.m */,
+				103907511680474800F9FE7C /* CommentLine.h */,
+				103907521680474900F9FE7C /* CommentLine.m */,
 				1063DF331676994D00FA22EB /* Commit.h */,
 				1063DF341676994D00FA22EB /* Commit.m */,
 				10CB25C016763EDA00A33C32 /* CommitTableViewController.h */,
 				10CB25C116763EDA00A33C32 /* CommitTableViewController.m */,
 				1063DF461676E23500FA22EB /* CommitViewController.h */,
 				1063DF471676E23500FA22EB /* CommitViewController.m */,
+				1039074B16801DA600F9FE7C /* ContextLine.h */,
+				1039074C16801DA600F9FE7C /* ContextLine.m */,
+				1039074816801D9C00F9FE7C /* DeletionLine.h */,
+				1039074916801D9D00F9FE7C /* DeletionLine.m */,
 				10ADE2581678313100B887B5 /* File.h */,
 				10ADE2591678313100B887B5 /* File.m */,
 				10390737168017A800F9FE7C /* GitHubClient.h */,
 				1039073C1680187E00F9FE7C /* GitHubClient.m */,
 				10390734168003B400F9FE7C /* GitUser.h */,
 				10390735168003B400F9FE7C /* GitUser.m */,
+				1039073F16801C1E00F9FE7C /* Line.h */,
+				1039074016801C1E00F9FE7C /* Line.m */,
+				1039074E16801E1F00F9FE7C /* LineFactory.h */,
+				1039074F16801E2000F9FE7C /* LineFactory.m */,
 				10BCC40B1675411900CCB5A9 /* MainStoryboard.storyboard */,
 				1063DF3E1676BA6100FA22EB /* NSDate+Formatting.h */,
 				1063DF3F1676BA6100FA22EB /* NSDate+Formatting.m */,
 				10302971167E84CB0056B9AC /* Patch.h */,
 				10302972167E84CC0056B9AC /* Patch.m */,
+				1039074216801D8800F9FE7C /* RangeLine.h */,
+				1039074316801D8800F9FE7C /* RangeLine.m */,
 				10CB25B71675B55C00A33C32 /* Repository.h */,
 				10CB25B81675B55C00A33C32 /* Repository.m */,
 				10CB25B41675B51D00A33C32 /* RepositoryTableViewController.h */,
@@ -214,18 +231,6 @@
 				10BCC4231675451000CCB5A9 /* User.m */,
 				10BCC41E167541CE00CCB5A9 /* UserTableViewController.h */,
 				10BCC41F167541CE00CCB5A9 /* UserTableViewController.m */,
-				1039073F16801C1E00F9FE7C /* Line.h */,
-				1039074016801C1E00F9FE7C /* Line.m */,
-				1039074216801D8800F9FE7C /* RangeLine.h */,
-				1039074316801D8800F9FE7C /* RangeLine.m */,
-				1039074516801D9200F9FE7C /* AdditionLine.h */,
-				1039074616801D9300F9FE7C /* AdditionLine.m */,
-				1039074816801D9C00F9FE7C /* DeletionLine.h */,
-				1039074916801D9D00F9FE7C /* DeletionLine.m */,
-				1039074B16801DA600F9FE7C /* ContextLine.h */,
-				1039074C16801DA600F9FE7C /* ContextLine.m */,
-				1039074E16801E1F00F9FE7C /* LineFactory.h */,
-				1039074F16801E2000F9FE7C /* LineFactory.m */,
 			);
 			path = HubView;
 			sourceTree = "<group>";
@@ -369,6 +374,7 @@
 				1039074A16801D9D00F9FE7C /* DeletionLine.m in Sources */,
 				1039074D16801DA700F9FE7C /* ContextLine.m in Sources */,
 				1039075016801E2000F9FE7C /* LineFactory.m in Sources */,
+				103907531680474A00F9FE7C /* CommentLine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
