@@ -13,9 +13,11 @@
 + (Commit *)initWithDictionary:(NSDictionary *)attributes
 {
     Commit *commit = [Commit new];
+    commit.sha = attributes[@"sha"];
     commit.message = [[attributes[@"commit"][@"message"] componentsSeparatedByString: @"\n"] objectAtIndex:0];
     commit.date = [Commit parseDate:attributes[@"commit"][@"author"][@"date"]];
     commit.author = [User initWithDictionary:attributes[@"author"]];
+    commit.repository = attributes[@"repository"];
     commit.files = [File initWithArrayOfDictionaries:attributes[@"files"]];
     return commit;
 }
@@ -32,6 +34,17 @@
 - (NSString *)detail
 {
     return [NSString stringWithFormat:@"%@ authored %@", self.author.login, self.date.distanceOfTimeInWords];
+}
+
+
+- (void)commitWithCompletionBlock:(void (^)(Commit *commit))block
+{
+    [[[AFGitHubClient sharedClient] operationQueue] cancelAllOperations];
+    [[AFGitHubClient sharedClient] getPath:[NSString stringWithFormat:@"/repos/%@/%@/commits/%@", self.repository.owner.login, self.repository.name, self.sha] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        Commit *commit = [Commit initWithDictionary:responseObject];
+        commit.repository = self.repository;
+        if (block) { block(commit); }
+    } failure:nil];
 }
 
 @end

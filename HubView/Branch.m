@@ -6,6 +6,7 @@
 {
     Branch *branch = [Branch new];
     branch.name = [attributes objectForKey:@"name"];
+    branch.repository = [attributes objectForKey:@"repository"];
     return branch;
 }
 
@@ -23,7 +24,7 @@
     [[[AFGitHubClient sharedClient] operationQueue] cancelAllOperations];
     [[AFGitHubClient sharedClient] getPath:[NSString stringWithFormat:@"/repos/%@/%@/commits", self.repository.owner.login, self.repository.name] parameters:@{@"sha" : self.name} success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSArray *commits = [Commit initWithArrayOfDictionaries:responseObject];
-        for (Commit *commit in commits) { commit.branch = self; }
+        for (Commit *commit in commits) { commit.repository = (Repository *)self.repository; }
         if (block) { block(commits); }
     } failure:nil];
 }

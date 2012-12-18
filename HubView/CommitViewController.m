@@ -6,7 +6,10 @@
 {
     if (_commit != commit)
     {
-        _commit = commit;
+        [commit commitWithCompletionBlock:^(Commit *commit) {
+            _commit = commit;
+            [self displayCommit];
+        }];
         if (self.masterPopoverController) { [self.masterPopoverController dismissPopoverAnimated:YES]; }
     }
 }
@@ -24,20 +27,28 @@
     self.masterPopoverController = nil;
 }
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
+    [self displayCommit];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+}
+
+- (void)displayCommit
+{
     self.view.autoresizesSubviews = YES;
     self.view.backgroundColor = [UIColor underPageBackgroundColor];
 
-    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-    scrollView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
-
-    for (File *file in self.commit.files)
-    {
-        // display files and their patch content
-    }
+    self.diff.text = [[self.commit.files valueForKey:@"patch"] componentsJoinedByString:@"\n"];
 }
 
 @end

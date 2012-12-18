@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1030296E167C28D80056B9AC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1030296D167C28D80056B9AC /* SystemConfiguration.framework */; };
 		10302970167C28DE0056B9AC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1030296F167C28DE0056B9AC /* MobileCoreServices.framework */; };
+		10302973167E84CC0056B9AC /* Patch.m in Sources */ = {isa = PBXBuildFile; fileRef = 10302972167E84CC0056B9AC /* Patch.m */; };
 		1063DF351676994D00FA22EB /* Commit.m in Sources */ = {isa = PBXBuildFile; fileRef = 1063DF341676994D00FA22EB /* Commit.m */; };
 		1063DF451676DEA900FA22EB /* NSDate+Formatting.m in Sources */ = {isa = PBXBuildFile; fileRef = 1063DF3F1676BA6100FA22EB /* NSDate+Formatting.m */; };
 		1063DF481676E23500FA22EB /* CommitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1063DF471676E23500FA22EB /* CommitViewController.m */; };
@@ -46,6 +47,8 @@
 /* Begin PBXFileReference section */
 		1030296D167C28D80056B9AC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		1030296F167C28DE0056B9AC /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		10302971167E84CB0056B9AC /* Patch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Patch.h; sourceTree = "<group>"; };
+		10302972167E84CC0056B9AC /* Patch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Patch.m; sourceTree = "<group>"; };
 		1063DF331676994D00FA22EB /* Commit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Commit.h; sourceTree = "<group>"; };
 		1063DF341676994D00FA22EB /* Commit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Commit.m; sourceTree = "<group>"; };
 		1063DF3E1676BA6100FA22EB /* NSDate+Formatting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+Formatting.h"; sourceTree = "<group>"; };
@@ -186,6 +189,8 @@
 				10BCC4231675451000CCB5A9 /* User.m */,
 				10BCC41E167541CE00CCB5A9 /* UserTableViewController.h */,
 				10BCC41F167541CE00CCB5A9 /* UserTableViewController.m */,
+				10302971167E84CB0056B9AC /* Patch.h */,
+				10302972167E84CC0056B9AC /* Patch.m */,
 			);
 			path = HubView;
 			sourceTree = "<group>";
@@ -321,6 +326,7 @@
 				1063DF481676E23500FA22EB /* CommitViewController.m in Sources */,
 				1063DF4B1676EB6400FA22EB /* Search.m in Sources */,
 				10ADE25A1678313100B887B5 /* File.m in Sources */,
+				10302973167E84CC0056B9AC /* Patch.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

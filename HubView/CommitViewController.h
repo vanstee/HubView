@@ -7,5 +7,6 @@
 
 @property (nonatomic, strong) Commit *commit;
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
+@property (weak, nonatomic) IBOutlet UITextView *diff;
 
 @end
