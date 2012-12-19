@@ -2,14 +2,16 @@
 
 @interface Line : NSObject
 
-@property (nonatomic, strong) NSNumber *beforeLineNumber;
-@property (nonatomic, strong) NSNumber *afterLineNumber;
+@property (nonatomic, assign) NSInteger beforeLineNumber;
+@property (nonatomic, assign) NSInteger afterLineNumber;
 @property (nonatomic, strong) NSString *rawLine;
 
 - (id)initWithRawLine:(NSString *)rawLine;
-- (NSNumber *)progressBeforeLineNumber;
-- (NSNumber *)progressAfterLineNumber;
+- (NSInteger)progressBeforeLineNumber;
+- (NSInteger)progressAfterLineNumber;
 - (UIColor *)textColor;
 - (UIColor *)backgroundColor;
+- (NSString *)beforeLineNumberString;
+- (NSString *)afterLineNumberString;
 
 @end

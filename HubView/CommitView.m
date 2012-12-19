@@ -46,9 +46,38 @@
     return fileScrollView;
 }
 
++ (UIView *)createGutterWithFileView:(UIView *)fileView andGutterWidth:(NSInteger)gutterWidth
+{
+    CGRect gutterFrame = CGRectMake(gutterWidth, FILE_HEADER_HEIGHT - 1, LINE_NUMBERS_WIDTH, fileView.frame.size.height);
+    UIView *gutter = [[UIView alloc] initWithFrame:gutterFrame];
+    gutter.backgroundColor = [UIColor colorWithRed:234.0/255.0 green:235.0/255.0 blue:238.0/255.0 alpha:1];
+    gutter.layer.borderColor = [UIColor colorWithRed:162.0/255.0 green:167.0/255.0 blue:184.0/255.0 alpha:1].CGColor;
+    gutter.layer.borderWidth = 1;
+    return gutter;
+}
+
++ (UILabel *)createLineNumberWithLinePosition:(NSInteger)linePosition gutterPosition:(NSInteger)gutterPosition andLineNumber:(NSString *)lineNumberString
+{
+    CGRect lineNumberFrame = CGRectMake(gutterPosition + LINE_NUMBERS_MARGIN, linePosition, LINE_NUMBERS_WIDTH - (LINE_NUMBERS_MARGIN * 2), LINE_HEIGHT);
+    UILabel *label = [[UILabel alloc] initWithFrame:lineNumberFrame];
+    label.text = lineNumberString;
+    label.textColor = [UIColor colorWithRed:162.0/255.0 green:167.0/255.0 blue:184.0/255.0 alpha:1];
+    label.backgroundColor = [UIColor clearColor];
+    if ([label.text isEqualToString:@"..."]) {
+        lineNumberFrame.origin.y = linePosition - (LINE_HEIGHT / 4.0);
+        label.frame = lineNumberFrame;
+        label.font = [UIFont fontWithName:@"Helvetica" size:22];
+        label.textAlignment = NSTextAlignmentCenter;
+    } else {
+        label.font = [UIFont fontWithName:@"Helvetica" size:11];
+        label.textAlignment = NSTextAlignmentRight;
+    }
+    return label;
+}
+
 + (UILabel *)createLineLabelWithLinePosition:(NSInteger)linePosition maxLineWidth:(NSInteger)maxLineWidth andLine:(Line *)line
 {
-    CGRect labelFrame = CGRectMake(0, linePosition, maxLineWidth, LINE_HEIGHT);
+    CGRect labelFrame = CGRectMake(GUTTER_WIDTH, linePosition, maxLineWidth, LINE_HEIGHT);
     UILabel *label = [[UILabel alloc] initWithFrame:labelFrame];
     label.font = [UIFont fontWithName:@"CourierNewPSMT" size:14];
     label.text = [NSString stringWithFormat:@" %@", line.rawLine];
@@ -93,14 +122,23 @@
         NSInteger lineNumber = 1;
         NSInteger maxLineWidth = MAX(fileView.frame.size.width, [CommitView maxLineWidthInLines:file.patch.lines]);
 
-        UINavigationBar *navigationBar = [CommitView createFileNavigationBarWithFileView:fileView andFile:file];
-        [fileView addSubview:navigationBar];
-
         NSInteger linePosition = FILE_HEADER_HEIGHT;
 
         UIScrollView *fileScrollView = [CommitView createFileScrollViewWithFileView:fileView];
 
+        UIView *beforeGutter = [CommitView createGutterWithFileView:fileView andGutterWidth:0];
+        UIView *afterGutter = [CommitView createGutterWithFileView:fileView andGutterWidth:LINE_NUMBERS_WIDTH - 1];
+
+        [fileScrollView addSubview:beforeGutter];
+        [fileScrollView addSubview:afterGutter];
+
         for (Line *line in file.patch.lines) {
+            UILabel *beforeLineNumber = [CommitView createLineNumberWithLinePosition:linePosition gutterPosition:0 andLineNumber:line.beforeLineNumberString];
+            [fileScrollView addSubview:beforeLineNumber];
+
+            UILabel *afterLineNumber = [CommitView createLineNumberWithLinePosition:linePosition gutterPosition:LINE_NUMBERS_WIDTH - 1 andLineNumber:line.afterLineNumberString];
+            [fileScrollView addSubview:afterLineNumber];
+
             UILabel *label = [CommitView createLineLabelWithLinePosition:linePosition maxLineWidth:maxLineWidth andLine:line];
             [fileScrollView addSubview:label];
 
@@ -110,6 +148,9 @@
 
         fileScrollView.contentSize = CGSizeMake(maxLineWidth, linePosition);
         [fileView addSubview:fileScrollView];
+
+        UINavigationBar *navigationBar = [CommitView createFileNavigationBarWithFileView:fileView andFile:file];
+        [fileView addSubview:navigationBar];
 
         [scrollView addSubview:fileView];
         

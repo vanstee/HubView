@@ -5,6 +5,9 @@
 #define FILE_MARGIN 20
 #define FILE_HEADER_HEIGHT 44
 #define LINE_HEIGHT 16
+#define LINE_NUMBERS_MARGIN 6
+#define LINE_NUMBERS_WIDTH 30.5
+#define GUTTER_WIDTH 60
 
 @interface CommitView : UIView
 

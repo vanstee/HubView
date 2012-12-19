@@ -34,20 +34,20 @@
     self = [super initWithRawLine:rawLine];
     if (self) {
         NSDictionary *rangeAttributes = [RangeLine parseRangeLine:rawLine];
-        self.beforeStartingLineNumber = rangeAttributes[@"beforeStartingLineNumber"];
-        self.beforeNumberOfLines      = rangeAttributes[@"beforeNumberOfLines"];
-        self.afterStartingLineNumber  = rangeAttributes[@"afterStartingLineNumber"];
-        self.afterNumberOfLines       = rangeAttributes[@"afterNumberOfLines"];
+        self.beforeStartingLineNumber = [rangeAttributes[@"beforeStartingLineNumber"] integerValue];
+        self.beforeNumberOfLines      = [rangeAttributes[@"beforeNumberOfLines"] integerValue];
+        self.afterStartingLineNumber  = [rangeAttributes[@"afterStartingLineNumber"] integerValue];
+        self.afterNumberOfLines       = [rangeAttributes[@"afterNumberOfLines"] integerValue];
     }
     return self;
 }
 
-- (NSNumber *)progressBeforeLineNumber
+- (NSInteger)progressBeforeLineNumber
 {
     return self.beforeStartingLineNumber;
 }
 
-- (NSNumber *)progressAfterLineNumber
+- (NSInteger)progressAfterLineNumber
 {
     return self.afterStartingLineNumber;
 }
@@ -60,6 +60,16 @@
 - (UIColor *)backgroundColor
 {
     return [UIColor colorWithRed:234.0/255.0 green:242.0/255.0 blue:245.0/255.0 alpha:1];
+}
+
+- (NSString *)beforeLineNumberString
+{
+    return @"...";
+}
+
+- (NSString *)afterLineNumberString
+{
+    return @"...";
 }
 
 @end

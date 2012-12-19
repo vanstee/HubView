@@ -2,7 +2,7 @@
 
 @implementation DeletionLine
 
-- (NSNumber *)progressAfterLineNumber
+- (NSInteger)progressAfterLineNumber
 {
     return self.afterLineNumber;
 }
@@ -17,9 +17,14 @@
     return [UIColor colorWithRed:255.0/255.0 green:221.0/255.0 blue:221.0/255.0 alpha:1];
 }
 
-- (NSString *)formattedLine
+- (NSString *)beforeLineNumberString
 {
-    return [NSString stringWithFormat:@"| %3d |     | %@", self.beforeLineNumber.integerValue, self.rawLine];
+    return [NSString stringWithFormat:@"%3d", self.beforeLineNumber];
+}
+
+- (NSString *)afterLineNumberString
+{
+    return @"";
 }
 
 @end
