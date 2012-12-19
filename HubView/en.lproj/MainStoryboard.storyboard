@@ -23,29 +23,15 @@
         <scene sceneID="16">
             <objects>
                 <viewController storyboardIdentifier="" title="Detail" id="4" customClass="CommitViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="26">
+                    <view key="view" contentMode="scaleToFill" id="gbb-x5-5ep" customClass="CommitView">
                         <rect key="frame" x="0.0" y="64" width="703" height="704"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WKD-Tf-uTX">
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
-                            </textView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="WKD-Tf-uTX" firstAttribute="leading" secondItem="26" secondAttribute="leading" type="default" id="3F9-NZ-6Qr"/>
-                            <constraint firstItem="WKD-Tf-uTX" firstAttribute="top" secondItem="26" secondAttribute="top" type="default" id="FlZ-Bk-GkW"/>
-                            <constraint firstItem="WKD-Tf-uTX" firstAttribute="trailing" secondItem="26" secondAttribute="trailing" type="default" id="ckH-Ku-L3I"/>
-                            <constraint firstItem="WKD-Tf-uTX" firstAttribute="bottom" secondItem="26" secondAttribute="bottom" type="default" id="vfX-Kn-Oea"/>
-                        </constraints>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="53"/>
                     <connections>
-                        <outlet property="diff" destination="WKD-Tf-uTX" id="eIr-qn-awc"/>
+                        <outlet property="commitView" destination="gbb-x5-5ep" id="dZP-QV-LXd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="15" sceneMemberID="firstResponder"/>

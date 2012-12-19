@@ -38,7 +38,7 @@
     Commit *commit = self.commits[self.tableView.indexPathForSelectedRow.row];
     UINavigationController *detailController = self.splitViewController.viewControllers[1];
     CommitViewController *commitViewController = detailController.viewControllers[0];
-    commitViewController.commit = commit;
+    [commitViewController setCommit:commit];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

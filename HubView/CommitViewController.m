@@ -4,14 +4,8 @@
 
 - (void)setCommit:(Commit *)commit
 {
-    if (_commit != commit)
-    {
-        [commit commitWithCompletionBlock:^(Commit *commit) {
-            _commit = commit;
-            [self displayCommit];
-        }];
-        if (self.masterPopoverController) { [self.masterPopoverController dismissPopoverAnimated:YES]; }
-    }
+    self.commitView.commit = commit;
+    if (self.masterPopoverController) { [self.masterPopoverController dismissPopoverAnimated:YES]; }
 }
 
 - (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController
@@ -27,31 +21,11 @@
     self.masterPopoverController = nil;
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-}
-
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self displayCommit];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-}
-
-- (void)displayCommit
-{
     self.view.autoresizesSubviews = YES;
     self.view.backgroundColor = [UIColor underPageBackgroundColor];
-
-    NSArray *arrayOfArrays = [[[self.commit.files valueForKey:@"patch"] valueForKey:@"lines"] valueForKey:@"formattedLine"];
-    NSMutableArray *lines = [NSMutableArray arrayWithCapacity:arrayOfArrays.count];
-    for (NSArray *array in arrayOfArrays) { [lines addObjectsFromArray:array]; }
-    self.diff.text = [lines componentsJoinedByString:@"\n"];
 }
 
 @end

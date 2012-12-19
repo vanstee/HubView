@@ -19,6 +19,7 @@
 		1039074D16801DA700F9FE7C /* ContextLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1039074C16801DA600F9FE7C /* ContextLine.m */; };
 		1039075016801E2000F9FE7C /* LineFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1039074F16801E2000F9FE7C /* LineFactory.m */; };
 		103907531680474A00F9FE7C /* CommentLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 103907521680474900F9FE7C /* CommentLine.m */; };
+		1058B11116815F5800EF2E93 /* CommitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1058B11016815F5800EF2E93 /* CommitView.m */; };
 		1063DF351676994D00FA22EB /* Commit.m in Sources */ = {isa = PBXBuildFile; fileRef = 1063DF341676994D00FA22EB /* Commit.m */; };
 		1063DF451676DEA900FA22EB /* NSDate+Formatting.m in Sources */ = {isa = PBXBuildFile; fileRef = 1063DF3F1676BA6100FA22EB /* NSDate+Formatting.m */; };
 		1063DF481676E23500FA22EB /* CommitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1063DF471676E23500FA22EB /* CommitViewController.m */; };
@@ -75,6 +76,8 @@
 		1039074F16801E2000F9FE7C /* LineFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineFactory.m; sourceTree = "<group>"; };
 		103907511680474800F9FE7C /* CommentLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentLine.h; sourceTree = "<group>"; };
 		103907521680474900F9FE7C /* CommentLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentLine.m; sourceTree = "<group>"; };
+		1058B10F16815F5700EF2E93 /* CommitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommitView.h; sourceTree = "<group>"; };
+		1058B11016815F5800EF2E93 /* CommitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommitView.m; sourceTree = "<group>"; };
 		1063DF331676994D00FA22EB /* Commit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Commit.h; sourceTree = "<group>"; };
 		1063DF341676994D00FA22EB /* Commit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Commit.m; sourceTree = "<group>"; };
 		1063DF3E1676BA6100FA22EB /* NSDate+Formatting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+Formatting.h"; sourceTree = "<group>"; };
@@ -197,6 +200,8 @@
 				1063DF341676994D00FA22EB /* Commit.m */,
 				10CB25C016763EDA00A33C32 /* CommitTableViewController.h */,
 				10CB25C116763EDA00A33C32 /* CommitTableViewController.m */,
+				1058B10F16815F5700EF2E93 /* CommitView.h */,
+				1058B11016815F5800EF2E93 /* CommitView.m */,
 				1063DF461676E23500FA22EB /* CommitViewController.h */,
 				1063DF471676E23500FA22EB /* CommitViewController.m */,
 				1039074B16801DA600F9FE7C /* ContextLine.h */,
@@ -375,6 +380,7 @@
 				1039074D16801DA700F9FE7C /* ContextLine.m in Sources */,
 				1039075016801E2000F9FE7C /* LineFactory.m in Sources */,
 				103907531680474A00F9FE7C /* CommentLine.m in Sources */,
+				1058B11116815F5800EF2E93 /* CommitView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
