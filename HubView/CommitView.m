@@ -51,11 +51,9 @@
     CGRect labelFrame = CGRectMake(0, linePosition, maxLineWidth, LINE_HEIGHT);
     UILabel *label = [[UILabel alloc] initWithFrame:labelFrame];
     label.font = [UIFont fontWithName:@"CourierNewPSMT" size:14];
-
-    label.text = line.rawLine;
+    label.text = [NSString stringWithFormat:@" %@", line.rawLine];
     label.textColor = line.textColor;
     label.backgroundColor = line.backgroundColor;
-
     return label;
 }
 
