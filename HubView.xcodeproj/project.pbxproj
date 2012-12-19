@@ -156,12 +156,12 @@
 		10BCC3E41675411900CCB5A9 = {
 			isa = PBXGroup;
 			children = (
-				1030296F167C28DE0056B9AC /* MobileCoreServices.framework */,
-				1030296D167C28D80056B9AC /* SystemConfiguration.framework */,
 				10BCC4861675842A00CCB5A9 /* AFNetworking */,
-				10BCC3F91675411900CCB5A9 /* HubView */,
 				10BCC3F21675411900CCB5A9 /* Frameworks */,
+				10BCC3F91675411900CCB5A9 /* HubView */,
+				1030296F167C28DE0056B9AC /* MobileCoreServices.framework */,
 				10BCC3F01675411900CCB5A9 /* Products */,
+				1030296D167C28D80056B9AC /* SystemConfiguration.framework */,
 			);
 			sourceTree = "<group>";
 		};

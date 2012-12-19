@@ -21,9 +21,14 @@
     return @(self.afterLineNumber.integerValue + 1);
 }
 
-- (NSString *)formattedLine
+- (UIColor *)textColor
 {
-    return [NSString stringWithFormat:@"| %3d | %3d | %@", self.beforeLineNumber.integerValue, self.afterLineNumber.integerValue, self.rawLine];
+    return [UIColor blackColor];
+}
+
+- (UIColor *)backgroundColor
+{
+    return [UIColor colorWithRed:252.0/255.0 green:252.0/255.0 blue:255.0/255.0 alpha:1];
 }
 
 @end
