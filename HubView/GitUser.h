@@ -6,6 +6,6 @@
 @property (nonatomic, strong) NSString *email;
 @property (nonatomic, strong) NSDate *date;
 
-+ (GitUser *)initWithDictionary:(NSDictionary *)attributes;
+- (id)initWithDictionary:(NSDictionary *)attributes;
 
 @end

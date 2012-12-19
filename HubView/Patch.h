@@ -6,6 +6,6 @@
 
 @property (nonatomic, strong) NSArray *lines;
 
-+ (Patch *)initWithRawPatch:(NSString *)rawPatch;
+- (id)initWithRawPatch:(NSString *)rawPatch;
 
 @end

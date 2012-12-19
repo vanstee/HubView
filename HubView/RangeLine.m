@@ -2,20 +2,6 @@
 
 @implementation RangeLine
 
-+ (Line *)initWithRawLine:(NSString *)rawLine
-{
-    RangeLine *line = [RangeLine new];
-    line.rawLine = rawLine;
-
-    NSDictionary *rangeAttributes = [self parseRangeLine:rawLine];
-    line.beforeStartingLineNumber = rangeAttributes[@"beforeStartingLineNumber"];
-    line.beforeNumberOfLines      = rangeAttributes[@"beforeNumberOfLines"];
-    line.afterStartingLineNumber  = rangeAttributes[@"afterStartingLineNumber"];
-    line.afterNumberOfLines       = rangeAttributes[@"afterNumberOfLines"];
-
-    return line;
-}
-
 + (NSDictionary *)parseRangeLine:(NSString *)rangeLine
 {
     NSMutableDictionary *attributes = [NSMutableDictionary new];
@@ -41,6 +27,19 @@
     }
     
     return attributes;
+}
+
+- (id)initWithRawLine:(NSString *)rawLine
+{
+    self = [super initWithRawLine:rawLine];
+    if (self) {
+        NSDictionary *rangeAttributes = [RangeLine parseRangeLine:rawLine];
+        self.beforeStartingLineNumber = rangeAttributes[@"beforeStartingLineNumber"];
+        self.beforeNumberOfLines      = rangeAttributes[@"beforeNumberOfLines"];
+        self.afterStartingLineNumber  = rangeAttributes[@"afterStartingLineNumber"];
+        self.afterNumberOfLines       = rangeAttributes[@"afterNumberOfLines"];
+    }
+    return self;
 }
 
 - (NSNumber *)progressBeforeLineNumber

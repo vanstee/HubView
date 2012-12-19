@@ -7,12 +7,9 @@
 @property (nonatomic, strong) NSNumber *index;
 @property (nonatomic, strong) NSString *rawLine;
 
-+ (Line *)initWithRawLine:(NSString *)rawLine;
-
+- (id)initWithRawLine:(NSString *)rawLine;
 - (NSNumber *)progressBeforeLineNumber;
-
 - (NSNumber *)progressAfterLineNumber;
-
 - (NSString *)formattedLine;
 
 @end

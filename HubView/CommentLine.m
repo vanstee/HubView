@@ -2,13 +2,6 @@
 
 @implementation CommentLine
 
-+ (Line *)initWithRawLine:(NSString *)rawLine
-{
-    CommentLine *line = [CommentLine new];
-    line.rawLine = rawLine;
-    return line;
-}
-
 - (NSNumber *)progressBeforeLineNumber
 {
     return self.beforeLineNumber;

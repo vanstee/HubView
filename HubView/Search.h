@@ -6,8 +6,7 @@
 
 @property (nonatomic, strong) NSString *keyword;
 
-+ (Search *)initWithDictionary:(NSDictionary *)attributes;
-
+- (id)initWithDictionary:(NSDictionary *)attributes;
 - (void)usersWithCompletionBlock:(void (^)(NSArray *users))block;
 
 @end

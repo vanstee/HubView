@@ -22,8 +22,8 @@
 
 - (void)updateBarButtonItem
 {
-    UINavigationController *detailController = [self.splitViewController.viewControllers objectAtIndex:1];
-    CommitViewController *commitViewController = [detailController.viewControllers objectAtIndex:0];
+    UINavigationController *detailController = self.splitViewController.viewControllers[1];
+    CommitViewController *commitViewController = detailController.viewControllers[0];
     commitViewController.navigationItem.leftBarButtonItem.title = @"Repositories";
 }
 
@@ -36,7 +36,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"Select Repository"]) {
-        Repository *repository = [self.repositories objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
+        Repository *repository = self.repositories[self.tableView.indexPathForSelectedRow.row];
         [segue.destinationViewController setRepository:repository];
     }
 }
@@ -45,19 +45,17 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.repositories count];
+    return self.repositories.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Repository";
-    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    }
+
+    if (!cell) { cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier]; }
     
-    Repository *repository = [self.repositories objectAtIndex:indexPath.row];
+    Repository *repository = self.repositories[indexPath.row];
     cell.textLabel.text = repository.name;
     
     return cell;

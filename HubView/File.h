@@ -11,8 +11,7 @@
 @property (nonatomic, strong) Patch *patch;
 @property (nonatomic, strong) Commit *commit;
 
-+ (File *)initWithDictionary:(NSDictionary *)attributes;
-
 + (NSArray *)initWithArrayOfDictionaries:(NSArray *)arrayOfDictionaries;
+- (id)initWithDictionary:(NSDictionary *)attributes;
 
 @end

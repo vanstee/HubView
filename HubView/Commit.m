@@ -2,27 +2,29 @@
 
 @implementation Commit
 
-+ (Commit *)initWithDictionary:(NSDictionary *)attributes
-{
-    Commit *commit = [Commit new];
-    commit.sha = attributes[@"sha"];
-    commit.message = [[attributes[@"commit"][@"message"] componentsSeparatedByString: @"\n"] objectAtIndex:0];
-    commit.gitAuthor = [GitUser initWithDictionary:attributes[@"commit"][@"author"]];
-    commit.gitCommitter = [GitUser initWithDictionary:attributes[@"commit"][@"committer"]];
-    if (attributes[@"author"] != [NSNull null]) { commit.author = [User initWithDictionary:attributes[@"author"]]; }
-    if (attributes[@"committer"] != [NSNull null]) { commit.committer = [User initWithDictionary:attributes[@"committer"]]; }
-    commit.repository = attributes[@"repository"];
-    if (attributes[@"files"] != [NSNull null]) { commit.files = [File initWithArrayOfDictionaries:attributes[@"files"]]; }
-    return commit;
-}
-
 + (NSArray *)initWithArrayOfDictionaries:(NSArray *)arrayOfDictionaries
 {
-    NSMutableArray *commits = [NSMutableArray arrayWithCapacity:[arrayOfDictionaries count]];
+    NSMutableArray *commits = [NSMutableArray arrayWithCapacity:arrayOfDictionaries.count];
     for (NSDictionary *attributes in arrayOfDictionaries) {
-        [commits addObject:[self initWithDictionary:attributes]];
+        [commits addObject:[[Commit alloc] initWithDictionary:attributes]];
     }
     return commits;
+}
+
+- (id)initWithDictionary:(NSDictionary *)attributes
+{
+    self = [super init];
+    if (self) {
+        self.sha = attributes[@"sha"];
+        self.message = [attributes[@"commit"][@"message"] componentsSeparatedByString: @"\n"][0];
+        self.gitAuthor = [[GitUser alloc] initWithDictionary:attributes[@"commit"][@"author"]];
+        self.gitCommitter = [[GitUser alloc] initWithDictionary:attributes[@"commit"][@"committer"]];
+        self.repository = attributes[@"repository"];
+        if (attributes[@"author"] != [NSNull null]) { self.author = [[User alloc] initWithDictionary:attributes[@"author"]]; }
+        if (attributes[@"committer"] != [NSNull null]) { self.committer = [[User alloc] initWithDictionary:attributes[@"committer"]]; }
+        if (attributes[@"files"] != [NSNull null]) { self.files = [File initWithArrayOfDictionaries:attributes[@"files"]]; }
+    }
+    return self;
 }
 
 - (NSDate *)date
@@ -67,7 +69,7 @@
 {
     [[[GitHubClient sharedClient] operationQueue] cancelAllOperations];
     [[GitHubClient sharedClient] getPath:[NSString stringWithFormat:@"/repos/%@/%@/commits/%@", self.repository.owner.login, self.repository.name, self.sha] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        Commit *commit = [Commit initWithDictionary:responseObject];
+        Commit *commit = [[Commit alloc] initWithDictionary:responseObject];
         commit.repository = self.repository;
         if (block) { block(commit); }
     } failure:nil];

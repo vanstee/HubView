@@ -2,13 +2,15 @@
 
 @implementation GitUser
 
-+ (GitUser *)initWithDictionary:(NSDictionary *)attributes
+- (id)initWithDictionary:(NSDictionary *)attributes
 {
-    GitUser *gitUser = [GitUser new];
-    gitUser.name = attributes[@"name"];
-    gitUser.email = attributes[@"email"];
-    gitUser.date = [NSDate parseDate:attributes[@"date"]];
-    return gitUser;
+    self = [super init];
+    if (self) {
+        self.name = attributes[@"name"];
+        self.email = attributes[@"email"];
+        self.date = [NSDate parseDate:attributes[@"date"]];
+    }
+    return self;
 }
 
 @end

@@ -20,12 +20,9 @@
 @property (nonatomic, strong) Repository *repository;
 @property (nonatomic, strong) NSArray *files;
 
-+ (Commit *)initWithDictionary:(NSDictionary *)attributes;
-
 + (NSArray *)initWithArrayOfDictionaries:(NSArray *)arrayOfDictionaries;
-
+- (id)initWithDictionary:(NSDictionary *)attributes;
 - (NSString *)detail;
-
 - (void)commitWithCompletionBlock:(void (^)(Commit *commit))block;
 
 @end

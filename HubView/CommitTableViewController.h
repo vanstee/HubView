@@ -3,6 +3,8 @@
 #import "Commit.h"
 #import "CommitViewController.h"
 
+#define PADDING 20
+
 @interface CommitTableViewController : UITableViewController
 
 @property (nonatomic, strong) Branch *branch;

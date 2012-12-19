@@ -10,10 +10,8 @@
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) Repository *repository;
 
-+ (Branch *)initWithDictionary:(NSDictionary *)attributes;
-
 + (NSArray *)initWithArrayOfDictionaries:(NSArray *)arrayOfDictionaries;
-
+- (id)initWithDictionary:(NSDictionary *)attributes;
 - (void)commitsWithCompletionBlock:(void (^)(NSArray *commits))block;
 
 @end

@@ -2,14 +2,14 @@
 
 @implementation LineFactory
 
-+ (Line *)createLineWithRawLine:(NSString *)rawLine
++ (id)createLineWithRawLine:(NSString *)rawLine
 {
-    return [[self lineTypeForRawLine:rawLine] initWithRawLine:rawLine];
+    return [[[LineFactory lineTypeForRawLine:rawLine] alloc] initWithRawLine:rawLine];
 }
 
-+ (Line *)createLineWithRawLine:(NSString *)rawLine andPreviousLine:(Line *)previousLine
++ (id)createLineWithRawLine:(NSString *)rawLine andPreviousLine:(Line *)previousLine
 {
-    Line *line = [self createLineWithRawLine:rawLine];
+    id line = [LineFactory createLineWithRawLine:rawLine];
     [line setBeforeLineNumber:[previousLine progressBeforeLineNumber]];
     [line setAfterLineNumber:[previousLine progressAfterLineNumber]];
     return line;
@@ -20,10 +20,9 @@
     NSMutableArray *lines = [NSMutableArray arrayWithCapacity:rawLines.count];
     Line *previousLine;
     
-    for (int index = 0; index < rawLines.count; index++) {
-        NSString *rawLine = rawLines[index];
-
+    for (NSString *rawLine in rawLines) {
         Line *line;
+
         if (previousLine) {
             line = [self createLineWithRawLine:rawLine andPreviousLine:previousLine];
         } else {

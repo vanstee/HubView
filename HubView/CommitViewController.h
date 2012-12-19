@@ -5,7 +5,7 @@
 @interface CommitViewController : UIViewController
 
 @property (nonatomic, strong) Commit *commit;
-@property (strong, nonatomic) UIPopoverController *masterPopoverController;
-@property (weak, nonatomic) IBOutlet UITextView *diff;
+@property (nonatomic, strong) UIPopoverController *masterPopoverController;
+@property (nonatomic, weak) IBOutlet UITextView *diff;
 
 @end

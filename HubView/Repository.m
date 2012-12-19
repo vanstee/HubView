@@ -2,22 +2,24 @@
 
 @implementation Repository
 
-+ (Repository *)initWithDictionary:(NSDictionary *)attributes
-{
-    Repository *repository = [Repository new];
-    repository.name = attributes[@"name"];
-    repository.updatedAt = [NSDate parseDate:attributes[@"updated_at"]];
-    repository.owner = [User initWithDictionary:attributes[@"owner"]];
-    return repository;
-}
-
 + (NSArray *)initWithArrayOfDictionaries:(NSArray *)arrayOfDictionaries
 {
-    NSMutableArray *repositories = [NSMutableArray arrayWithCapacity:[arrayOfDictionaries count]];
+    NSMutableArray *repositories = [NSMutableArray arrayWithCapacity:arrayOfDictionaries.count];
     for (NSDictionary *attributes in arrayOfDictionaries) {
-        [repositories addObject:[self initWithDictionary:attributes]];
+        [repositories addObject:[[Repository alloc] initWithDictionary:attributes]];
     }
     return repositories;
+}
+
+- (id)initWithDictionary:(NSDictionary *)attributes
+{
+    self = [super init];
+    if (self) {
+        self.name = attributes[@"name"];
+        self.updatedAt = [NSDate parseDate:attributes[@"updated_at"]];
+        self.owner = [[User alloc] initWithDictionary:attributes[@"owner"]];
+    }
+    return self;
 }
 
 - (void)branchesWithCompletionBlock:(void (^)(NSArray *branches))block

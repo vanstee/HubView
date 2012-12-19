@@ -11,10 +11,8 @@
 @property (nonatomic, strong) NSDate *updatedAt;
 @property (nonatomic, strong) User *owner;
 
-+ (Repository *)initWithDictionary:(NSDictionary *)attributes;
-
 + (NSArray *)initWithArrayOfDictionaries:(NSArray *)arrayOfDictionaries;
-
+- (id)initWithDictionary:(NSDictionary *)attributes;
 - (void)branchesWithCompletionBlock:(void (^)(NSArray *branches))block;
 
 @end

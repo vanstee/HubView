@@ -2,21 +2,23 @@
 
 @implementation File
 
-+ (File *)initWithDictionary:(NSDictionary *)attributes
-{
-    File *file = [File new];
-    file.filename = attributes[@"filename"];
-    file.patch = [Patch initWithRawPatch:attributes[@"patch"]];
-    return file;
-}
-
 + (NSArray *)initWithArrayOfDictionaries:(NSArray *)arrayOfDictionaries
 {
-    NSMutableArray *files = [NSMutableArray arrayWithCapacity:[arrayOfDictionaries count]];
+    NSMutableArray *files = [NSMutableArray arrayWithCapacity:arrayOfDictionaries.count];
     for (NSDictionary *attributes in arrayOfDictionaries) {
-        [files addObject:[self initWithDictionary:attributes]];
+        [files addObject:[[File alloc] initWithDictionary:attributes]];
     }
     return files;
+}
+
+- (id)initWithDictionary:(NSDictionary *)attributes
+{
+    self = [super init];
+    if (self) {
+        self.filename = attributes[@"filename"];
+        self.patch = [[Patch alloc] initWithRawPatch:attributes[@"patch"]];
+    }
+    return self;
 }
 
 @end

@@ -2,11 +2,13 @@
 
 @implementation Patch
 
-+ (Patch *)initWithRawPatch:(NSString *)rawPatch
+- (id)initWithRawPatch:(NSString *)rawPatch
 {
-    Patch *patch = [Patch new];
-    patch.lines = [LineFactory createLinesWithRawLines:[rawPatch componentsSeparatedByString:@"\n"]];
-    return patch;
+    self = [super init];
+    if (self) {
+        self.lines = [LineFactory createLinesWithRawLines:[rawPatch componentsSeparatedByString:@"\n"]];
+    }
+    return self;
 }
 
 @end

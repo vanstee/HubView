@@ -2,20 +2,22 @@
 
 @implementation User
 
-+ (User *)initWithDictionary:(NSDictionary *)attributes
-{
-    User *user = [User new];
-    user.login = [attributes objectForKey:@"login"];
-    return user;
-}
-
 + (NSArray *)initWithArrayOfDictionaries:(NSArray *)arrayOfDictionaries
 {
-    NSMutableArray *users = [NSMutableArray arrayWithCapacity:[arrayOfDictionaries count]];
+    NSMutableArray *users = [NSMutableArray arrayWithCapacity:arrayOfDictionaries.count];
     for (NSDictionary *attributes in arrayOfDictionaries) {
-        [users addObject:[self initWithDictionary:attributes]];
+        [users addObject:[[User alloc] initWithDictionary:attributes]];
     }
     return users;
+}
+
+- (id)initWithDictionary:(NSDictionary *)attributes
+{
+    self = [super init];
+    if (self) {
+        self.login = attributes[@"login"];
+    }
+    return self;
 }
 
 - (void)repositoriesWithCompletionBlock:(void (^)(NSArray *repositories))block
