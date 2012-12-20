@@ -10,6 +10,7 @@
 		1030296E167C28D80056B9AC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1030296D167C28D80056B9AC /* SystemConfiguration.framework */; };
 		10302970167C28DE0056B9AC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1030296F167C28DE0056B9AC /* MobileCoreServices.framework */; };
 		10302973167E84CC0056B9AC /* Patch.m in Sources */ = {isa = PBXBuildFile; fileRef = 10302972167E84CC0056B9AC /* Patch.m */; };
+		103375211682D4B000291D98 /* Menlo.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 103375201682D4B000291D98 /* Menlo.ttc */; };
 		10390736168003B400F9FE7C /* GitUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 10390735168003B400F9FE7C /* GitUser.m */; };
 		1039073E1680187E00F9FE7C /* GitHubClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1039073C1680187E00F9FE7C /* GitHubClient.m */; };
 		1039074116801C1E00F9FE7C /* Line.m in Sources */ = {isa = PBXBuildFile; fileRef = 1039074016801C1E00F9FE7C /* Line.m */; };
@@ -58,6 +59,7 @@
 		1030296F167C28DE0056B9AC /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		10302971167E84CB0056B9AC /* Patch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Patch.h; sourceTree = "<group>"; };
 		10302972167E84CC0056B9AC /* Patch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Patch.m; sourceTree = "<group>"; };
+		103375201682D4B000291D98 /* Menlo.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Menlo.ttc; sourceTree = "<group>"; };
 		10390734168003B400F9FE7C /* GitUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GitUser.h; sourceTree = "<group>"; };
 		10390735168003B400F9FE7C /* GitUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GitUser.m; sourceTree = "<group>"; };
 		10390737168017A800F9FE7C /* GitHubClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GitHubClient.h; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 		10BCC3FA1675411900CCB5A9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				103375201682D4B000291D98 /* Menlo.ttc */,
 				10BCC3FB1675411900CCB5A9 /* HubView-Info.plist */,
 				10BCC3FC1675411900CCB5A9 /* InfoPlist.strings */,
 				10BCC3FF1675411900CCB5A9 /* main.m */,
@@ -337,6 +340,7 @@
 				10BCC4081675411900CCB5A9 /* Default@2x.png in Resources */,
 				10BCC40A1675411900CCB5A9 /* Default-568h@2x.png in Resources */,
 				10BCC40D1675411900CCB5A9 /* MainStoryboard.storyboard in Resources */,
+				103375211682D4B000291D98 /* Menlo.ttc in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -50,8 +50,8 @@
 {
     CGRect gutterFrame = CGRectMake(gutterWidth, FILE_HEADER_HEIGHT - 1, LINE_NUMBERS_WIDTH, fileView.frame.size.height);
     UIView *gutter = [[UIView alloc] initWithFrame:gutterFrame];
-    gutter.backgroundColor = [UIColor colorWithRed:234.0/255.0 green:235.0/255.0 blue:238.0/255.0 alpha:1];
-    gutter.layer.borderColor = [UIColor colorWithRed:162.0/255.0 green:167.0/255.0 blue:184.0/255.0 alpha:1].CGColor;
+    gutter.backgroundColor = [UIColor colorWithRed:244.0/255.0 green:245.0/255.0 blue:248.0/255.0 alpha:1];
+    gutter.layer.borderColor = [UIColor colorWithRed:182.0/255.0 green:187.0/255.0 blue:204.0/255.0 alpha:1].CGColor;
     gutter.layer.borderWidth = 1;
     return gutter;
 }
@@ -61,16 +61,13 @@
     CGRect lineNumberFrame = CGRectMake(gutterPosition + LINE_NUMBERS_MARGIN, linePosition, LINE_NUMBERS_WIDTH - (LINE_NUMBERS_MARGIN * 2), LINE_HEIGHT);
     UILabel *label = [[UILabel alloc] initWithFrame:lineNumberFrame];
     label.text = lineNumberString;
-    label.textColor = [UIColor colorWithRed:162.0/255.0 green:167.0/255.0 blue:184.0/255.0 alpha:1];
+    label.textColor = [UIColor colorWithRed:172.0/255.0 green:177.0/255.0 blue:194.0/255.0 alpha:1];
     label.backgroundColor = [UIColor clearColor];
+    label.font = [UIFont fontWithName:@"Menlo" size:10];
+    label.textAlignment = NSTextAlignmentRight;
     if ([label.text isEqualToString:@"..."]) {
-        lineNumberFrame.origin.y = linePosition - (LINE_HEIGHT / 4.0);
+        lineNumberFrame.origin.y = linePosition - (LINE_HEIGHT / 8.0);
         label.frame = lineNumberFrame;
-        label.font = [UIFont fontWithName:@"Helvetica" size:22];
-        label.textAlignment = NSTextAlignmentCenter;
-    } else {
-        label.font = [UIFont fontWithName:@"Helvetica" size:11];
-        label.textAlignment = NSTextAlignmentRight;
     }
     return label;
 }
@@ -79,7 +76,7 @@
 {
     CGRect labelFrame = CGRectMake(GUTTER_WIDTH, linePosition, maxLineWidth, LINE_HEIGHT);
     UILabel *label = [[UILabel alloc] initWithFrame:labelFrame];
-    label.font = [UIFont fontWithName:@"CourierNewPSMT" size:14];
+    label.font = [UIFont fontWithName:@"Menlo" size:12];
     label.text = [NSString stringWithFormat:@" %@", line.rawLine];
     label.textColor = line.textColor;
     label.backgroundColor = line.backgroundColor;
@@ -90,7 +87,8 @@
 {
     NSInteger max = 0;
     for (Line *line in lines) {
-        max = MAX(max, [line.rawLine sizeWithFont:[UIFont fontWithName:@"CourierNewPSMT" size:14]].width);
+        NSString *rawLine = [NSString stringWithFormat:@" %@", line.rawLine];
+        max = MAX(max, [rawLine sizeWithFont:[UIFont fontWithName:@"Menlo" size:12]].width + GUTTER_WIDTH);
     }
     return max;
 }
