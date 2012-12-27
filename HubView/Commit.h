@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#import "Commit.h"
+#import "Comment.h"
 #import "File.h"
 #import "GitHubClient.h"
 #import "GitUser.h"
@@ -19,10 +19,13 @@
 @property (nonatomic, strong) User *committer;
 @property (nonatomic, strong) Repository *repository;
 @property (nonatomic, strong) NSArray *files;
+@property (nonatomic, strong) NSArray *comments;
 
 + (NSArray *)initWithArrayOfDictionaries:(NSArray *)arrayOfDictionaries;
 - (id)initWithDictionary:(NSDictionary *)attributes;
 - (NSString *)detail;
 - (void)commitWithCompletionBlock:(void (^)(Commit *commit))block;
+- (void)commentsWithCompletionBlock:(void (^)(NSArray *comments))block;
+- (NSDictionary *)commentsByPathAndPosition;
 
 @end

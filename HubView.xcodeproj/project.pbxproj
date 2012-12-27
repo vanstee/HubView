@@ -57,6 +57,8 @@
 		F164E2EA1690D5050053103F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F164E2E81690D5050053103F /* LoginViewController.m */; };
 		F164E2EB1690D5050053103F /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F164E2E91690D5050053103F /* LoginViewController.xib */; };
 		F1D1FA951690F8CE00A78721 /* GitHubCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = F1D1FA941690F8CE00A78721 /* GitHubCredentials.m */; };
+		10DEF1C11683F8EF00970EFF /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DEF1C01683F8EF00970EFF /* Comment.m */; };
+		10DEF1C91684300000970EFF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10DEF1C81684300000970EFF /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -151,6 +153,9 @@
 		F164E2E91690D5050053103F /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		F1D1FA931690F8CE00A78721 /* GitHubCredentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GitHubCredentials.h; sourceTree = "<group>"; };
 		F1D1FA941690F8CE00A78721 /* GitHubCredentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GitHubCredentials.m; sourceTree = "<group>"; };
+		10DEF1BF1683F8EF00970EFF /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
+		10DEF1C01683F8EF00970EFF /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
+		10DEF1C81684300000970EFF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +163,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10DEF1C91684300000970EFF /* QuartzCore.framework in Frameworks */,
 				10302970167C28DE0056B9AC /* MobileCoreServices.framework in Frameworks */,
 				1030296E167C28D80056B9AC /* SystemConfiguration.framework in Frameworks */,
 				10BCC3F61675411900CCB5A9 /* Foundation.framework in Frameworks */,
@@ -173,6 +179,7 @@
 		10BCC3E41675411900CCB5A9 = {
 			isa = PBXGroup;
 			children = (
+				10DEF1C81684300000970EFF /* QuartzCore.framework */,
 				10BCC4861675842A00CCB5A9 /* AFNetworking */,
 				10BCC3F21675411900CCB5A9 /* Frameworks */,
 				10BCC3F91675411900CCB5A9 /* HubView */,
@@ -213,6 +220,8 @@
 				10CB25BE1676309400A33C32 /* Branch.m */,
 				10CB25BA16762FF500A33C32 /* BranchTableViewController.h */,
 				10CB25BB16762FF500A33C32 /* BranchTableViewController.m */,
+				10DEF1BF1683F8EF00970EFF /* Comment.h */,
+				10DEF1C01683F8EF00970EFF /* Comment.m */,
 				103907511680474800F9FE7C /* CommentLine.h */,
 				103907521680474900F9FE7C /* CommentLine.m */,
 				1063DF331676994D00FA22EB /* Commit.h */,
@@ -431,6 +440,7 @@
 				F164E2EA1690D5050053103F /* LoginViewController.m in Sources */,
 				F13731DF1690D84E0039C504 /* HVTextFieldCell.m in Sources */,
 				F1D1FA951690F8CE00A78721 /* GitHubCredentials.m in Sources */,
+				10DEF1C11683F8EF00970EFF /* Comment.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
