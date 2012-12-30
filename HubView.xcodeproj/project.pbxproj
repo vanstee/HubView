@@ -52,6 +52,9 @@
 		10CB25BC16762FF500A33C32 /* BranchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10CB25BB16762FF500A33C32 /* BranchTableViewController.m */; };
 		10CB25BF1676309400A33C32 /* Branch.m in Sources */ = {isa = PBXBuildFile; fileRef = 10CB25BE1676309400A33C32 /* Branch.m */; };
 		10CB25C216763EDA00A33C32 /* CommitTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10CB25C116763EDA00A33C32 /* CommitTableViewController.m */; };
+		F13731DF1690D84E0039C504 /* HVTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F13731DE1690D84E0039C504 /* HVTextFieldCell.m */; };
+		F164E2EA1690D5050053103F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F164E2E81690D5050053103F /* LoginViewController.m */; };
+		F164E2EB1690D5050053103F /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F164E2E91690D5050053103F /* LoginViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -137,6 +140,11 @@
 		10CB25BE1676309400A33C32 /* Branch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Branch.m; sourceTree = "<group>"; };
 		10CB25C016763EDA00A33C32 /* CommitTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommitTableViewController.h; sourceTree = "<group>"; };
 		10CB25C116763EDA00A33C32 /* CommitTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommitTableViewController.m; sourceTree = "<group>"; };
+		F13731DD1690D84E0039C504 /* HVTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVTextFieldCell.h; sourceTree = "<group>"; };
+		F13731DE1690D84E0039C504 /* HVTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVTextFieldCell.m; sourceTree = "<group>"; };
+		F164E2E71690D5050053103F /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		F164E2E81690D5050053103F /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		F164E2E91690D5050053103F /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +246,11 @@
 				10BCC4231675451000CCB5A9 /* User.m */,
 				10BCC41E167541CE00CCB5A9 /* UserTableViewController.h */,
 				10BCC41F167541CE00CCB5A9 /* UserTableViewController.m */,
+				F164E2E71690D5050053103F /* LoginViewController.h */,
+				F164E2E81690D5050053103F /* LoginViewController.m */,
+				F164E2E91690D5050053103F /* LoginViewController.xib */,
+				F13731DD1690D84E0039C504 /* HVTextFieldCell.h */,
+				F13731DE1690D84E0039C504 /* HVTextFieldCell.m */,
 			);
 			path = HubView;
 			sourceTree = "<group>";
@@ -341,6 +354,7 @@
 				10BCC40A1675411900CCB5A9 /* Default-568h@2x.png in Resources */,
 				10BCC40D1675411900CCB5A9 /* MainStoryboard.storyboard in Resources */,
 				103375211682D4B000291D98 /* Menlo.ttc in Resources */,
+				F164E2EB1690D5050053103F /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +399,8 @@
 				1039075016801E2000F9FE7C /* LineFactory.m in Sources */,
 				103907531680474A00F9FE7C /* CommentLine.m in Sources */,
 				1058B11116815F5800EF2E93 /* CommitView.m in Sources */,
+				F164E2EA1690D5050053103F /* LoginViewController.m in Sources */,
+				F13731DF1690D84E0039C504 /* HVTextFieldCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

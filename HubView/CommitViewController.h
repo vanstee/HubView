@@ -1,8 +1,9 @@
 #import <UIKit/UIKit.h>
 #import "Commit.h"
 #import "CommitView.h"
+#import "LoginViewController.h"
 
-@interface CommitViewController : UIViewController
+@interface CommitViewController : UIViewController <LoginViewControllerDelegate>
 
 @property (nonatomic, strong) UIPopoverController *masterPopoverController;
 @property (nonatomic, strong) IBOutlet CommitView *commitView;
