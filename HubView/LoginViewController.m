@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "HVTextFieldCell.h"
+#import "GitHubCredentials.h"
 
 enum LoginViewCells {
     kUsernameCellIndex = 0,
@@ -46,7 +47,15 @@ enum LoginViewCells {
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    GitHubCredentials *credentials = [GitHubCredentials sharedCredentials];
+    if (credentials.username) {
+        usernameCell.textField.text = credentials.username;
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -78,8 +87,13 @@ enum LoginViewCells {
 
 - (IBAction)saveButtonTapped:(id)sender {
     if ([self validateInputs]) {
-        if ([self.delegate respondsToSelector:@selector(loginViewController:wasSaved:)]) {
-            [self.delegate loginViewController:self wasSaved:sender];
+        GitHubCredentials *credentials = [GitHubCredentials sharedCredentials];
+        if ([credentials setUsername:self.username password:self.password]) {
+            if ([self.delegate respondsToSelector:@selector(loginViewController:wasSaved:)]) {
+                [self.delegate loginViewController:self wasSaved:sender];
+            }
+        } else {
+            [[[UIAlertView alloc] initWithTitle:@"Error" message:@"We could not save your credentials at this time. Please try again soon." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
         }
     }
 }
@@ -91,18 +105,26 @@ enum LoginViewCells {
 }
 
 - (BOOL)validateInputs {
-    if (usernameCell.textField.text.length <= 0) {
+    if (self.username.length <= 0) {
         [[[UIAlertView alloc] initWithTitle:@"Username" message:@"Please enter your GitHub username" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
         return NO;
     }
     
-    if (passwordCell.textField.text.length <= 0) {
+    if (self.password.length <= 0) {
         [[[UIAlertView alloc] initWithTitle:@"Password" message:@"Please enter your GitHub password" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
         return NO;
         
     }
     
     return YES;
+}
+
+- (NSString *)username {
+    return usernameCell.textField.text;
+}
+
+- (NSString *)password {
+    return passwordCell.textField.text;
 }
 
 @end
