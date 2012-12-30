@@ -2,6 +2,11 @@
 
 A tiny iPad app for viewing and commenting on commits!
 
+## Build
+
+Build using `HubView.xcworkspace`, *not* `HubView.xcodeproj`. Otherwise,
+CocoaPods will not be brought in correctly.
+
 ## Disclaimer
 
 I am a terrible, terrible Objective-C developer. Be warned. Reading this code
