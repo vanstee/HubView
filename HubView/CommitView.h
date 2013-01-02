@@ -1,6 +1,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import <UIKit/UIKit.h>
 #import "Commit.h"
+#import "PanelView.h"
 
 #define FILE_MARGIN 20
 #define FILE_HEADER_HEIGHT 44

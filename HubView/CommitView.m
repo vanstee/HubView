@@ -12,16 +12,7 @@
 
 + (UIView *)createFileViewWithCommitView:(CommitView *)commitView filePosition:(NSInteger)filePosition andFile:(File *)file
 {
-    CGRect viewFrame = CGRectMake(FILE_MARGIN, filePosition, commitView.frame.size.width - (FILE_MARGIN * 2), (file.patch.lines.count * LINE_HEIGHT) + FILE_HEADER_HEIGHT);
-    UIView *fileView = [[UIView alloc] initWithFrame:viewFrame];
-    fileView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
-    fileView.backgroundColor = [UIColor whiteColor];
-    fileView.layer.masksToBounds = NO;
-    fileView.layer.cornerRadius = 0;
-    fileView.layer.shadowOffset = CGSizeMake(0, 1);
-    fileView.layer.shadowRadius = 5;
-    fileView.layer.shadowOpacity = 0.5;
-    return fileView;
+    return [[PanelView alloc] initWithContainerFrame:commitView.frame originY:filePosition height:(file.patch.lines.count * LINE_HEIGHT)];
 }
 
 + (UINavigationBar *)createFileNavigationBarWithFileView:(UIView *)fileView andFile:(File *)file

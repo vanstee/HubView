@@ -10,6 +10,7 @@
 		1030296E167C28D80056B9AC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1030296D167C28D80056B9AC /* SystemConfiguration.framework */; };
 		10302970167C28DE0056B9AC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1030296F167C28DE0056B9AC /* MobileCoreServices.framework */; };
 		10302973167E84CC0056B9AC /* Patch.m in Sources */ = {isa = PBXBuildFile; fileRef = 10302972167E84CC0056B9AC /* Patch.m */; };
+		1032FDBA1694E80F00F55F2D /* PanelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1032FDB91694E80F00F55F2D /* PanelView.m */; };
 		103375211682D4B000291D98 /* Menlo.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 103375201682D4B000291D98 /* Menlo.ttc */; };
 		10390736168003B400F9FE7C /* GitUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 10390735168003B400F9FE7C /* GitUser.m */; };
 		1039073E1680187E00F9FE7C /* GitHubClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1039073C1680187E00F9FE7C /* GitHubClient.m */; };
@@ -52,13 +53,13 @@
 		10CB25BC16762FF500A33C32 /* BranchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10CB25BB16762FF500A33C32 /* BranchTableViewController.m */; };
 		10CB25BF1676309400A33C32 /* Branch.m in Sources */ = {isa = PBXBuildFile; fileRef = 10CB25BE1676309400A33C32 /* Branch.m */; };
 		10CB25C216763EDA00A33C32 /* CommitTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10CB25C116763EDA00A33C32 /* CommitTableViewController.m */; };
+		10DEF1C11683F8EF00970EFF /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DEF1C01683F8EF00970EFF /* Comment.m */; };
+		10DEF1C91684300000970EFF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10DEF1C81684300000970EFF /* QuartzCore.framework */; };
 		A1856EE3224B4E69A530D957 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D64C65D462B947169B80F3FA /* libPods.a */; };
 		F13731DF1690D84E0039C504 /* HVTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F13731DE1690D84E0039C504 /* HVTextFieldCell.m */; };
 		F164E2EA1690D5050053103F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F164E2E81690D5050053103F /* LoginViewController.m */; };
 		F164E2EB1690D5050053103F /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F164E2E91690D5050053103F /* LoginViewController.xib */; };
 		F1D1FA951690F8CE00A78721 /* GitHubCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = F1D1FA941690F8CE00A78721 /* GitHubCredentials.m */; };
-		10DEF1C11683F8EF00970EFF /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DEF1C01683F8EF00970EFF /* Comment.m */; };
-		10DEF1C91684300000970EFF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10DEF1C81684300000970EFF /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,8 @@
 		1030296F167C28DE0056B9AC /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		10302971167E84CB0056B9AC /* Patch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Patch.h; sourceTree = "<group>"; };
 		10302972167E84CC0056B9AC /* Patch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Patch.m; sourceTree = "<group>"; };
+		1032FDB81694E80F00F55F2D /* PanelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanelView.h; sourceTree = "<group>"; };
+		1032FDB91694E80F00F55F2D /* PanelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanelView.m; sourceTree = "<group>"; };
 		103375201682D4B000291D98 /* Menlo.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Menlo.ttc; sourceTree = "<group>"; };
 		10390734168003B400F9FE7C /* GitUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GitUser.h; sourceTree = "<group>"; };
 		10390735168003B400F9FE7C /* GitUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GitUser.m; sourceTree = "<group>"; };
@@ -144,6 +147,9 @@
 		10CB25BE1676309400A33C32 /* Branch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Branch.m; sourceTree = "<group>"; };
 		10CB25C016763EDA00A33C32 /* CommitTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommitTableViewController.h; sourceTree = "<group>"; };
 		10CB25C116763EDA00A33C32 /* CommitTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommitTableViewController.m; sourceTree = "<group>"; };
+		10DEF1BF1683F8EF00970EFF /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
+		10DEF1C01683F8EF00970EFF /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
+		10DEF1C81684300000970EFF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		9E7C7B32F4944181A4220C17 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		D64C65D462B947169B80F3FA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F13731DD1690D84E0039C504 /* HVTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVTextFieldCell.h; sourceTree = "<group>"; };
@@ -153,9 +159,6 @@
 		F164E2E91690D5050053103F /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		F1D1FA931690F8CE00A78721 /* GitHubCredentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GitHubCredentials.h; sourceTree = "<group>"; };
 		F1D1FA941690F8CE00A78721 /* GitHubCredentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GitHubCredentials.m; sourceTree = "<group>"; };
-		10DEF1BF1683F8EF00970EFF /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
-		10DEF1C01683F8EF00970EFF /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
-		10DEF1C81684300000970EFF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -271,6 +274,8 @@
 				F13731DE1690D84E0039C504 /* HVTextFieldCell.m */,
 				F1D1FA931690F8CE00A78721 /* GitHubCredentials.h */,
 				F1D1FA941690F8CE00A78721 /* GitHubCredentials.m */,
+				1032FDB81694E80F00F55F2D /* PanelView.h */,
+				1032FDB91694E80F00F55F2D /* PanelView.m */,
 			);
 			path = HubView;
 			sourceTree = "<group>";
@@ -441,6 +446,7 @@
 				F13731DF1690D84E0039C504 /* HVTextFieldCell.m in Sources */,
 				F1D1FA951690F8CE00A78721 /* GitHubCredentials.m in Sources */,
 				10DEF1C11683F8EF00970EFF /* Comment.m in Sources */,
+				1032FDBA1694E80F00F55F2D /* PanelView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
