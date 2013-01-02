@@ -17,10 +17,15 @@
     return self;
 }
 
-- (id)initWithContainerFrame:(CGRect)containerFrame originY:(CGFloat)originY height:(CGFloat)height
+- (id)initWithContainerFrame:(CGRect)containerFrame originY:(CGFloat)originY height:(CGFloat)height title:(NSString *)title;
 {
-    CGRect frame = CGRectMake(PANEL_MARGIN, originY, containerFrame.size.width - (PANEL_MARGIN * 2), PANEL_HEADER_HEIGHT + height);
-    return [self initWithFrame:frame];
+    CGRect frame = CGRectMake(PANEL_MARGIN, originY, containerFrame.size.width - (PANEL_MARGIN * 2), PANEL_NAVIGATION_BAR_HEIGHT + height);
+    self = [self initWithFrame:frame];
+
+    PanelNavigationBar *navigationBar = [[PanelNavigationBar alloc] initWithTitle:title width:frame.size.width];
+    [self addSubview:navigationBar];
+
+    return self;
 }
 
 @end

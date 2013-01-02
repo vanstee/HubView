@@ -22,7 +22,6 @@ extern UIColor *gradientEndColor;
 
 + (UIScrollView *)createScrollViewWithCommitView:(CommitView *)commitView;
 + (UIView *)createFileViewWithCommitView:(CommitView *)commitView filePosition:(NSInteger)filePosition andFile:(File *)file;
-+ (UINavigationBar *)createFileNavigationBarWithFileView:(UIView *)fileView andFile:(File *)file;
 + (UIScrollView *)createFileScrollViewWithFileView:(UIView *)fileView;
 + (UIView *)createGutterWithFileView:(UIView *)fileView andGutterWidth:(NSInteger)gutterWidth;
 + (UILabel *)createLineNumberWithLinePosition:(NSInteger)linePosition gutterPosition:(NSInteger)gutterPosition andLineNumber:(NSString *)lineNumberString;

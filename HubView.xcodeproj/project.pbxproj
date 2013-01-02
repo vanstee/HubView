@@ -11,6 +11,7 @@
 		10302970167C28DE0056B9AC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1030296F167C28DE0056B9AC /* MobileCoreServices.framework */; };
 		10302973167E84CC0056B9AC /* Patch.m in Sources */ = {isa = PBXBuildFile; fileRef = 10302972167E84CC0056B9AC /* Patch.m */; };
 		1032FDBA1694E80F00F55F2D /* PanelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1032FDB91694E80F00F55F2D /* PanelView.m */; };
+		1032FDBE1694F08C00F55F2D /* PanelNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1032FDBD1694F08C00F55F2D /* PanelNavigationBar.m */; };
 		103375211682D4B000291D98 /* Menlo.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 103375201682D4B000291D98 /* Menlo.ttc */; };
 		10390736168003B400F9FE7C /* GitUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 10390735168003B400F9FE7C /* GitUser.m */; };
 		1039073E1680187E00F9FE7C /* GitHubClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1039073C1680187E00F9FE7C /* GitHubClient.m */; };
@@ -69,6 +70,8 @@
 		10302972167E84CC0056B9AC /* Patch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Patch.m; sourceTree = "<group>"; };
 		1032FDB81694E80F00F55F2D /* PanelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanelView.h; sourceTree = "<group>"; };
 		1032FDB91694E80F00F55F2D /* PanelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanelView.m; sourceTree = "<group>"; };
+		1032FDBC1694F08B00F55F2D /* PanelNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanelNavigationBar.h; sourceTree = "<group>"; };
+		1032FDBD1694F08C00F55F2D /* PanelNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanelNavigationBar.m; sourceTree = "<group>"; };
 		103375201682D4B000291D98 /* Menlo.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Menlo.ttc; sourceTree = "<group>"; };
 		10390734168003B400F9FE7C /* GitUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GitUser.h; sourceTree = "<group>"; };
 		10390735168003B400F9FE7C /* GitUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GitUser.m; sourceTree = "<group>"; };
@@ -243,15 +246,26 @@
 				10ADE2591678313100B887B5 /* File.m */,
 				10390737168017A800F9FE7C /* GitHubClient.h */,
 				1039073C1680187E00F9FE7C /* GitHubClient.m */,
+				F1D1FA931690F8CE00A78721 /* GitHubCredentials.h */,
+				F1D1FA941690F8CE00A78721 /* GitHubCredentials.m */,
 				10390734168003B400F9FE7C /* GitUser.h */,
 				10390735168003B400F9FE7C /* GitUser.m */,
+				F13731DD1690D84E0039C504 /* HVTextFieldCell.h */,
+				F13731DE1690D84E0039C504 /* HVTextFieldCell.m */,
 				1039073F16801C1E00F9FE7C /* Line.h */,
 				1039074016801C1E00F9FE7C /* Line.m */,
 				1039074E16801E1F00F9FE7C /* LineFactory.h */,
 				1039074F16801E2000F9FE7C /* LineFactory.m */,
+				F164E2E71690D5050053103F /* LoginViewController.h */,
+				F164E2E81690D5050053103F /* LoginViewController.m */,
+				F164E2E91690D5050053103F /* LoginViewController.xib */,
 				10BCC40B1675411900CCB5A9 /* MainStoryboard.storyboard */,
 				1063DF3E1676BA6100FA22EB /* NSDate+Formatting.h */,
 				1063DF3F1676BA6100FA22EB /* NSDate+Formatting.m */,
+				1032FDBC1694F08B00F55F2D /* PanelNavigationBar.h */,
+				1032FDBD1694F08C00F55F2D /* PanelNavigationBar.m */,
+				1032FDB81694E80F00F55F2D /* PanelView.h */,
+				1032FDB91694E80F00F55F2D /* PanelView.m */,
 				10302971167E84CB0056B9AC /* Patch.h */,
 				10302972167E84CC0056B9AC /* Patch.m */,
 				1039074216801D8800F9FE7C /* RangeLine.h */,
@@ -267,15 +281,6 @@
 				10BCC4231675451000CCB5A9 /* User.m */,
 				10BCC41E167541CE00CCB5A9 /* UserTableViewController.h */,
 				10BCC41F167541CE00CCB5A9 /* UserTableViewController.m */,
-				F164E2E71690D5050053103F /* LoginViewController.h */,
-				F164E2E81690D5050053103F /* LoginViewController.m */,
-				F164E2E91690D5050053103F /* LoginViewController.xib */,
-				F13731DD1690D84E0039C504 /* HVTextFieldCell.h */,
-				F13731DE1690D84E0039C504 /* HVTextFieldCell.m */,
-				F1D1FA931690F8CE00A78721 /* GitHubCredentials.h */,
-				F1D1FA941690F8CE00A78721 /* GitHubCredentials.m */,
-				1032FDB81694E80F00F55F2D /* PanelView.h */,
-				1032FDB91694E80F00F55F2D /* PanelView.m */,
 			);
 			path = HubView;
 			sourceTree = "<group>";
@@ -447,6 +452,7 @@
 				F1D1FA951690F8CE00A78721 /* GitHubCredentials.m in Sources */,
 				10DEF1C11683F8EF00970EFF /* Comment.m in Sources */,
 				1032FDBA1694E80F00F55F2D /* PanelView.m in Sources */,
+				1032FDBE1694F08C00F55F2D /* PanelNavigationBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

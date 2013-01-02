@@ -12,20 +12,7 @@
 
 + (UIView *)createFileViewWithCommitView:(CommitView *)commitView filePosition:(NSInteger)filePosition andFile:(File *)file
 {
-    return [[PanelView alloc] initWithContainerFrame:commitView.frame originY:filePosition height:(file.patch.lines.count * LINE_HEIGHT)];
-}
-
-+ (UINavigationBar *)createFileNavigationBarWithFileView:(UIView *)fileView andFile:(File *)file
-{
-    UINavigationBar *navigationBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, fileView.frame.size.width, FILE_HEADER_HEIGHT)];
-    navigationBar.layer.masksToBounds = NO;
-    navigationBar.layer.cornerRadius = 3;
-    navigationBar.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-
-    UINavigationItem *navigationItem = [[UINavigationItem alloc] initWithTitle:file.filename];
-    [navigationBar pushNavigationItem:navigationItem animated:NO];
-
-    return navigationBar;
+    return [[PanelView alloc] initWithContainerFrame:commitView.frame originY:filePosition height:(file.patch.lines.count * LINE_HEIGHT) title:file.filename];
 }
 
 + (UIScrollView *)createFileScrollViewWithFileView:(UIView *)fileView
@@ -262,9 +249,6 @@
 
         fileScrollView.contentSize = CGSizeMake(maxLineWidth, linePosition);
         [fileView addSubview:fileScrollView];
-
-        UINavigationBar *navigationBar = [CommitView createFileNavigationBarWithFileView:fileView andFile:file];
-        [fileView addSubview:navigationBar];
 
         [scrollView addSubview:fileView];
 
