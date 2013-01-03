@@ -2,13 +2,14 @@
 #import <UIKit/UIKit.h>
 #import "Commit.h"
 #import "FileView.h"
+#import "GutterView.h"
 
 #define FILE_MARGIN 20
 #define FILE_HEADER_HEIGHT 44
 #define LINE_HEIGHT 16
 #define LINE_NUMBERS_MARGIN 6
 #define LINE_NUMBERS_WIDTH 31
-#define GUTTER_WIDTH 61
+#define GUTTER_WIDTH 60
 #define COMMENT_MARGIN 10
 #define COMMENT_PADDING 10
 
@@ -21,8 +22,7 @@ extern UIColor *gradientEndColor;
 @property (nonatomic, strong) Commit *commit;
 @property (nonatomic, strong) UIScrollView *scrollView;
 
-+ (UIView *)createGutterWithFileView:(UIView *)fileView andGutterWidth:(NSInteger)gutterWidth;
-+ (UILabel *)createLineNumberWithLinePosition:(NSInteger)linePosition gutterPosition:(NSInteger)gutterPosition andLineNumber:(NSString *)lineNumberString;
++ (UILabel *)createLineNumberWithLinePosition:(NSInteger)linePosition lineNumber:(NSString *)lineNumberString;
 + (UILabel *)createLineLabelWithLinePosition:(NSInteger)linePosition maxLineWidth:(NSInteger)maxLineWidth andLine:(Line *)line;
 + (UIView *)createCommentsViewWithComments:(NSArray *)comments color:(UIColor *)color andFileView:(UIView *)fileView;
 + (NSInteger)maxLineWidthInLines:(NSArray *)lines;

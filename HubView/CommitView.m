@@ -6,6 +6,8 @@
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
+        self.autoresizesSubviews = YES;
+        self.backgroundColor = [UIColor underPageBackgroundColor];
         self.scrollView = [[UIScrollView alloc] init];
         self.scrollView.autoresizesSubviews = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
     }
@@ -21,19 +23,9 @@
     }
 }
 
-+ (UIView *)createGutterWithFileView:(UIView *)fileView andGutterWidth:(NSInteger)gutterWidth
++ (UILabel *)createLineNumberWithLinePosition:(NSInteger)linePosition lineNumber:(NSString *)lineNumberString
 {
-    CGRect gutterFrame = CGRectMake(gutterWidth, FILE_HEADER_HEIGHT - 1, LINE_NUMBERS_WIDTH, fileView.frame.size.height);
-    UIView *gutter = [[UIView alloc] initWithFrame:gutterFrame];
-    gutter.backgroundColor = [UIColor colorWithRed:244.0/255.0 green:245.0/255.0 blue:248.0/255.0 alpha:1];
-    gutter.layer.borderColor = [UIColor colorWithRed:182.0/255.0 green:187.0/255.0 blue:204.0/255.0 alpha:1].CGColor;
-    gutter.layer.borderWidth = 1;
-    return gutter;
-}
-
-+ (UILabel *)createLineNumberWithLinePosition:(NSInteger)linePosition gutterPosition:(NSInteger)gutterPosition andLineNumber:(NSString *)lineNumberString
-{
-    CGRect lineNumberFrame = CGRectMake(gutterPosition + LINE_NUMBERS_MARGIN, linePosition, LINE_NUMBERS_WIDTH - (LINE_NUMBERS_MARGIN * 2), LINE_HEIGHT);
+    CGRect lineNumberFrame = CGRectMake(LINE_NUMBERS_MARGIN, linePosition, LINE_NUMBERS_WIDTH - (LINE_NUMBERS_MARGIN * 2), LINE_HEIGHT);
     UILabel *label = [[UILabel alloc] initWithFrame:lineNumberFrame];
     label.text = lineNumberString;
     label.textColor = [UIColor colorWithRed:172.0/255.0 green:177.0/255.0 blue:194.0/255.0 alpha:1];
@@ -180,9 +172,6 @@
 
 - (void)displayCommit
 {
-    self.autoresizesSubviews = YES;
-    self.backgroundColor = [UIColor underPageBackgroundColor];
-
     NSInteger filePosition = FILE_MARGIN;
 
     NSDictionary *commentsByPathAndPosition = self.commit.commentsByPathAndPosition;
@@ -193,22 +182,19 @@
         NSInteger lineNumber = 1;
         NSInteger maxLineWidth = MAX(fileView.frame.size.width, [CommitView maxLineWidthInLines:file.patch.lines]);
 
-        NSInteger linePosition = FILE_HEADER_HEIGHT;
+        NSInteger linePosition = 0;
 
-        UIView *beforeGutter = [CommitView createGutterWithFileView:fileView andGutterWidth:0];
-        UIView *afterGutter = [CommitView createGutterWithFileView:fileView andGutterWidth:LINE_NUMBERS_WIDTH - 1];
-
-        [fileView.scrollView addSubview:beforeGutter];
-        [fileView.scrollView addSubview:afterGutter];
+        GutterView *beforeGutter = [[GutterView alloc] init];
+        GutterView *afterGutter = [[GutterView alloc] init];
 
         for (NSInteger index = 0; index < file.patch.lines.count; index++) {
             Line *line = file.patch.lines[index];
 
-            UILabel *beforeLineNumber = [CommitView createLineNumberWithLinePosition:linePosition gutterPosition:0 andLineNumber:line.beforeLineNumberString];
-            [fileView.scrollView addSubview:beforeLineNumber];
+            UILabel *beforeLineNumber = [CommitView createLineNumberWithLinePosition:linePosition lineNumber:line.beforeLineNumberString];
+            [beforeGutter addSubview:beforeLineNumber];
 
-            UILabel *afterLineNumber = [CommitView createLineNumberWithLinePosition:linePosition gutterPosition:LINE_NUMBERS_WIDTH - 1 andLineNumber:line.afterLineNumberString];
-            [fileView.scrollView addSubview:afterLineNumber];
+            UILabel *afterLineNumber = [CommitView createLineNumberWithLinePosition:linePosition lineNumber:line.afterLineNumberString];
+            [afterGutter addSubview:afterLineNumber];
 
             UILabel *label = [CommitView createLineLabelWithLinePosition:linePosition maxLineWidth:maxLineWidth andLine:line];
             [fileView.scrollView addSubview:label];
@@ -228,22 +214,22 @@
             }
         }
 
-        CGRect beforeGutterFrame = beforeGutter.frame;
-        beforeGutterFrame.size.height = linePosition;
+        CGRect beforeGutterFrame = CGRectMake(-1, -1, LINE_NUMBERS_WIDTH, linePosition + 2);
         beforeGutter.frame = beforeGutterFrame;
+        [fileView.scrollView addSubview:beforeGutter];
 
-        CGRect afterGutterFrame = afterGutter.frame;
-        afterGutterFrame.size.height = linePosition;
+        CGRect afterGutterFrame = CGRectMake(LINE_NUMBERS_WIDTH - 2, -1, LINE_NUMBERS_WIDTH, linePosition + 2);
         afterGutter.frame = afterGutterFrame;
+        [fileView.scrollView addSubview:afterGutter];
 
-        CGRect fileScrollViewFrame = CGRectMake(0, 0, fileView.frame.size.width, linePosition);
+        CGRect fileScrollViewFrame = CGRectMake(0, PANEL_NAVIGATION_BAR_HEIGHT, fileView.frame.size.width, linePosition);
         fileView.scrollView.frame = fileScrollViewFrame;
         fileView.scrollView.contentSize = CGSizeMake(maxLineWidth, linePosition);
         [fileView addSubview:fileView.scrollView];
 
         [self.scrollView addSubview:fileView];
 
-        filePosition += linePosition + FILE_MARGIN;
+        filePosition += PANEL_NAVIGATION_BAR_HEIGHT + linePosition + FILE_MARGIN;
     }
 
     self.scrollView.contentSize = CGSizeMake(self.frame.size.width, filePosition);
