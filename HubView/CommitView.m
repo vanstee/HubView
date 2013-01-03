@@ -2,12 +2,23 @@
 
 @implementation CommitView
 
-+ (UIScrollView *)createScrollViewWithCommitView:(CommitView *)commitView
+- (id)initWithCoder:(NSCoder *)aDecoder
 {
-    CGRect scrollViewFrame = CGRectMake(0, 0, commitView.frame.size.width, commitView.frame.size.height);
-    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:scrollViewFrame];
-    scrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
-    return scrollView;
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        self.scrollView = [[UIScrollView alloc] init];
+        self.scrollView.autoresizesSubviews = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+    }
+    return self;
+}
+
+- (void)setFrame:(CGRect)frame
+{
+    [super setFrame:frame];
+    if (self.scrollView) {
+        self.scrollView.frame = frame;
+        [self.scrollView setNeedsDisplay];
+    }
 }
 
 + (UIView *)createFileViewWithCommitView:(CommitView *)commitView filePosition:(NSInteger)filePosition andFile:(File *)file
@@ -186,8 +197,6 @@
     self.autoresizesSubviews = YES;
     self.backgroundColor = [UIColor underPageBackgroundColor];
 
-    UIScrollView *scrollView = [CommitView createScrollViewWithCommitView:self];
-
     NSInteger filePosition = FILE_MARGIN;
 
     NSDictionary *commentsByPathAndPosition = self.commit.commentsByPathAndPosition;
@@ -250,13 +259,13 @@
         fileScrollView.contentSize = CGSizeMake(maxLineWidth, linePosition);
         [fileView addSubview:fileScrollView];
 
-        [scrollView addSubview:fileView];
+        [self.scrollView addSubview:fileView];
 
         filePosition += linePosition + FILE_MARGIN;
     }
 
-    scrollView.contentSize = CGSizeMake(self.frame.size.width, filePosition);
-    [self addSubview:scrollView];
+    self.scrollView.contentSize = CGSizeMake(self.frame.size.width, filePosition);
+    [self addSubview:self.scrollView];
 }
 
 - (void)hideCommit

@@ -19,8 +19,8 @@ extern UIColor *gradientStartColor;
 extern UIColor *gradientEndColor;
 
 @property (nonatomic, strong) Commit *commit;
+@property (nonatomic, strong) UIScrollView *scrollView;
 
-+ (UIScrollView *)createScrollViewWithCommitView:(CommitView *)commitView;
 + (UIView *)createFileViewWithCommitView:(CommitView *)commitView filePosition:(NSInteger)filePosition andFile:(File *)file;
 + (UIScrollView *)createFileScrollViewWithFileView:(UIView *)fileView;
 + (UIView *)createGutterWithFileView:(UIView *)fileView andGutterWidth:(NSInteger)gutterWidth;
