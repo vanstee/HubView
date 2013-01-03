@@ -1,7 +1,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import <UIKit/UIKit.h>
 #import "Commit.h"
-#import "PanelView.h"
+#import "FileView.h"
 
 #define FILE_MARGIN 20
 #define FILE_HEADER_HEIGHT 44
@@ -21,8 +21,6 @@ extern UIColor *gradientEndColor;
 @property (nonatomic, strong) Commit *commit;
 @property (nonatomic, strong) UIScrollView *scrollView;
 
-+ (UIView *)createFileViewWithCommitView:(CommitView *)commitView filePosition:(NSInteger)filePosition andFile:(File *)file;
-+ (UIScrollView *)createFileScrollViewWithFileView:(UIView *)fileView;
 + (UIView *)createGutterWithFileView:(UIView *)fileView andGutterWidth:(NSInteger)gutterWidth;
 + (UILabel *)createLineNumberWithLinePosition:(NSInteger)linePosition gutterPosition:(NSInteger)gutterPosition andLineNumber:(NSString *)lineNumberString;
 + (UILabel *)createLineLabelWithLinePosition:(NSInteger)linePosition maxLineWidth:(NSInteger)maxLineWidth andLine:(Line *)line;

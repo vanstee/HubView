@@ -21,20 +21,6 @@
     }
 }
 
-+ (UIView *)createFileViewWithCommitView:(CommitView *)commitView filePosition:(NSInteger)filePosition andFile:(File *)file
-{
-    return [[PanelView alloc] initWithContainerFrame:commitView.frame originY:filePosition height:(file.patch.lines.count * LINE_HEIGHT) title:file.filename];
-}
-
-+ (UIScrollView *)createFileScrollViewWithFileView:(UIView *)fileView
-{
-    CGRect fileScrollViewFrame = CGRectMake(0, 0, fileView.frame.size.width, fileView.frame.size.height);
-    UIScrollView *fileScrollView = [[UIScrollView alloc] initWithFrame:fileScrollViewFrame];
-    fileScrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
-    fileScrollView.bounces = NO;
-    return fileScrollView;
-}
-
 + (UIView *)createGutterWithFileView:(UIView *)fileView andGutterWidth:(NSInteger)gutterWidth
 {
     CGRect gutterFrame = CGRectMake(gutterWidth, FILE_HEADER_HEIGHT - 1, LINE_NUMBERS_WIDTH, fileView.frame.size.height);
@@ -202,32 +188,30 @@
     NSDictionary *commentsByPathAndPosition = self.commit.commentsByPathAndPosition;
 
     for (File *file in self.commit.files) {
-        UIView *fileView = [CommitView createFileViewWithCommitView:self filePosition:filePosition andFile:file];
+        FileView *fileView = [[FileView alloc] initWithContainerFrame:self.frame originY:filePosition height:(file.patch.lines.count * LINE_HEIGHT) file:file];
 
         NSInteger lineNumber = 1;
         NSInteger maxLineWidth = MAX(fileView.frame.size.width, [CommitView maxLineWidthInLines:file.patch.lines]);
 
         NSInteger linePosition = FILE_HEADER_HEIGHT;
 
-        UIScrollView *fileScrollView = [CommitView createFileScrollViewWithFileView:fileView];
-
         UIView *beforeGutter = [CommitView createGutterWithFileView:fileView andGutterWidth:0];
         UIView *afterGutter = [CommitView createGutterWithFileView:fileView andGutterWidth:LINE_NUMBERS_WIDTH - 1];
 
-        [fileScrollView addSubview:beforeGutter];
-        [fileScrollView addSubview:afterGutter];
+        [fileView.scrollView addSubview:beforeGutter];
+        [fileView.scrollView addSubview:afterGutter];
 
         for (NSInteger index = 0; index < file.patch.lines.count; index++) {
             Line *line = file.patch.lines[index];
 
             UILabel *beforeLineNumber = [CommitView createLineNumberWithLinePosition:linePosition gutterPosition:0 andLineNumber:line.beforeLineNumberString];
-            [fileScrollView addSubview:beforeLineNumber];
+            [fileView.scrollView addSubview:beforeLineNumber];
 
             UILabel *afterLineNumber = [CommitView createLineNumberWithLinePosition:linePosition gutterPosition:LINE_NUMBERS_WIDTH - 1 andLineNumber:line.afterLineNumberString];
-            [fileScrollView addSubview:afterLineNumber];
+            [fileView.scrollView addSubview:afterLineNumber];
 
             UILabel *label = [CommitView createLineLabelWithLinePosition:linePosition maxLineWidth:maxLineWidth andLine:line];
-            [fileScrollView addSubview:label];
+            [fileView.scrollView addSubview:label];
 
             lineNumber++;
             linePosition += LINE_HEIGHT;
@@ -239,7 +223,7 @@
                 commentsViewFrame.origin.x = GUTTER_WIDTH;
                 commentsViewFrame.origin.y = linePosition;
                 commentsView.frame = commentsViewFrame;
-                [fileScrollView addSubview:commentsView];
+                [fileView.scrollView addSubview:commentsView];
                 linePosition += commentsView.frame.size.height;
             }
         }
@@ -252,12 +236,10 @@
         afterGutterFrame.size.height = linePosition;
         afterGutter.frame = afterGutterFrame;
 
-        CGRect fileScrollViewFrame = fileScrollView.frame;
-        fileScrollViewFrame.size.height = linePosition;
-        fileScrollView.frame = fileScrollViewFrame;
-
-        fileScrollView.contentSize = CGSizeMake(maxLineWidth, linePosition);
-        [fileView addSubview:fileScrollView];
+        CGRect fileScrollViewFrame = CGRectMake(0, 0, fileView.frame.size.width, linePosition);
+        fileView.scrollView.frame = fileScrollViewFrame;
+        fileView.scrollView.contentSize = CGSizeMake(maxLineWidth, linePosition);
+        [fileView addSubview:fileView.scrollView];
 
         [self.scrollView addSubview:fileView];
 

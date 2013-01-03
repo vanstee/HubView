@@ -12,6 +12,7 @@
 		10302973167E84CC0056B9AC /* Patch.m in Sources */ = {isa = PBXBuildFile; fileRef = 10302972167E84CC0056B9AC /* Patch.m */; };
 		1032FDBA1694E80F00F55F2D /* PanelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1032FDB91694E80F00F55F2D /* PanelView.m */; };
 		1032FDBE1694F08C00F55F2D /* PanelNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1032FDBD1694F08C00F55F2D /* PanelNavigationBar.m */; };
+		1032FDC11695021500F55F2D /* FileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1032FDC01695021500F55F2D /* FileView.m */; };
 		103375211682D4B000291D98 /* Menlo.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 103375201682D4B000291D98 /* Menlo.ttc */; };
 		10390736168003B400F9FE7C /* GitUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 10390735168003B400F9FE7C /* GitUser.m */; };
 		1039073E1680187E00F9FE7C /* GitHubClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1039073C1680187E00F9FE7C /* GitHubClient.m */; };
@@ -72,6 +73,8 @@
 		1032FDB91694E80F00F55F2D /* PanelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanelView.m; sourceTree = "<group>"; };
 		1032FDBC1694F08B00F55F2D /* PanelNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanelNavigationBar.h; sourceTree = "<group>"; };
 		1032FDBD1694F08C00F55F2D /* PanelNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanelNavigationBar.m; sourceTree = "<group>"; };
+		1032FDBF1695021500F55F2D /* FileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileView.h; sourceTree = "<group>"; };
+		1032FDC01695021500F55F2D /* FileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileView.m; sourceTree = "<group>"; };
 		103375201682D4B000291D98 /* Menlo.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Menlo.ttc; sourceTree = "<group>"; };
 		10390734168003B400F9FE7C /* GitUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GitUser.h; sourceTree = "<group>"; };
 		10390735168003B400F9FE7C /* GitUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GitUser.m; sourceTree = "<group>"; };
@@ -281,6 +284,8 @@
 				10BCC4231675451000CCB5A9 /* User.m */,
 				10BCC41E167541CE00CCB5A9 /* UserTableViewController.h */,
 				10BCC41F167541CE00CCB5A9 /* UserTableViewController.m */,
+				1032FDBF1695021500F55F2D /* FileView.h */,
+				1032FDC01695021500F55F2D /* FileView.m */,
 			);
 			path = HubView;
 			sourceTree = "<group>";
@@ -453,6 +458,7 @@
 				10DEF1C11683F8EF00970EFF /* Comment.m in Sources */,
 				1032FDBA1694E80F00F55F2D /* PanelView.m in Sources */,
 				1032FDBE1694F08C00F55F2D /* PanelNavigationBar.m in Sources */,
+				1032FDC11695021500F55F2D /* FileView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
