@@ -8,6 +8,7 @@
         CGRect frame = CGRectMake(0, PANEL_NAVIGATION_BAR_HEIGHT, self.frame.size.width, self.frame.size.height);
         self.scrollView = [[UIScrollView alloc] initWithFrame:frame];
         self.scrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+        self.scrollView.bounces = NO;
         [self addSubview:self.scrollView];
     }
 
