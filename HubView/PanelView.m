@@ -4,8 +4,7 @@
 
 - (id)initWithFrame:(CGRect)frame
 {
-    self = [super initWithFrame:frame];
-    if (self) {
+    if(self = [super initWithFrame:frame]) {
         self.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
         self.backgroundColor = [UIColor whiteColor];
         self.layer.masksToBounds = NO;
@@ -14,16 +13,18 @@
         self.layer.shadowRadius = 5;
         self.layer.shadowOpacity = 0.5;
     }
+
     return self;
 }
 
 - (id)initWithContainerFrame:(CGRect)containerFrame originY:(CGFloat)originY height:(CGFloat)height title:(NSString *)title;
 {
     CGRect frame = CGRectMake(PANEL_MARGIN, originY, containerFrame.size.width - (PANEL_MARGIN * 2), PANEL_NAVIGATION_BAR_HEIGHT + height);
-    self = [self initWithFrame:frame];
 
-    PanelNavigationBar *navigationBar = [[PanelNavigationBar alloc] initWithTitle:title width:frame.size.width];
-    [self addSubview:navigationBar];
+    if(self = [self initWithFrame:frame]) {
+        PanelNavigationBar *navigationBar = [[PanelNavigationBar alloc] initWithTitle:title width:self.frame.size.width];
+        [self addSubview:navigationBar];
+    }
 
     return self;
 }
