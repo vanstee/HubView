@@ -8,35 +8,11 @@
     if (self) {
         self.autoresizesSubviews = YES;
         self.backgroundColor = [UIColor underPageBackgroundColor];
-        self.scrollView = [[UIScrollView alloc] init];
-        self.scrollView.autoresizesSubviews = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+        self.scrollView = [[UIScrollView alloc] initWithFrame:self.frame];
+        self.scrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+        [self addSubview:self.scrollView];
     }
     return self;
-}
-
-- (void)setFrame:(CGRect)frame
-{
-    [super setFrame:frame];
-    if (self.scrollView) {
-        self.scrollView.frame = frame;
-        [self.scrollView setNeedsDisplay];
-    }
-}
-
-+ (UILabel *)createLineNumberWithLinePosition:(NSInteger)linePosition lineNumber:(NSString *)lineNumberString
-{
-    CGRect lineNumberFrame = CGRectMake(LINE_NUMBERS_MARGIN, linePosition, LINE_NUMBERS_WIDTH - (LINE_NUMBERS_MARGIN * 2), LINE_HEIGHT);
-    UILabel *label = [[UILabel alloc] initWithFrame:lineNumberFrame];
-    label.text = lineNumberString;
-    label.textColor = [UIColor colorWithRed:172.0/255.0 green:177.0/255.0 blue:194.0/255.0 alpha:1];
-    label.backgroundColor = [UIColor clearColor];
-    label.font = [UIFont fontWithName:@"Menlo" size:10];
-    label.textAlignment = NSTextAlignmentRight;
-    if ([label.text isEqualToString:@"..."]) {
-        lineNumberFrame.origin.y = linePosition - (LINE_HEIGHT / 8.0);
-        label.frame = lineNumberFrame;
-    }
-    return label;
 }
 
 + (UILabel *)createLineLabelWithLinePosition:(NSInteger)linePosition maxLineWidth:(NSInteger)maxLineWidth andLine:(Line *)line
@@ -190,10 +166,10 @@
         for (NSInteger index = 0; index < file.patch.lines.count; index++) {
             Line *line = file.patch.lines[index];
 
-            UILabel *beforeLineNumber = [CommitView createLineNumberWithLinePosition:linePosition lineNumber:line.beforeLineNumberString];
+            LineNumberLabel *beforeLineNumber = [[LineNumberLabel alloc] initWithText:line.beforeLineNumberString originY:linePosition];
             [beforeGutter addSubview:beforeLineNumber];
 
-            UILabel *afterLineNumber = [CommitView createLineNumberWithLinePosition:linePosition lineNumber:line.afterLineNumberString];
+            LineNumberLabel *afterLineNumber = [[LineNumberLabel alloc] initWithText:line.afterLineNumberString originY:linePosition];
             [afterGutter addSubview:afterLineNumber];
 
             UILabel *label = [CommitView createLineLabelWithLinePosition:linePosition maxLineWidth:maxLineWidth andLine:line];
@@ -225,7 +201,6 @@
         CGRect fileScrollViewFrame = CGRectMake(0, PANEL_NAVIGATION_BAR_HEIGHT, fileView.frame.size.width, linePosition);
         fileView.scrollView.frame = fileScrollViewFrame;
         fileView.scrollView.contentSize = CGSizeMake(maxLineWidth, linePosition);
-        [fileView addSubview:fileView.scrollView];
 
         [self.scrollView addSubview:fileView];
 

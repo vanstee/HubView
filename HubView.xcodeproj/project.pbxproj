@@ -25,6 +25,7 @@
 		103907531680474A00F9FE7C /* CommentLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 103907521680474900F9FE7C /* CommentLine.m */; };
 		1058B11116815F5800EF2E93 /* CommitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1058B11016815F5800EF2E93 /* CommitView.m */; };
 		105D58E516955A0500A9B166 /* GutterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 105D58E416955A0500A9B166 /* GutterView.m */; };
+		105D590916965CCB00A9B166 /* LineNumberLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 105D590816965CCB00A9B166 /* LineNumberLabel.m */; };
 		1063DF351676994D00FA22EB /* Commit.m in Sources */ = {isa = PBXBuildFile; fileRef = 1063DF341676994D00FA22EB /* Commit.m */; };
 		1063DF451676DEA900FA22EB /* NSDate+Formatting.m in Sources */ = {isa = PBXBuildFile; fileRef = 1063DF3F1676BA6100FA22EB /* NSDate+Formatting.m */; };
 		1063DF481676E23500FA22EB /* CommitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1063DF471676E23500FA22EB /* CommitViewController.m */; };
@@ -99,6 +100,8 @@
 		1058B11016815F5800EF2E93 /* CommitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommitView.m; sourceTree = "<group>"; };
 		105D58E316955A0500A9B166 /* GutterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GutterView.h; sourceTree = "<group>"; };
 		105D58E416955A0500A9B166 /* GutterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GutterView.m; sourceTree = "<group>"; };
+		105D590716965CCB00A9B166 /* LineNumberLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineNumberLabel.h; sourceTree = "<group>"; };
+		105D590816965CCB00A9B166 /* LineNumberLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineNumberLabel.m; sourceTree = "<group>"; };
 		1063DF331676994D00FA22EB /* Commit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Commit.h; sourceTree = "<group>"; };
 		1063DF341676994D00FA22EB /* Commit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Commit.m; sourceTree = "<group>"; };
 		1063DF3E1676BA6100FA22EB /* NSDate+Formatting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+Formatting.h"; sourceTree = "<group>"; };
@@ -291,6 +294,8 @@
 				1032FDC01695021500F55F2D /* FileView.m */,
 				105D58E316955A0500A9B166 /* GutterView.h */,
 				105D58E416955A0500A9B166 /* GutterView.m */,
+				105D590716965CCB00A9B166 /* LineNumberLabel.h */,
+				105D590816965CCB00A9B166 /* LineNumberLabel.m */,
 			);
 			path = HubView;
 			sourceTree = "<group>";
@@ -465,6 +470,7 @@
 				1032FDBE1694F08C00F55F2D /* PanelNavigationBar.m in Sources */,
 				1032FDC11695021500F55F2D /* FileView.m in Sources */,
 				105D58E516955A0500A9B166 /* GutterView.m in Sources */,
+				105D590916965CCB00A9B166 /* LineNumberLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
