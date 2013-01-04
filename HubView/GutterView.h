@@ -2,7 +2,6 @@
 #import <UIKit/UIKit.h>
 #import "Line.h"
 
-#define LINE_NUMBERS_WIDTH 31
 #define GUTTER_WIDTH 60
 
 @interface GutterView : UIView

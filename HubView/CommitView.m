@@ -15,17 +15,6 @@
     return self;
 }
 
-+ (UILabel *)createLineLabelWithLinePosition:(NSInteger)linePosition maxLineWidth:(NSInteger)maxLineWidth andLine:(Line *)line
-{
-    CGRect labelFrame = CGRectMake(GUTTER_WIDTH, linePosition, maxLineWidth, LINE_HEIGHT);
-    UILabel *label = [[UILabel alloc] initWithFrame:labelFrame];
-    label.font = [UIFont fontWithName:@"Menlo" size:12];
-    label.text = [NSString stringWithFormat:@" %@", line.rawLine];
-    label.textColor = line.textColor;
-    label.backgroundColor = line.backgroundColor;
-    return label;
-}
-
 + (UIView *)createCommentsViewWithComments:(NSArray *)comments color:(UIColor *)color andFileView:(UIView *)fileView
 {
     UIColor *greyColor = [UIColor colorWithRed:202.0/255.0 green:202.0/255.0 blue:202.0/255.0 alpha:1];
@@ -172,7 +161,7 @@
             LineNumberLabel *afterLineNumber = [[LineNumberLabel alloc] initWithText:line.afterLineNumberString originY:linePosition];
             [afterGutter addSubview:afterLineNumber];
 
-            UILabel *label = [CommitView createLineLabelWithLinePosition:linePosition maxLineWidth:maxLineWidth andLine:line];
+            LineLabel *label = [[LineLabel alloc] initWithLine:line originY:linePosition width:maxLineWidth];
             [fileView.scrollView addSubview:label];
 
             lineNumber++;

@@ -3,6 +3,7 @@
 #import "Commit.h"
 #import "FileView.h"
 #import "GutterView.h"
+#import "LineLabel.h"
 #import "LineNumberLabel.h"
 
 #define FILE_MARGIN 20
@@ -23,7 +24,6 @@ extern UIColor *gradientEndColor;
 @property (nonatomic, strong) Commit *commit;
 @property (nonatomic, strong) UIScrollView *scrollView;
 
-+ (UILabel *)createLineLabelWithLinePosition:(NSInteger)linePosition maxLineWidth:(NSInteger)maxLineWidth andLine:(Line *)line;
 + (UIView *)createCommentsViewWithComments:(NSArray *)comments color:(UIColor *)color andFileView:(UIView *)fileView;
 + (NSInteger)maxLineWidthInLines:(NSArray *)lines;
 - (void)displayCommit;
