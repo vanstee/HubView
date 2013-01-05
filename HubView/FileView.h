@@ -1,4 +1,6 @@
+#import "CommitView.h"
 #import "File.h"
+#import "LineNumberLabel.h"
 #import "PanelView.h"
 
 @interface FileView : PanelView

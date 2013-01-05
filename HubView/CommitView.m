@@ -102,16 +102,6 @@
     return background;
 }
 
-+ (NSInteger)maxLineWidthInLines:(NSArray *)lines
-{
-    NSInteger max = 0;
-    for (Line *line in lines) {
-        NSString *rawLine = [NSString stringWithFormat:@" %@", line.rawLine];
-        max = MAX(max, [rawLine sizeWithFont:[UIFont fontWithName:@"Menlo" size:12]].width + GUTTER_WIDTH);
-    }
-    return max;
-}
-
 - (void)setPartialCommit:(Commit *)commit
 {
     self.commit = nil;
@@ -154,56 +144,8 @@
 
     for (File *file in self.commit.files) {
         FileView *fileView = [[FileView alloc] initWithContainerFrame:self.frame originY:filePosition height:(file.patch.lines.count * LINE_HEIGHT) file:file];
-
-        NSInteger lineNumber = 1;
-        NSInteger maxLineWidth = MAX(fileView.frame.size.width, [CommitView maxLineWidthInLines:file.patch.lines]);
-
-        NSInteger linePosition = 0;
-
-        GutterView *beforeGutter = [[GutterView alloc] init];
-        GutterView *afterGutter = [[GutterView alloc] init];
-
-        for (NSInteger index = 0; index < file.patch.lines.count; index++) {
-            Line *line = file.patch.lines[index];
-
-            LineNumberLabel *beforeLineNumber = [[LineNumberLabel alloc] initWithText:line.beforeLineNumberString originY:linePosition];
-            [beforeGutter addSubview:beforeLineNumber];
-
-            LineNumberLabel *afterLineNumber = [[LineNumberLabel alloc] initWithText:line.afterLineNumberString originY:linePosition];
-            [afterGutter addSubview:afterLineNumber];
-
-            LineLabel *label = [[LineLabel alloc] initWithLine:line originY:linePosition width:maxLineWidth];
-            [fileView.scrollView addSubview:label];
-
-            lineNumber++;
-            linePosition += LINE_HEIGHT;
-
-            if (line.comments) {
-                UIView *commentsView = [CommitView createCommentsViewWithComments:line.comments color:label.backgroundColor andFileView:fileView];
-                CGRect commentsViewFrame = commentsView.frame;
-                commentsViewFrame.origin.x = GUTTER_WIDTH;
-                commentsViewFrame.origin.y = linePosition;
-                commentsView.frame = commentsViewFrame;
-                [fileView.scrollView addSubview:commentsView];
-                linePosition += commentsView.frame.size.height;
-            }
-        }
-
-        CGRect beforeGutterFrame = CGRectMake(-1, -1, LINE_NUMBERS_WIDTH, linePosition + 2);
-        beforeGutter.frame = beforeGutterFrame;
-        [fileView.scrollView addSubview:beforeGutter];
-
-        CGRect afterGutterFrame = CGRectMake(LINE_NUMBERS_WIDTH - 2, -1, LINE_NUMBERS_WIDTH, linePosition + 2);
-        afterGutter.frame = afterGutterFrame;
-        [fileView.scrollView addSubview:afterGutter];
-
-        CGRect fileScrollViewFrame = CGRectMake(0, PANEL_NAVIGATION_BAR_HEIGHT, fileView.frame.size.width, linePosition);
-        fileView.scrollView.frame = fileScrollViewFrame;
-        fileView.scrollView.contentSize = CGSizeMake(maxLineWidth, linePosition);
-
         [self.scrollView addSubview:fileView];
-
-        filePosition += PANEL_NAVIGATION_BAR_HEIGHT + linePosition + FILE_MARGIN;
+        filePosition += PANEL_NAVIGATION_BAR_HEIGHT + fileView.frame.size.height + FILE_MARGIN;
     }
 
     self.scrollView.contentSize = CGSizeMake(self.frame.size.width, filePosition);

@@ -27,7 +27,6 @@ extern UIColor *gradientEndColor;
 @property (nonatomic, strong) UIScrollView *scrollView;
 
 + (UIView *)createCommentsViewWithComments:(NSArray *)comments color:(UIColor *)color andFileView:(UIView *)fileView;
-+ (NSInteger)maxLineWidthInLines:(NSArray *)lines;
 - (void)displayCommit;
 - (void)hideCommit;
 
