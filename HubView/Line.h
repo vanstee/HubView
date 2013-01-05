@@ -5,6 +5,7 @@
 @property (nonatomic, assign) NSInteger beforeLineNumber;
 @property (nonatomic, assign) NSInteger afterLineNumber;
 @property (nonatomic, strong) NSString *rawLine;
+@property (nonatomic, strong) NSArray *comments;
 
 - (id)initWithRawLine:(NSString *)rawLine;
 - (NSInteger)progressBeforeLineNumber;

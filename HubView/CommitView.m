@@ -112,19 +112,32 @@
     return max;
 }
 
+- (void)setPartialCommit:(Commit *)commit
+{
+    self.commit = nil;
+    self.comments = nil;
+
+    [commit commitWithCompletionBlock:^(Commit *commit) {
+        self.commit = commit;
+        [self refresh];
+    }];
+
+    [commit commentsWithCompletionBlock:^(NSArray *comments) {
+        self.comments = comments;
+        [self refresh];
+    }];
+}
+
 - (void)setCommit:(Commit *)commit
 {
-    if (_commit != commit)
-    {
-        [commit commitWithCompletionBlock:^(Commit *commit) {
-            _commit = commit;
+    if (_comments) { commit.comments = _comments; }
+    _commit = commit;
+}
 
-            [self.commit commentsWithCompletionBlock:^(NSArray *comments) {
-                self.commit.comments = comments;
-                [self refresh];
-            }];
-        }];
-    }
+- (void)setComments:(NSArray *)comments
+{
+    if (_commit) { _commit.comments = comments; }
+    _comments = comments;
 }
 
 - (void)refresh
@@ -138,8 +151,6 @@
 - (void)displayCommit
 {
     NSInteger filePosition = FILE_MARGIN;
-
-    NSDictionary *commentsByPathAndPosition = self.commit.commentsByPathAndPosition;
 
     for (File *file in self.commit.files) {
         FileView *fileView = [[FileView alloc] initWithContainerFrame:self.frame originY:filePosition height:(file.patch.lines.count * LINE_HEIGHT) file:file];
@@ -167,9 +178,8 @@
             lineNumber++;
             linePosition += LINE_HEIGHT;
 
-            NSArray *comments = commentsByPathAndPosition[file.filename][[NSNumber numberWithInteger:index]];
-            if (comments) {
-                UIView *commentsView = [CommitView createCommentsViewWithComments:comments color:label.backgroundColor andFileView:fileView];
+            if (line.comments) {
+                UIView *commentsView = [CommitView createCommentsViewWithComments:line.comments color:label.backgroundColor andFileView:fileView];
                 CGRect commentsViewFrame = commentsView.frame;
                 commentsViewFrame.origin.x = GUTTER_WIDTH;
                 commentsViewFrame.origin.y = linePosition;

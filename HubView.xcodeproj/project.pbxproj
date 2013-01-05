@@ -60,6 +60,7 @@
 		10CB25C216763EDA00A33C32 /* CommitTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10CB25C116763EDA00A33C32 /* CommitTableViewController.m */; };
 		10DEF1C11683F8EF00970EFF /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DEF1C01683F8EF00970EFF /* Comment.m */; };
 		10DEF1C91684300000970EFF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10DEF1C81684300000970EFF /* QuartzCore.framework */; };
+		10F1EFE71698A1A8007E55C8 /* CommentOrganizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 10F1EFE61698A1A8007E55C8 /* CommentOrganizer.m */; };
 		A1856EE3224B4E69A530D957 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D64C65D462B947169B80F3FA /* libPods.a */; };
 		F13731DF1690D84E0039C504 /* HVTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F13731DE1690D84E0039C504 /* HVTextFieldCell.m */; };
 		F164E2EA1690D5050053103F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F164E2E81690D5050053103F /* LoginViewController.m */; };
@@ -165,6 +166,8 @@
 		10DEF1BF1683F8EF00970EFF /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
 		10DEF1C01683F8EF00970EFF /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
 		10DEF1C81684300000970EFF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		10F1EFE51698A1A8007E55C8 /* CommentOrganizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentOrganizer.h; sourceTree = "<group>"; };
+		10F1EFE61698A1A8007E55C8 /* CommentOrganizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentOrganizer.m; sourceTree = "<group>"; };
 		9E7C7B32F4944181A4220C17 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		D64C65D462B947169B80F3FA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F13731DD1690D84E0039C504 /* HVTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVTextFieldCell.h; sourceTree = "<group>"; };
@@ -242,6 +245,8 @@
 				10DEF1C01683F8EF00970EFF /* Comment.m */,
 				103907511680474800F9FE7C /* CommentLine.h */,
 				103907521680474900F9FE7C /* CommentLine.m */,
+				10F1EFE51698A1A8007E55C8 /* CommentOrganizer.h */,
+				10F1EFE61698A1A8007E55C8 /* CommentOrganizer.m */,
 				1063DF331676994D00FA22EB /* Commit.h */,
 				1063DF341676994D00FA22EB /* Commit.m */,
 				10CB25C016763EDA00A33C32 /* CommitTableViewController.h */,
@@ -477,6 +482,7 @@
 				105D58E516955A0500A9B166 /* GutterView.m in Sources */,
 				105D590916965CCB00A9B166 /* LineNumberLabel.m in Sources */,
 				105D590D16966B6400A9B166 /* LineLabel.m in Sources */,
+				10F1EFE71698A1A8007E55C8 /* CommentOrganizer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

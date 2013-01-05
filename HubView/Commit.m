@@ -27,6 +27,17 @@
     return self;
 }
 
+- (void)setComments:(NSArray *)comments
+{
+    CommentOrganizer *commentOrganizer = [[CommentOrganizer alloc] initWithComments:comments];
+
+    _comments = commentOrganizer.commitLevelComments;
+
+    for (File *file in self.files) {
+        file.commentsByPosition = [commentOrganizer commentsForFile:file];
+    }
+}
+
 - (NSDate *)date
 {
     NSDate *date;
@@ -65,29 +76,8 @@
     return [NSString stringWithFormat:@"%@ authored %@", self.login, self.date.distanceOfTimeInWords];
 }
 
-- (NSDictionary *)commentsByPathAndPosition
-{
-    NSMutableDictionary *comments = [NSMutableDictionary dictionaryWithCapacity:self.comments.count];
-    for (Comment *comment in self.comments) {
-        NSNumber *position = [NSNumber numberWithInteger:comment.position];
-        if (!comments[comment.path]) { comments[comment.path] = [NSMutableDictionary new]; }
-        if (!comments[comment.path][position]) { comments[comment.path][position] = [NSMutableArray new]; }
-        [comments[comment.path][position] addObject:comment];
-    }
-
-    for (NSString *path in comments) {
-        for (NSNumber *position in comments[path]) {
-            NSArray *commentsForPathAndPosition = comments[path][position];
-            comments[path][position] = [[[commentsForPathAndPosition sortedArrayUsingSelector:@selector(createdAt)] reverseObjectEnumerator] allObjects];
-        }
-    }
-
-    return comments;
-}
-
 - (void)commitWithCompletionBlock:(void (^)(Commit *commit))block
 {
-    [[[GitHubClient sharedClient] operationQueue] cancelAllOperations];
     [[GitHubClient sharedClient] getPath:[NSString stringWithFormat:@"/repos/%@/%@/commits/%@", self.repository.owner.login, self.repository.name, self.sha] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         Commit *commit = [[Commit alloc] initWithDictionary:responseObject];
         commit.repository = self.repository;
@@ -97,7 +87,6 @@
 
 - (void)commentsWithCompletionBlock:(void (^)(NSArray *comments))block
 {
-    [[[GitHubClient sharedClient] operationQueue] cancelAllOperations];
     [[GitHubClient sharedClient] getPath:[NSString stringWithFormat:@"/repos/%@/%@/commits/%@/comments", self.repository.owner.login, self.repository.name, self.sha] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSArray *comments = [Comment initWithArrayOfDictionaries:responseObject];
         if (block) { block(comments); }

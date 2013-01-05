@@ -21,7 +21,9 @@ extern UIColor *blackColor;
 extern UIColor *gradientStartColor;
 extern UIColor *gradientEndColor;
 
+@property (nonatomic, strong) Commit *partialCommit;
 @property (nonatomic, strong) Commit *commit;
+@property (nonatomic, strong) NSArray *comments;
 @property (nonatomic, strong) UIScrollView *scrollView;
 
 + (UIView *)createCommentsViewWithComments:(NSArray *)comments color:(UIColor *)color andFileView:(UIView *)fileView;

@@ -6,9 +6,7 @@
 {
     NSMutableArray *comments = [NSMutableArray arrayWithCapacity:arrayOfDictionaries.count];
     for (NSDictionary *attributes in arrayOfDictionaries) {
-        if (attributes[@"path"] != [NSNull null]) {
-            [comments addObject:[[Comment alloc] initWithDictionary:attributes]];
-        }
+        [comments addObject:[[Comment alloc] initWithDictionary:attributes]];
     }
     return comments;
 }
@@ -20,9 +18,9 @@
         self.body = attributes[@"body"];
         self.user = [[User alloc] initWithDictionary:attributes[@"user"]];
         self.createdAt = [NSDate parseDate:attributes[@"created_at"]];
-        self.line = [attributes[@"line"] integerValue];
-        self.position = [attributes[@"position"] integerValue];
-        self.path = attributes[@"path"];
+        if (attributes[@"line"] != [NSNull null]) { self.line = [attributes[@"line"] integerValue]; }
+        if (attributes[@"position"] != [NSNull null]) { self.position = [attributes[@"position"] integerValue]; }
+        if (attributes[@"path"] != [NSNull null]) { self.path = attributes[@"path"]; }
     }
     return self;
 }
