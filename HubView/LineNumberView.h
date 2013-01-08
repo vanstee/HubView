@@ -2,9 +2,9 @@
 #import <UIKit/UIKit.h>
 #import "Line.h"
 
-#define GUTTER_WIDTH 60
+#define LINE_NUMBER_VIEW_WIDTH 60
 
-@interface GutterView : UIView
+@interface LineNumberView : UIView
 
 @property (nonatomic, strong) NSString *type;
 @property (nonatomic, strong) NSArray *lines;

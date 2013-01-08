@@ -16,7 +16,7 @@
     NSInteger max = 0;
     for (Line *line in self.lines) {
         NSString *rawLine = [NSString stringWithFormat:@" %@", line.rawLine];
-        max = MAX(max, [rawLine sizeWithFont:[UIFont fontWithName:@"Menlo" size:12]].width + GUTTER_WIDTH);
+        max = MAX(max, [rawLine sizeWithFont:[UIFont fontWithName:@"Menlo" size:12]].width + LINE_NUMBER_VIEW_WIDTH);
     }
     return max;
 }

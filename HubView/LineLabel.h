@@ -1,6 +1,6 @@
 #import <UIKit/UIKit.h>
 #import "Line.h"
-#import "GutterView.h"
+#import "LineNumberView.h"
 
 #define LINE_HEIGHT 16
 

@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "File.h"
-#import "GutterView.h"
+#import "LineNumberView.h"
 #import "LineFactory.h"
 
 @interface Patch : NSObject

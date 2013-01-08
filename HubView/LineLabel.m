@@ -13,7 +13,7 @@
 
 - (id)initWithLine:(Line *)line originY:(CGFloat)originY width:(CGFloat)width
 {
-    CGRect frame = CGRectMake(GUTTER_WIDTH, originY, width, LINE_HEIGHT);
+    CGRect frame = CGRectMake(LINE_NUMBER_VIEW_WIDTH, originY, width, LINE_HEIGHT);
 
     if(self = [self initWithFrame:frame]) {
         self.text = [NSString stringWithFormat:@" %@", line.rawLine];

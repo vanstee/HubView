@@ -2,7 +2,7 @@
 #import <UIKit/UIKit.h>
 #import "Commit.h"
 #import "FileView.h"
-#import "GutterView.h"
+#import "LineNumberView.h"
 #import "LineLabel.h"
 #import "LineNumberLabel.h"
 

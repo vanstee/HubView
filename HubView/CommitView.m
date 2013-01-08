@@ -21,7 +21,7 @@
     UIColor *gradientStartColor = [UIColor colorWithRed:247.0/255.0 green:248.0/255.0 blue:250.0/255.0 alpha:1];
     UIColor *gradientEndColor = [UIColor colorWithRed:209.0/255.0 green:212.0/255.0 blue:221.0/255.0 alpha:1];
 
-    NSInteger backgroundWidth = fileView.frame.size.width - GUTTER_WIDTH;
+    NSInteger backgroundWidth = fileView.frame.size.width - LINE_NUMBER_VIEW_WIDTH;
     NSInteger contentWidth = backgroundWidth - (COMMENT_MARGIN * 2);
     NSInteger contentTextWidth = contentWidth - (COMMENT_PADDING * 2);
 
