@@ -7,6 +7,6 @@
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 
-- (id)initWithContainerFrame:(CGRect)containerFrame originY:(CGFloat)originY height:(CGFloat)height file:(File *)file;
+- (id)initWithContainerFrame:(CGRect)containerFrame originY:(CGFloat)originY file:(File *)file;
 
 @end

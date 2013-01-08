@@ -143,7 +143,7 @@
     NSInteger filePosition = FILE_MARGIN;
 
     for (File *file in self.commit.files) {
-        FileView *fileView = [[FileView alloc] initWithContainerFrame:self.frame originY:filePosition height:(file.patch.lines.count * LINE_HEIGHT) file:file];
+        FileView *fileView = [[FileView alloc] initWithContainerFrame:self.frame originY:filePosition file:file];
         [self.scrollView addSubview:fileView];
         filePosition += PANEL_NAVIGATION_BAR_HEIGHT + fileView.frame.size.height + FILE_MARGIN;
     }
