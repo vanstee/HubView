@@ -48,7 +48,7 @@
 
 - (void)displayCommit
 {
-    FileView *previous = nil;
+    UIView *previous = nil;
 
     for (File *file in self.commit.files) {
         CGFloat originY = previous ? previous.frame.origin.y + previous.frame.size.height + FILE_MARGIN : FILE_MARGIN;
@@ -57,6 +57,15 @@
         fileView.file = file;
         [self.scrollView addSubview:fileView];
         previous = fileView;
+    }
+
+    if(self.commit.comments) {
+        CGFloat originY = previous ? previous.frame.origin.y + previous.frame.size.height + FILE_MARGIN : FILE_MARGIN;
+        CGRect commitLevelCommentThreadViewFrame = CGRectMake(FILE_MARGIN, originY, self.frame.size.width - (FILE_MARGIN * 2), 0);
+        CommitLevelCommentThreadView *commitLevelCommentThreadView = [[CommitLevelCommentThreadView alloc] initWithFrame:commitLevelCommentThreadViewFrame];
+        commitLevelCommentThreadView.comments = self.commit.comments;
+        [self.scrollView addSubview:commitLevelCommentThreadView];
+        previous = commitLevelCommentThreadView;
     }
 
     CGFloat originY = previous ? previous.frame.origin.y + previous.frame.size.height + FILE_MARGIN : 0;

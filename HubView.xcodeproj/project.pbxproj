@@ -38,6 +38,7 @@
 		10B1D9B316A33D22006B70F7 /* AfterLineNumberView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B1D9B216A33D22006B70F7 /* AfterLineNumberView.m */; };
 		10B1D9B616A341C2006B70F7 /* CommentThreadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B1D9B516A341C2006B70F7 /* CommentThreadView.m */; };
 		10B1D9E916A3928F006B70F7 /* UIColor+CustomColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B1D9E816A3928F006B70F7 /* UIColor+CustomColors.m */; };
+		10B1D9F816A39959006B70F7 /* CommitLevelCommentThreadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B1D9F716A39958006B70F7 /* CommitLevelCommentThreadView.m */; };
 		10BCC3F41675411900CCB5A9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10BCC3F31675411900CCB5A9 /* UIKit.framework */; };
 		10BCC3F61675411900CCB5A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10BCC3F51675411900CCB5A9 /* Foundation.framework */; };
 		10BCC3F81675411900CCB5A9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10BCC3F71675411900CCB5A9 /* CoreGraphics.framework */; };
@@ -135,6 +136,8 @@
 		10B1D9B516A341C2006B70F7 /* CommentThreadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentThreadView.m; sourceTree = "<group>"; };
 		10B1D9E716A3928F006B70F7 /* UIColor+CustomColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CustomColors.h"; sourceTree = "<group>"; };
 		10B1D9E816A3928F006B70F7 /* UIColor+CustomColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CustomColors.m"; sourceTree = "<group>"; };
+		10B1D9F616A39958006B70F7 /* CommitLevelCommentThreadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommitLevelCommentThreadView.h; sourceTree = "<group>"; };
+		10B1D9F716A39958006B70F7 /* CommitLevelCommentThreadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommitLevelCommentThreadView.m; sourceTree = "<group>"; };
 		10BCC3EF1675411900CCB5A9 /* HubView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HubView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10BCC3F31675411900CCB5A9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		10BCC3F51675411900CCB5A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -261,6 +264,8 @@
 				10B1D9B516A341C2006B70F7 /* CommentThreadView.m */,
 				10B1D9A416A27AF9006B70F7 /* CommentView.h */,
 				10B1D9A516A27AF9006B70F7 /* CommentView.m */,
+				10B1D9F616A39958006B70F7 /* CommitLevelCommentThreadView.h */,
+				10B1D9F716A39958006B70F7 /* CommitLevelCommentThreadView.m */,
 				1058B10F16815F5700EF2E93 /* CommitView.h */,
 				1058B11016815F5800EF2E93 /* CommitView.m */,
 				10B1D9AB16A27CD1006B70F7 /* FileContentView.h */,
@@ -269,14 +274,14 @@
 				1032FDC01695021500F55F2D /* FileView.m */,
 				10DD5CA7169BBD5A0048C53A /* GutterView.h */,
 				10DD5CA8169BBD5B0048C53A /* GutterView.m */,
+				F13731DD1690D84E0039C504 /* HVTextFieldCell.h */,
+				F13731DE1690D84E0039C504 /* HVTextFieldCell.m */,
 				105D590B16966B6400A9B166 /* LineLabel.h */,
 				105D590C16966B6400A9B166 /* LineLabel.m */,
 				105D590716965CCB00A9B166 /* LineNumberLabel.h */,
 				105D590816965CCB00A9B166 /* LineNumberLabel.m */,
 				105D58E316955A0500A9B166 /* LineNumberView.h */,
 				105D58E416955A0500A9B166 /* LineNumberView.m */,
-				F13731DD1690D84E0039C504 /* HVTextFieldCell.h */,
-				F13731DE1690D84E0039C504 /* HVTextFieldCell.m */,
 				F164E2E91690D5050053103F /* LoginViewController.xib */,
 				1032FDBC1694F08B00F55F2D /* PanelNavigationBar.h */,
 				1032FDBD1694F08C00F55F2D /* PanelNavigationBar.m */,
@@ -557,6 +562,7 @@
 				10B1D9B316A33D22006B70F7 /* AfterLineNumberView.m in Sources */,
 				10B1D9B616A341C2006B70F7 /* CommentThreadView.m in Sources */,
 				10B1D9E916A3928F006B70F7 /* UIColor+CustomColors.m in Sources */,
+				10B1D9F816A39959006B70F7 /* CommitLevelCommentThreadView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
