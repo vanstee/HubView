@@ -23,8 +23,8 @@
         }
     }
 
-    for (NSString *path in commentDictionary) {
-        for (NSNumber *position in commentDictionary[path]) {
+    for (NSString *path in [commentDictionary allKeys]) {
+        for (NSNumber *position in [commentDictionary[path] allKeys]) {
             NSArray *commentsForPathAndPosition = commentDictionary[path][position];
             commentDictionary[path][position] = [[[commentsForPathAndPosition sortedArrayUsingSelector:@selector(createdAt)] reverseObjectEnumerator] allObjects];
         }
