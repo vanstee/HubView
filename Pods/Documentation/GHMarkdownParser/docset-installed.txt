@@ -1,0 +1,4 @@
+Documentation set was installed to Xcode!
+
+Path: /Users/vanstee/Library/Developer/Shared/Documentation/DocSets/org.cocoapods.GHMarkdownParser-0.0.1.docset
+Time: 2013-01-14 03:10:32 +0000

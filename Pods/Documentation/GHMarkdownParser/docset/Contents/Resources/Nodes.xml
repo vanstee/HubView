@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DocSetNodes version="1.0">
+    <TOC>
+        <Node type="folder">
+            <Name>GHMarkdownParser 0.0.1</Name>
+            <Path>index.html</Path>
+			<Subnodes>
+                
+				
+				<Node type="folder">
+					<Name>Classes</Name>
+					<Path>index.html</Path>
+					<Subnodes>
+						<NodeRef refid="1"/>
+						
+					</Subnodes>
+				</Node>
+				
+				
+				<Node type="folder">
+					<Name>Categories</Name>
+					<Path>index.html</Path>
+					<Subnodes>
+						<NodeRef refid="2"/>
+						
+					</Subnodes>
+				</Node>
+				
+				
+			</Subnodes>
+        </Node>
+    </TOC>
+	<Library>
+		
+		<Node id="1">
+			<Name>GHMarkdownParser</Name>
+			<Path>Classes/GHMarkdownParser.html</Path>
+		</Node>
+		
+		<Node id="2">
+			<Name>NSString(GHMarkdownParser)</Name>
+			<Path>Categories/NSString+GHMarkdownParser.html</Path>
+		</Node>
+		
+		
+	</Library>
+</DocSetNodes>

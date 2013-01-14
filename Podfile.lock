@@ -1,11 +1,14 @@
 
 PODS:
+- GHMarkdownParser (0.0.1)
 - SSKeychain (0.1.4)
 
 DEPENDENCIES:
+- GHMarkdownParser (~> 0.0.1)
 - SSKeychain (~> 0.1.4)
 
 SPEC CHECKSUMS:
+  GHMarkdownParser: 52174cb8daaaa4a9eafb84de3b252b4f3cc0cf91
   SSKeychain: bae692a4354f48691ca3463a121dc8060f781a7d
 
-COCOAPODS: 0.16.0
+COCOAPODS: 0.16.1
