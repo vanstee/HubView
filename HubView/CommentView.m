@@ -4,10 +4,6 @@
 
 - (void)setComment:(Comment *)comment
 {
-    UIColor *greyColor = [UIColor colorWithRed:202.0/255.0 green:202.0/255.0 blue:202.0/255.0 alpha:1];
-    UIColor *gradientStartColor = [UIColor colorWithRed:247.0/255.0 green:248.0/255.0 blue:250.0/255.0 alpha:1];
-    UIColor *gradientEndColor = [UIColor colorWithRed:209.0/255.0 green:212.0/255.0 blue:221.0/255.0 alpha:1];
-
     UIFont *headerFont = [UIFont fontWithName:@"Helvetica" size:14];
     UIFont *bodyFont = [UIFont fontWithName:@"Helvetica" size:14];
 
@@ -21,12 +17,12 @@
     
     CGRect headerFrame = CGRectMake(0, 0, contentSize.width, headerSize.height);
     UIView *header = [[UIView alloc] initWithFrame:headerFrame];
-    header.layer.borderColor = [greyColor CGColor];
+    header.layer.borderColor = [UIColor commentBorderColor].CGColor;
     header.layer.borderWidth = 1;
     
     CAGradientLayer *gradient = [CAGradientLayer new];
     gradient.frame = header.bounds;
-    gradient.colors = @[(id)[gradientStartColor CGColor], (id)[gradientEndColor CGColor]];
+    gradient.colors = @[(id)[UIColor commentHeaderGradientStartColor].CGColor, (id)[UIColor commentHeaderGradientEndColor].CGColor];
     [header.layer insertSublayer:gradient atIndex:0];
     
     CGRect headerTextFrame = CGRectMake(COMMENT_MARGIN, COMMENT_MARGIN, contentTextWidth, headerTextSize.height);
@@ -47,8 +43,8 @@
     
     CGRect bodyFrame = CGRectMake(0, headerSize.height - 1, bodySize.width, bodySize.height);
     UIView *body = [[UIView alloc] initWithFrame:bodyFrame];
-    body.backgroundColor = [UIColor colorWithRed:251.0/255.0 green:251.0/255.0 blue:251.0/255.0 alpha:1];
-    body.layer.borderColor = [[UIColor colorWithRed:202.0/255.0 green:202.0/255.0 blue:202.0/255.0 alpha:1] CGColor];
+    body.backgroundColor = [UIColor commentBodyBackgroundColor];
+    body.layer.borderColor = [UIColor commentBorderColor].CGColor;
     body.layer.borderWidth = 1;
     
     CGRect bodyTextFrame = CGRectMake(COMMENT_MARGIN, COMMENT_MARGIN, contentTextWidth, bodyTextSize.height);

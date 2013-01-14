@@ -14,7 +14,7 @@
 
 - (UIColor *)backgroundColor
 {
-    return [UIColor colorWithRed:221.0/255.0 green:255.0/255.0 blue:221.0/255.0 alpha:1];
+    return [UIColor additionLineBackgroundColor];
 }
 
 - (NSString *)beforeLineNumberString
