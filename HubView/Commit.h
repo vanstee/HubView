@@ -1,5 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "Comment.h"
+#import "CommentOrganizer.h"
 #import "File.h"
 #import "GitHubClient.h"
 #import "GitUser.h"
@@ -26,6 +27,5 @@
 - (NSString *)detail;
 - (void)commitWithCompletionBlock:(void (^)(Commit *commit))block;
 - (void)commentsWithCompletionBlock:(void (^)(NSArray *comments))block;
-- (NSDictionary *)commentsByPathAndPosition;
 
 @end

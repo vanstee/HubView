@@ -31,7 +31,7 @@
 
 - (void)setCommit:(Commit *)commit
 {
-    self.commitView.commit = commit;
+    self.commitView.partialCommit = commit;
     if (self.masterPopoverController) { [self.masterPopoverController dismissPopoverAnimated:YES]; }
 }
 

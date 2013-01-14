@@ -21,4 +21,12 @@
     return self;
 }
 
+- (void)setCommentsByPosition:(NSDictionary *)commentsByPosition
+{
+    for (NSNumber *position in [commentsByPosition allKeys]) {
+        Line *line = self.patch.lines[[position integerValue]];
+        line.comments = commentsByPosition[position];
+    }
+}
+
 @end
