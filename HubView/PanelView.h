@@ -6,6 +6,8 @@
 
 @interface PanelView : UIView
 
-- (id)initWithContainerFrame:(CGRect)containerFrame originY:(CGFloat)originY height:(CGFloat)height title:(NSString *)title;
+@property (nonatomic, strong) PanelNavigationBar *navigationBar;
+
+- (void)setTitle:(NSString *)title;
 
 @end

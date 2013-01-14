@@ -13,16 +13,11 @@
     return self;
 }
 
-- (id)initWithTitle:(NSString *)title width:(CGFloat)width
+- (void)setTitle:(NSString *)title
 {
-    CGRect frame = CGRectMake(0, 0, width, PANEL_NAVIGATION_BAR_HEIGHT);
-
-    if(self = [self initWithFrame:frame]) {
-        UINavigationItem *navigationItem = [[UINavigationItem alloc] initWithTitle:title];
-        [self pushNavigationItem:navigationItem animated:NO];
-    }
-
-    return self;
+    [self popNavigationItemAnimated:NO];
+    UINavigationItem *navigationItem = [[UINavigationItem alloc] initWithTitle:title];
+    [self pushNavigationItem:navigationItem animated:NO];
 }
 
 @end

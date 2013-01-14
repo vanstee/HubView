@@ -2,62 +2,48 @@
 
 @implementation FileView
 
-- (id)initWithContainerFrame:(CGRect)containerFrame originY:(CGFloat)originY file:(File *)file;
+- (id)initWithFrame:(CGRect)frame
 {
-    if(self = [super initWithContainerFrame:containerFrame originY:originY height:0 title:file.filename]) {
-        CGRect frame = CGRectMake(0, PANEL_NAVIGATION_BAR_HEIGHT, self.frame.size.width, self.frame.size.height);
-        self.scrollView = [[UIScrollView alloc] initWithFrame:frame];
+    if (self = [super initWithFrame:frame]) {
+        self.autoresizesSubviews = YES;
+
+        CGRect scrollViewFrame = CGRectMake(0, PANEL_NAVIGATION_BAR_HEIGHT, self.frame.size.width, 0);
+        self.scrollView = [[UIScrollView alloc] initWithFrame:scrollViewFrame];
         self.scrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+        self.scrollView.autoresizesSubviews = YES;
         self.scrollView.bounces = NO;
         [self addSubview:self.scrollView];
-
-        NSInteger maxLineWidth = MAX(self.frame.size.width, file.patch.maxLineWidth);
-
-        NSInteger linePosition = 0;
-
-        LineNumberView *beforeLineNumberView = [LineNumberView new];
-        LineNumberView *afterLineNumberView = [LineNumberView new];
-
-        for (Line *line in file.patch.lines) {
-            LineNumberLabel *beforeLineNumber = [[LineNumberLabel alloc] initWithText:line.beforeLineNumberString originY:linePosition];
-            [beforeLineNumberView addSubview:beforeLineNumber];
-
-            LineNumberLabel *afterLineNumber = [[LineNumberLabel alloc] initWithText:line.afterLineNumberString originY:linePosition];
-            [afterLineNumberView addSubview:afterLineNumber];
-
-            LineLabel *label = [[LineLabel alloc] initWithLine:line originY:linePosition width:maxLineWidth];
-            [self.scrollView addSubview:label];
-
-            linePosition += label.frame.size.height;
-
-            if (line.comments) {
-                UIView *commentsView = [CommitView createCommentsViewWithComments:line.comments color:label.backgroundColor andFileView:self];
-                CGRect commentsViewFrame = commentsView.frame;
-                commentsViewFrame.origin.x = LINE_NUMBER_VIEW_WIDTH;
-                commentsViewFrame.origin.y = linePosition;
-                commentsView.frame = commentsViewFrame;
-                [self.scrollView addSubview:commentsView];
-                linePosition += commentsView.frame.size.height;
-            }
-        }
-
-        CGRect beforeFrame = CGRectMake(-1, -1, LINE_NUMBERS_WIDTH, linePosition + 2);
-        beforeLineNumberView.frame = beforeFrame;
-        [self.scrollView addSubview:beforeLineNumberView];
-
-        CGRect afterFrame = CGRectMake(LINE_NUMBERS_WIDTH - 2, -1, LINE_NUMBERS_WIDTH, linePosition + 2);
-        afterLineNumberView.frame = afterFrame;
-        [self.scrollView addSubview:afterLineNumberView];
-
-        CGRect fileViewFrame = CGRectMake(PANEL_MARGIN, originY, containerFrame.size.width - (PANEL_MARGIN * 2), linePosition);
-        self.frame = fileViewFrame;
-
-        CGRect fileScrollViewFrame = CGRectMake(0, PANEL_NAVIGATION_BAR_HEIGHT, self.frame.size.width, linePosition);
-        self.scrollView.frame = fileScrollViewFrame;
-        self.scrollView.contentSize = CGSizeMake(maxLineWidth, linePosition);
     }
 
     return self;
+}
+
+- (void)setFile:(File *)file
+{
+    _file = file;
+    [super setTitle:file.filename];
+
+    CGRect fileContentViewFrame = CGRectMake(GUTTER_WIDTH + 1, 0, self.frame.size.width - GUTTER_WIDTH + 1, 0);
+    FileContentView *fileContentView = [[FileContentView alloc] initWithFrame:fileContentViewFrame];
+    fileContentView.file = self.file;
+    [self.scrollView addSubview:fileContentView];
+    
+    CGRect gutterViewFrame = CGRectMake(0, 0, GUTTER_WIDTH, 0);
+    GutterView *gutterView = [[GutterView alloc] initWithFrame:gutterViewFrame];
+    [gutterView setFileContentViewWidth:fileContentViewFrame.size.width];
+    gutterView.file = file;
+    [self.scrollView addSubview:gutterView];
+    
+    CGRect frame = self.frame;
+    frame.size.height = PANEL_NAVIGATION_BAR_HEIGHT + fileContentView.frame.size.height;
+    self.frame = frame;
+
+    CGRect scrollViewFrame = self.scrollView.frame;
+    scrollViewFrame.size.height = fileContentView.frame.size.height;
+    self.scrollView.frame = scrollViewFrame;
+    
+    CGSize contentSize = CGSizeMake(gutterView.frame.size.width + fileContentView.frame.size.width, fileContentView.frame.size.height);
+    self.scrollView.contentSize = contentSize;
 }
 
 @end

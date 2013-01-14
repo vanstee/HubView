@@ -3,6 +3,8 @@
 #import "LineNumberView.h"
 #import "LineFactory.h"
 
+@class LineNumberView;
+
 @interface Patch : NSObject
 
 @property (nonatomic, strong) NSArray *lines;

@@ -6,6 +6,6 @@
 
 @interface LineLabel : UILabel
 
-- (id)initWithLine:(Line *)line originY:(CGFloat)originY width:(CGFloat)width;
+@property (nonatomic, strong) Line *line;
 
 @end

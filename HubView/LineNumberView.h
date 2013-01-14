@@ -1,12 +1,18 @@
 #import <QuartzCore/QuartzCore.h>
 #import <UIKit/UIKit.h>
-#import "Line.h"
+#import "CommentThreadView.h"
+#import "File.h"
+#import "LineNumberLabel.h"
 
-#define LINE_NUMBER_VIEW_WIDTH 60
+#define LINE_NUMBER_VIEW_WIDTH 32
+
+@class File;
 
 @interface LineNumberView : UIView
 
-@property (nonatomic, strong) NSString *type;
-@property (nonatomic, strong) NSArray *lines;
+@property (nonatomic, strong) File *file;
+@property CGFloat fileContentViewWidth;
+
+- (NSString *)lineNumberType;
 
 @end

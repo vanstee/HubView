@@ -14,19 +14,4 @@
     return self;
 }
 
-- (id)initWithText:(NSString *)text originY:(CGFloat)originY
-{
-    CGRect frame = CGRectMake(LINE_NUMBER_MARGIN, originY, LINE_NUMBER_WIDTH - (LINE_NUMBER_MARGIN * 2), LINE_HEIGHT);
-
-    if ([text isEqualToString:@"..."]) {
-        frame.origin.y = originY - (LINE_HEIGHT / 8.0);
-    }
-
-    if (self = [self initWithFrame:frame]) {
-        self.text = text;
-    }
-
-    return self;
-}
-
 @end

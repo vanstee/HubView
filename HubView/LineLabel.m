@@ -11,17 +11,11 @@
     return self;
 }
 
-- (id)initWithLine:(Line *)line originY:(CGFloat)originY width:(CGFloat)width
+- (void)setLine:(Line *)line
 {
-    CGRect frame = CGRectMake(LINE_NUMBER_VIEW_WIDTH, originY, width, LINE_HEIGHT);
-
-    if(self = [self initWithFrame:frame]) {
-        self.text = [NSString stringWithFormat:@" %@", line.rawLine];
-        self.textColor = line.textColor;
-        self.backgroundColor = line.backgroundColor;
-    }
-
-    return self;
+    self.text = [NSString stringWithFormat:@" %@", line.rawLine];
+    self.textColor = line.textColor;
+    self.backgroundColor = line.backgroundColor;
 }
 
 @end

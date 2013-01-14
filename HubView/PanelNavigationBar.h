@@ -5,6 +5,6 @@
 
 @interface PanelNavigationBar : UINavigationBar
 
-- (id)initWithTitle:(NSString *)title width:(CGFloat)width;
+- (void)setTitle:(NSString *)title;
 
 @end
