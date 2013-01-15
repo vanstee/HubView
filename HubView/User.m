@@ -23,7 +23,7 @@
 - (void)repositoriesWithCompletionBlock:(void (^)(NSArray *repositories))block
 {
     [[[GitHubClient sharedClient] operationQueue] cancelAllOperations];
-    [[GitHubClient sharedClient] getPath:[NSString stringWithFormat:@"/users/%@/repos", self.login] parameters:@{@"per_page" : @"200"} success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [[GitHubClient sharedClient] getPath:[NSString stringWithFormat:@"/users/%@/repos", self.login] parameters:@{@"per_page" : @"200", @"sort" : @"updated"} success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSArray *repositories = [Repository initWithArrayOfDictionaries:responseObject];
         for (Repository *repository in repositories) { repository.owner = self; }
         if (block) { block(repositories); }
