@@ -1,5 +1,8 @@
 #import "GutterView.h"
 
+#import "BeforeLineNumberView.h"
+#import "AfterLineNumberView.h"
+
 @implementation GutterView
 
 - (id)initWithFrame:(CGRect)frame

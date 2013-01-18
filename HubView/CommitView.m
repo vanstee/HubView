@@ -1,5 +1,10 @@
 #import "CommitView.h"
 
+#import "Commit.h"
+#import "CommitLevelCommentThreadView.h"
+#import "FileView.h"
+#import <QuartzCore/QuartzCore.h>
+
 @implementation CommitView
 
 - (id)initWithCoder:(NSCoder *)aDecoder

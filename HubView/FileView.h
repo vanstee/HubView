@@ -1,10 +1,8 @@
-#import "File.h"
-#import "FileContentView.h"
-#import "GutterView.h"
-#import "LineNumberLabel.h"
 #import "PanelView.h"
 
 #define FILE_MARGIN 20
+
+@class File;
 
 @interface FileView : PanelView
 

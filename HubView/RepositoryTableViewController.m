@@ -1,5 +1,10 @@
 #import "RepositoryTableViewController.h"
 
+#import "BranchTableViewController.h"
+#import "CommitViewController.h"
+#import "Repository.h"
+#import "User.h"
+
 @implementation RepositoryTableViewController
 
 - (void)setUser:(User *)user

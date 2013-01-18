@@ -1,5 +1,8 @@
 #import "CommentOrganizer.h"
 
+#import "Comment.h"
+#import "File.h"
+
 @implementation CommentOrganizer
 
 + (NSArray *)commentsWithoutPathAndPosition:(NSArray *)comments

@@ -1,5 +1,7 @@
 #import "GitHubClient.h"
 
+#import "AFJSONRequestOperation.h"
+
 @implementation GitHubClient
 
 + (id)sharedClient {

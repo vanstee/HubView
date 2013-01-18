@@ -1,5 +1,7 @@
 #import "CommitViewController.h"
 
+#import "CommitView.h"
+
 @interface CommitViewController () {
     UIBarButtonItem *loginButton;
     LoginViewController *loginViewController;

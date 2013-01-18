@@ -1,8 +1,4 @@
-#import <QuartzCore/QuartzCore.h>
 #import <UIKit/UIKit.h>
-#import "CommentThreadView.h"
-#import "File.h"
-#import "LineNumberLabel.h"
 
 #define LINE_NUMBER_VIEW_WIDTH 32
 

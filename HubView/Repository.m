@@ -1,5 +1,9 @@
 #import "Repository.h"
 
+#import "Branch.h"
+#import "GitHubClient.h"
+#import "User.h"
+
 @implementation Repository
 
 + (NSArray *)initWithArrayOfDictionaries:(NSArray *)arrayOfDictionaries

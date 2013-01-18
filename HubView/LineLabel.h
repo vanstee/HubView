@@ -1,8 +1,8 @@
 #import <UIKit/UIKit.h>
-#import "Line.h"
-#import "LineNumberView.h"
 
 #define LINE_HEIGHT 16
+
+@class Line;
 
 @interface LineLabel : UILabel
 

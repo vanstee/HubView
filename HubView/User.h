@@ -1,6 +1,4 @@
 #import <Foundation/Foundation.h>
-#import "GitHubClient.h"
-#import "Repository.h"
 
 @interface User : NSObject
 

@@ -1,5 +1,4 @@
 #import <UIKit/UIKit.h>
-#import "CommentView.h"
 
 #define COMMENT_THREAD_MARGIN 10
 

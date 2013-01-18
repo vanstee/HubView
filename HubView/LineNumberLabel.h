@@ -1,5 +1,4 @@
 #import <UIKit/UIKit.h>
-#import "LineLabel.h"
 
 #define LINE_NUMBER_WIDTH_MARGIN 6
 #define LINE_NUMBER_HEIGHT_MARGIN 3

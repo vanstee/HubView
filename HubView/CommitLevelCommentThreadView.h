@@ -1,4 +1,3 @@
-#import "Comment.h"
 #import "PanelView.h"
 
 @interface CommitLevelCommentThreadView : PanelView

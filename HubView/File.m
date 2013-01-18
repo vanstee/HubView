@@ -1,5 +1,9 @@
 #import "File.h"
 
+#import "Commit.h"
+#import "Line.h"
+#import "Patch.h"
+
 @implementation File
 
 + (NSArray *)initWithArrayOfDictionaries:(NSArray *)arrayOfDictionaries

@@ -1,5 +1,10 @@
 #import "Branch.h"
 
+#import "Commit.h"
+#import "GitHubClient.h"
+#import "Repository.h"
+#import "User.h"
+
 @implementation Branch
 
 + (NSArray *)initWithArrayOfDictionaries:(NSArray *)arrayOfDictionaries

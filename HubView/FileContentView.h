@@ -1,8 +1,6 @@
 #import <UIKit/UIKit.h>
-#import "CommentThreadView.h"
-#import "File.h"
-#import "Line.h"
-#import "LineLabel.h"
+
+@class File;
 
 @interface FileContentView : UIView
 

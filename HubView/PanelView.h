@@ -1,8 +1,8 @@
-#import <QuartzCore/QuartzCore.h>
 #import <UIKit/UIKit.h>
-#import "PanelNavigationBar.h"
 
 #define PANEL_MARGIN 20
+
+@class PanelNavigationBar;
 
 @interface PanelView : UIView
 

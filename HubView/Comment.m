@@ -1,5 +1,7 @@
 #import "Comment.h"
 
+#import "User.h"
+
 @implementation Comment
 
 + (NSArray *)initWithArrayOfDictionaries:(NSArray *)arrayOfDictionaries

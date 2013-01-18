@@ -1,10 +1,6 @@
-#import <QuartzCore/QuartzCore.h>
 #import <UIKit/UIKit.h>
-#import "Commit.h"
-#import "CommitLevelCommentThreadView.h"
-#import "FileView.h"
 
-@class Comment;
+@class Commit;
 
 @interface CommitView : UIView
 

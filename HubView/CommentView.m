@@ -1,5 +1,9 @@
 #import "CommentView.h"
 
+#import "Comment.h"
+#import "User.h"
+#import <QuartzCore/QuartzCore.h>
+
 @implementation CommentView
 
 - (void)setComment:(Comment *)comment

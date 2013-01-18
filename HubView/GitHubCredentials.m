@@ -1,12 +1,5 @@
-//
-//  GitHubCredentials.m
-//  HubView
-//
-//  Created by ADML on 2012-12-30.
-//  Copyright (c) 2012 Patrick Van Stee. All rights reserved.
-//
-
 #import "GitHubCredentials.h"
+
 #import <SSKeychain.h>
 
 #define HUBVIEW_KEYCHAIN_SERVICE @"HubView"

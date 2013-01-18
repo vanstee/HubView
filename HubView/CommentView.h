@@ -1,5 +1,4 @@
 #import <UIKit/UIKit.h>
-#import "Comment.h"
 
 #define COMMENT_MARGIN 10
 

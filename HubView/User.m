@@ -1,5 +1,8 @@
 #import "User.h"
 
+#import "GitHubClient.h"
+#import "Repository.h"
+
 @implementation User
 
 + (NSArray *)initWithArrayOfDictionaries:(NSArray *)arrayOfDictionaries

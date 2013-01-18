@@ -1,7 +1,8 @@
 #import <UIKit/UIKit.h>
-#import "Commit.h"
-#import "CommitView.h"
 #import "LoginViewController.h"
+
+@class Commit;
+@class CommitView;
 
 @interface CommitViewController : UIViewController <LoginViewControllerDelegate>
 

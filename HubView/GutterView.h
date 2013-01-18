@@ -1,15 +1,15 @@
 #import <UIKit/UIKit.h>
-#import "File.h"
-#import "Line.h"
-#import "BeforeLineNumberView.h"
-#import "AfterLineNumberView.h"
 
 #define GUTTER_WIDTH 60
 
+@class AfterLineNumberView;
+@class BeforeLineNumberView;
+@class File;
+
 @interface GutterView : UIView
 
-@property (nonatomic, strong) BeforeLineNumberView *beforeLineNumberView;
 @property (nonatomic, strong) AfterLineNumberView *afterLineNumberView;
+@property (nonatomic, strong) BeforeLineNumberView *beforeLineNumberView;
 
 - (id)initWithFrame:(CGRect)frame;
 - (void)setFile:(File *)file;

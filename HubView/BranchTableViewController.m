@@ -1,5 +1,10 @@
 #import "BranchTableViewController.h"
 
+#import "Branch.h"
+#import "CommitViewController.h"
+#import "CommitTableViewController.h"
+#import "Repository.h"
+
 @implementation BranchTableViewController
 
 - (void)setBranches:(NSArray *)branches

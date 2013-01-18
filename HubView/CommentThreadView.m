@@ -1,5 +1,7 @@
 #import "CommentThreadView.h"
 
+#import "CommentView.h"
+
 @implementation CommentThreadView
 
 - (void)setComments:(NSArray *)comments

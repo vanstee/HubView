@@ -1,5 +1,11 @@
 #import "FileContentView.h"
 
+#import "CommentThreadView.h"
+#import "File.h"
+#import "Line.h"
+#import "LineLabel.h"
+#import "Patch.h"
+
 @implementation FileContentView
 
 - (void)setFile:(File *)file

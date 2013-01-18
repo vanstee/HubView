@@ -1,5 +1,13 @@
 #import "LineNumberView.h"
 
+#import "CommentThreadView.h"
+#import "File.h"
+#import "Line.h"
+#import "LineLabel.h"
+#import "LineNumberLabel.h"
+#import "Patch.h"
+#import <QuartzCore/QuartzCore.h>
+
 @implementation LineNumberView
 
 - (id)initWithFrame:(CGRect)frame

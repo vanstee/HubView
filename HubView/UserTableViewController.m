@@ -1,5 +1,9 @@
 #import "UserTableViewController.h"
+
+#import "CommitViewController.h"
+#import "Search.h"
 #import "RepositoryTableViewController.h"
+#import "User.h"
 
 @implementation UserTableViewController
 

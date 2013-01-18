@@ -1,5 +1,7 @@
 #import "LineLabel.h"
 
+#import "Line.h"
+
 @implementation LineLabel
 
 - (id)initWithFrame:(CGRect)frame

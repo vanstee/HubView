@@ -1,5 +1,10 @@
 #import "CommitLevelCommentThreadView.h"
 
+#import "Comment.h"
+#import "CommentView.h"
+#import "CommentThreadView.h"
+#import "PanelNavigationBar.h"
+
 @implementation CommitLevelCommentThreadView
 
 - (id)initWithFrame:(CGRect)frame

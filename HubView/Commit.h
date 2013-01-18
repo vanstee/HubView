@@ -1,12 +1,7 @@
 #import <Foundation/Foundation.h>
-#import "Comment.h"
-#import "CommentOrganizer.h"
-#import "File.h"
-#import "GitHubClient.h"
-#import "GitUser.h"
-#import "Repository.h"
-#import "User.h"
 
+@class Commit;
+@class GitUser;
 @class Repository;
 @class User;
 

@@ -1,5 +1,12 @@
 #import "LineFactory.h"
 
+#import "Line.h"
+#import "AdditionLine.h"
+#import "CommentLine.h"
+#import "ContextLine.h"
+#import "DeletionLine.h"
+#import "RangeLine.h"
+
 @implementation LineFactory
 
 + (id)createLineWithRawLine:(NSString *)rawLine

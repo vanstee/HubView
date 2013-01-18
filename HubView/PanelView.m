@@ -1,5 +1,8 @@
 #import "PanelView.h"
 
+#import "PanelNavigationBar.h"
+#import <QuartzCore/QuartzCore.h>
+
 @implementation PanelView
 
 - (id)initWithFrame:(CGRect)frame

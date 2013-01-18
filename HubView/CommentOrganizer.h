@@ -1,6 +1,4 @@
 #import <Foundation/Foundation.h>
-#import "Comment.h"
-#import "File.h"
 
 @interface CommentOrganizer : NSObject
 

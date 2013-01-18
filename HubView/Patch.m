@@ -1,5 +1,9 @@
 #import "Patch.h"
 
+#import "Line.h"
+#import "LineNumberView.h"
+#import "LineFactory.h"
+
 @implementation Patch
 
 - (id)initWithRawPatch:(NSString *)rawPatch

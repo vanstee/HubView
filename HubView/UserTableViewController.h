@@ -1,6 +1,4 @@
 #import <UIKit/UIKit.h>
-#import "CommitViewController.h"
-#import "Search.h"
 
 @interface UserTableViewController : UITableViewController <UISearchBarDelegate>
 

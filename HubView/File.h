@@ -1,6 +1,4 @@
 #import <Foundation/Foundation.h>
-#import "Commit.h"
-#import "Patch.h"
 
 @class Commit;
 @class Patch;

@@ -1,5 +1,10 @@
 #import "FileView.h"
 
+#import "File.h"
+#import "FileContentView.h"
+#import "GutterView.h"
+#import "PanelNavigationBar.h"
+
 @implementation FileView
 
 - (id)initWithFrame:(CGRect)frame

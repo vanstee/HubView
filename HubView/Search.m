@@ -1,5 +1,8 @@
 #import "Search.h"
 
+#import "GitHubClient.h"
+#import "User.h"
+
 @implementation Search
 
 - (id)initWithDictionary:(NSDictionary *)attributes

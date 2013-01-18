@@ -1,4 +1,3 @@
-#import <QuartzCore/QuartzCore.h>
 #import <UIKit/UIKit.h>
 
 #define PANEL_NAVIGATION_BAR_HEIGHT 44
