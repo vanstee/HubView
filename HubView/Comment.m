@@ -1,5 +1,6 @@
 #import "Comment.h"
 
+#import <GHMarkdownParser.h>
 #import "User.h"
 
 @implementation Comment
@@ -25,6 +26,11 @@
         if (attributes[@"path"] != [NSNull null]) { self.path = attributes[@"path"]; }
     }
     return self;
+}
+
+- (NSString *)parsedBody
+{
+    return self.body.HTMLStringFromMarkdown;
 }
 
 @end

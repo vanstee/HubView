@@ -51,17 +51,13 @@
     body.layer.borderColor = [UIColor commentBorderColor].CGColor;
     body.layer.borderWidth = 1;
     
-    CGRect bodyTextFrame = CGRectMake(COMMENT_MARGIN, COMMENT_MARGIN, contentTextWidth, bodyTextSize.height);
-    UILabel *bodyText = [[UILabel alloc] initWithFrame:bodyTextFrame];
-    bodyText.text = comment.body;
-    bodyText.font = bodyFont;
-    bodyText.backgroundColor = [UIColor clearColor];
-    bodyText.lineBreakMode = NSLineBreakByWordWrapping;
-    bodyText.numberOfLines = 0;
-    
+    CGRect bodyWebViewFrame = CGRectMake(COMMENT_MARGIN, COMMENT_MARGIN, contentTextWidth, bodyTextSize.height);
+    UIWebView *bodyWebView = [[UIWebView alloc] initWithFrame:bodyWebViewFrame];
+    [bodyWebView loadHTMLString:comment.parsedBody baseURL:nil];
+
     [header addSubview:headerText];
     [header addSubview:headerDate];
-    [body addSubview:bodyText];
+    [body addSubview:bodyWebView];
     [self addSubview:header];
     [self addSubview:body];
 

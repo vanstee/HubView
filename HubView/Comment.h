@@ -13,5 +13,6 @@
 
 + (NSArray *)initWithArrayOfDictionaries:(NSArray *)arrayOfDictionaries;
 - (id)initWithDictionary:(NSDictionary *)attributes;
+- (NSString *)parsedBody;
 
 @end
