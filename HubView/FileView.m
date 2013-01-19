@@ -30,12 +30,13 @@
 
     CGRect fileContentViewFrame = CGRectMake(GUTTER_WIDTH + 1, 0, self.frame.size.width - GUTTER_WIDTH + 1, 0);
     FileContentView *fileContentView = [[FileContentView alloc] initWithFrame:fileContentViewFrame];
+    fileContentView.fileView = self;
     fileContentView.file = self.file;
     [self.scrollView addSubview:fileContentView];
     
     CGRect gutterViewFrame = CGRectMake(0, 0, GUTTER_WIDTH, 0);
     GutterView *gutterView = [[GutterView alloc] initWithFrame:gutterViewFrame];
-    [gutterView setFileContentViewWidth:fileContentViewFrame.size.width];
+    gutterView.fileContentView = fileContentView;
     gutterView.file = file;
     [self.scrollView addSubview:gutterView];
     

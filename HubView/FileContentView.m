@@ -26,6 +26,7 @@
         if (line.comments) {
             CGRect commentThreadViewFrame = CGRectMake(0, linePosition, maxLineWidth, 0);
             CommentThreadView *commentThreadView = [[CommentThreadView alloc] initWithFrame:commentThreadViewFrame];
+            commentThreadView.fileContentView = self;
             commentThreadView.backgroundColor = label.backgroundColor;
             commentThreadView.comments = line.comments;
             [self addSubview:commentThreadView];

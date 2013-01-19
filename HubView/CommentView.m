@@ -1,6 +1,10 @@
 #import "CommentView.h"
 
 #import "Comment.h"
+#import "CommentThreadView.h"
+#import "CommitLevelCommentThreadView.h"
+#import "FileContentView.h"
+#import "FileView.h"
 #import "User.h"
 #import <QuartzCore/QuartzCore.h>
 
@@ -64,6 +68,19 @@
     CGRect frame = self.frame;
     frame.size.height += headerFrame.size.height + bodyFrame.size.height;
     self.frame = frame;
+}
+
+- (CommitView *)commitView
+{
+    CommitView *commitView = nil;
+
+    if (self.commentThreadView) {
+        commitView = self.commentThreadView.fileContentView.fileView.commitView;
+    } else if(self.commitLevelCommentThreadView) {
+        commitView = self.commitLevelCommentThreadView.commitView;
+    }
+
+    return commitView;
 }
 
 @end

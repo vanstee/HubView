@@ -75,6 +75,7 @@
         CGFloat originY = previous ? previous.frame.origin.y + previous.frame.size.height + FILE_MARGIN : FILE_MARGIN;
         CGRect fileViewFrame = CGRectMake(FILE_MARGIN, originY, self.frame.size.width - (FILE_MARGIN * 2), 0);
         FileView *fileView = [[FileView alloc] initWithFrame:fileViewFrame];
+        fileView.commitView = self;
         fileView.file = file;
         [self.scrollView addSubview:fileView];
         previous = fileView;
@@ -84,6 +85,7 @@
         CGFloat originY = previous ? previous.frame.origin.y + previous.frame.size.height + FILE_MARGIN : FILE_MARGIN;
         CGRect commitLevelCommentThreadViewFrame = CGRectMake(FILE_MARGIN, originY, self.frame.size.width - (FILE_MARGIN * 2), 0);
         CommitLevelCommentThreadView *commitLevelCommentThreadView = [[CommitLevelCommentThreadView alloc] initWithFrame:commitLevelCommentThreadViewFrame];
+        commitLevelCommentThreadView.commitView = self;
         commitLevelCommentThreadView.comments = self.commit.comments;
         [self.scrollView addSubview:commitLevelCommentThreadView];
         previous = commitLevelCommentThreadView;

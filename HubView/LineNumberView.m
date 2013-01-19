@@ -2,6 +2,7 @@
 
 #import "CommentThreadView.h"
 #import "File.h"
+#import "FileContentView.h"
 #import "Line.h"
 #import "LineLabel.h"
 #import "LineNumberLabel.h"
@@ -42,8 +43,9 @@
         linePosition += LINE_HEIGHT;
         
         if (line.comments) {
-            CGRect commentThreadViewFrame = CGRectMake(0, 0, self.fileContentViewWidth, 0);
+            CGRect commentThreadViewFrame = CGRectMake(0, 0, self.fileContentView.frame.size.width, 0);
             CommentThreadView *commentThreadView = [[CommentThreadView alloc] initWithFrame:commentThreadViewFrame];
+            commentThreadView.fileContentView = self.fileContentView;
             commentThreadView.comments = line.comments;
             linePosition += commentThreadView.frame.size.height;
         }

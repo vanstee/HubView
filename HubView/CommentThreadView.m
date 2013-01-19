@@ -11,6 +11,7 @@
     for (Comment *comment in comments) {
         CGRect commentViewFrame = CGRectMake(COMMENT_THREAD_MARGIN, position + COMMENT_THREAD_MARGIN, self.frame.size.width - (COMMENT_THREAD_MARGIN * 2), 0);
         CommentView *commentView = [[CommentView alloc] initWithFrame:commentViewFrame];
+        commentView.commentThreadView = self;
         commentView.comment = comment;
         
         [self addSubview:commentView];

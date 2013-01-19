@@ -3,11 +3,12 @@
 #define LINE_NUMBER_VIEW_WIDTH 32
 
 @class File;
+@class FileContentView;
 
 @interface LineNumberView : UIView
 
 @property (nonatomic, strong) File *file;
-@property CGFloat fileContentViewWidth;
+@property (nonatomic, weak) FileContentView *fileContentView;
 
 - (NSString *)lineNumberType;
 

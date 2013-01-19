@@ -22,18 +22,19 @@
 
 - (void)setFile:(File *)file
 {
-    [self.beforeLineNumberView setFile:file];
-    [self.afterLineNumberView setFile:file];
+    self.beforeLineNumberView.file = file;
+    self.afterLineNumberView.file = file;
+
     [self addSubview:self.beforeLineNumberView];
     [self addSubview:self.afterLineNumberView];
 
     self.frame = self.beforeLineNumberView.frame;
 }
 
-- (void)setFileContentViewWidth:(CGFloat)fileContentViewWidth
+- (void)setFileContentView:(FileContentView *)fileContentView
 {
-    self.beforeLineNumberView.fileContentViewWidth = fileContentViewWidth;
-    self.afterLineNumberView.fileContentViewWidth = fileContentViewWidth;
+    _fileContentView = fileContentView;
+    self.beforeLineNumberView.fileContentView = fileContentView;
 }
 
 @end
