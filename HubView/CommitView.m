@@ -1,5 +1,6 @@
 #import "CommitView.h"
 
+#import "Comment.h"
 #import "Commit.h"
 #import "CommitLevelCommentThreadView.h"
 #import "FileView.h"
@@ -40,6 +41,21 @@
 {
     if (_commit) { _commit.comments = comments; }
     _comments = comments;
+
+    self.commentWebViews = [[NSMutableArray alloc] initWithCapacity:comments.count];
+
+    for (Comment *comment in comments) {
+        UIWebView *commentWebView = [UIWebView new];
+        commentWebView.delegate = self;
+        [commentWebView loadHTMLString:comment.parsedBody baseURL:nil];
+        [self.commentWebViews addObject:commentWebView];
+    }
+
+    [self refresh];
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
     [self refresh];
 }
 
