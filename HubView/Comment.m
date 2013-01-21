@@ -1,5 +1,6 @@
 #import "Comment.h"
 
+#import "CommentBodyParser.h"
 #import <GHMarkdownParser.h>
 #import "User.h"
 
@@ -30,7 +31,7 @@
 
 - (NSString *)parsedBody
 {
-    return self.body.HTMLStringFromMarkdown;
+    return [CommentBodyParser htmlForMarkdownString:self.body];
 }
 
 @end

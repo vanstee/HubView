@@ -27,6 +27,9 @@
 		105D58E516955A0500A9B166 /* LineNumberView.m in Sources */ = {isa = PBXBuildFile; fileRef = 105D58E416955A0500A9B166 /* LineNumberView.m */; };
 		105D590916965CCB00A9B166 /* LineNumberLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 105D590816965CCB00A9B166 /* LineNumberLabel.m */; };
 		105D590D16966B6400A9B166 /* LineLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 105D590C16966B6400A9B166 /* LineLabel.m */; };
+		106220FA16AC7FFB0095B211 /* CommentBodyParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 106220F916AC7FFB0095B211 /* CommentBodyParser.m */; };
+		106220FD16AC821F0095B211 /* MarkdownHeader.html in Resources */ = {isa = PBXBuildFile; fileRef = 106220FC16AC821F0095B211 /* MarkdownHeader.html */; };
+		106220FF16AC822D0095B211 /* MarkdownFooter.html in Resources */ = {isa = PBXBuildFile; fileRef = 106220FE16AC822D0095B211 /* MarkdownFooter.html */; };
 		1063DF351676994D00FA22EB /* Commit.m in Sources */ = {isa = PBXBuildFile; fileRef = 1063DF341676994D00FA22EB /* Commit.m */; };
 		1063DF451676DEA900FA22EB /* NSDate+Formatting.m in Sources */ = {isa = PBXBuildFile; fileRef = 1063DF3F1676BA6100FA22EB /* NSDate+Formatting.m */; };
 		1063DF481676E23500FA22EB /* CommitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1063DF471676E23500FA22EB /* CommitViewController.m */; };
@@ -114,6 +117,10 @@
 		105D590816965CCB00A9B166 /* LineNumberLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineNumberLabel.m; sourceTree = "<group>"; };
 		105D590B16966B6400A9B166 /* LineLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineLabel.h; sourceTree = "<group>"; };
 		105D590C16966B6400A9B166 /* LineLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineLabel.m; sourceTree = "<group>"; };
+		106220F816AC7FFB0095B211 /* CommentBodyParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentBodyParser.h; sourceTree = "<group>"; };
+		106220F916AC7FFB0095B211 /* CommentBodyParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentBodyParser.m; sourceTree = "<group>"; };
+		106220FC16AC821F0095B211 /* MarkdownHeader.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = MarkdownHeader.html; sourceTree = "<group>"; };
+		106220FE16AC822D0095B211 /* MarkdownFooter.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = MarkdownFooter.html; sourceTree = "<group>"; };
 		1063DF331676994D00FA22EB /* Commit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Commit.h; sourceTree = "<group>"; };
 		1063DF341676994D00FA22EB /* Commit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Commit.m; sourceTree = "<group>"; };
 		1063DF3E1676BA6100FA22EB /* NSDate+Formatting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+Formatting.h"; sourceTree = "<group>"; };
@@ -300,6 +307,8 @@
 				10CB25BE1676309400A33C32 /* Branch.m */,
 				10DEF1BF1683F8EF00970EFF /* Comment.h */,
 				10DEF1C01683F8EF00970EFF /* Comment.m */,
+				106220F816AC7FFB0095B211 /* CommentBodyParser.h */,
+				106220F916AC7FFB0095B211 /* CommentBodyParser.m */,
 				103907511680474800F9FE7C /* CommentLine.h */,
 				103907521680474900F9FE7C /* CommentLine.m */,
 				10F1EFE51698A1A8007E55C8 /* CommentOrganizer.h */,
@@ -372,12 +381,12 @@
 		10BCC3F91675411900CCB5A9 /* HubView */ = {
 			isa = PBXGroup;
 			children = (
-				10B1D9D316A390BD006B70F7 /* Models */,
-				10B1D9D216A3907E006B70F7 /* Views */,
-				10B1D9D116A39035006B70F7 /* Controllers */,
 				10B1D9D016A39015006B70F7 /* Application */,
+				10B1D9D116A39035006B70F7 /* Controllers */,
 				10BCC40B1675411900CCB5A9 /* MainStoryboard.storyboard */,
+				10B1D9D316A390BD006B70F7 /* Models */,
 				10BCC3FA1675411900CCB5A9 /* Supporting Files */,
+				10B1D9D216A3907E006B70F7 /* Views */,
 			);
 			path = HubView;
 			sourceTree = "<group>";
@@ -385,14 +394,16 @@
 		10BCC3FA1675411900CCB5A9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				103375201682D4B000291D98 /* Menlo.ttc */,
-				10BCC3FB1675411900CCB5A9 /* HubView-Info.plist */,
-				10BCC3FC1675411900CCB5A9 /* InfoPlist.strings */,
-				10BCC3FF1675411900CCB5A9 /* main.m */,
-				10BCC4011675411900CCB5A9 /* HubView-Prefix.pch */,
+				10BCC4091675411900CCB5A9 /* Default-568h@2x.png */,
 				10BCC4051675411900CCB5A9 /* Default.png */,
 				10BCC4071675411900CCB5A9 /* Default@2x.png */,
-				10BCC4091675411900CCB5A9 /* Default-568h@2x.png */,
+				10BCC3FB1675411900CCB5A9 /* HubView-Info.plist */,
+				10BCC4011675411900CCB5A9 /* HubView-Prefix.pch */,
+				10BCC3FC1675411900CCB5A9 /* InfoPlist.strings */,
+				10BCC3FF1675411900CCB5A9 /* main.m */,
+				106220FE16AC822D0095B211 /* MarkdownFooter.html */,
+				106220FC16AC821F0095B211 /* MarkdownHeader.html */,
+				103375201682D4B000291D98 /* Menlo.ttc */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -483,6 +494,8 @@
 				10BCC40D1675411900CCB5A9 /* MainStoryboard.storyboard in Resources */,
 				103375211682D4B000291D98 /* Menlo.ttc in Resources */,
 				F164E2EB1690D5050053103F /* LoginViewController.xib in Resources */,
+				106220FD16AC821F0095B211 /* MarkdownHeader.html in Resources */,
+				106220FF16AC822D0095B211 /* MarkdownFooter.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -563,6 +576,7 @@
 				10B1D9B616A341C2006B70F7 /* CommentThreadView.m in Sources */,
 				10B1D9E916A3928F006B70F7 /* UIColor+CustomColors.m in Sources */,
 				10B1D9F816A39959006B70F7 /* CommitLevelCommentThreadView.m in Sources */,
+				106220FA16AC7FFB0095B211 /* CommentBodyParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
