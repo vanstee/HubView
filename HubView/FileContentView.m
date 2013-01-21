@@ -23,7 +23,7 @@
         
         linePosition += label.frame.size.height;
         
-        if (line.comments) {
+        if (line.comments && line.comments.count) {
             CGRect commentThreadViewFrame = CGRectMake(0, linePosition, maxLineWidth, 0);
             CommentThreadView *commentThreadView = [[CommentThreadView alloc] initWithFrame:commentThreadViewFrame];
             commentThreadView.fileContentView = self;

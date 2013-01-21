@@ -81,7 +81,7 @@
         previous = fileView;
     }
 
-    if(self.commit.comments) {
+    if(self.commit.comments && self.commit.comments.count) {
         CGFloat originY = previous ? previous.frame.origin.y + previous.frame.size.height + FILE_MARGIN : FILE_MARGIN;
         CGRect commitLevelCommentThreadViewFrame = CGRectMake(FILE_MARGIN, originY, self.frame.size.width - (FILE_MARGIN * 2), 0);
         CommitLevelCommentThreadView *commitLevelCommentThreadView = [[CommitLevelCommentThreadView alloc] initWithFrame:commitLevelCommentThreadViewFrame];

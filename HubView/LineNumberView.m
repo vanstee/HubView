@@ -42,7 +42,7 @@
         
         linePosition += LINE_HEIGHT;
         
-        if (line.comments) {
+        if (line.comments && line.comments.count) {
             CGRect commentThreadViewFrame = CGRectMake(0, 0, self.fileContentView.frame.size.width, 0);
             CommentThreadView *commentThreadView = [[CommentThreadView alloc] initWithFrame:commentThreadViewFrame];
             commentThreadView.fileContentView = self.fileContentView;
