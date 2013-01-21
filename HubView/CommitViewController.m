@@ -67,6 +67,11 @@
     self.view.backgroundColor = [UIColor underPageBackgroundColor];
 }
 
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    [(CommitView *)self.view refresh];
+}
+
 #pragma mark - Login View Controller Delegate
 - (void)loginViewController:(LoginViewController *)loginViewController wasSaved:(id)sender {
     [loginPopoverController dismissPopoverAnimated:YES];

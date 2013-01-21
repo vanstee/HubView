@@ -10,7 +10,6 @@
 @property (nonatomic, strong) NSMutableArray *commentWebViews;
 @property (nonatomic, strong) UIScrollView *scrollView;
 
-- (void)displayCommit;
-- (void)hideCommit;
+- (void)refresh;
 
 @end
