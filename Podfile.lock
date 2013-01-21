@@ -1,13 +1,16 @@
 
 PODS:
+- AFNetworking (1.1.0)
 - GHMarkdownParser (0.0.1)
 - SSKeychain (0.1.4)
 
 DEPENDENCIES:
+- AFNetworking (~> 1.1.0)
 - GHMarkdownParser (~> 0.0.1)
 - SSKeychain (~> 0.1.4)
 
 SPEC CHECKSUMS:
+  AFNetworking: 761a418233d280c1e0580bcb76ff9cb4c3073d17
   GHMarkdownParser: 52174cb8daaaa4a9eafb84de3b252b4f3cc0cf91
   SSKeychain: bae692a4354f48691ca3463a121dc8060f781a7d
 

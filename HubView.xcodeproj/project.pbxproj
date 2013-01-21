@@ -54,15 +54,6 @@
 		10BCC40D1675411900CCB5A9 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10BCC40B1675411900CCB5A9 /* MainStoryboard.storyboard */; };
 		10BCC420167541CE00CCB5A9 /* UserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10BCC41F167541CE00CCB5A9 /* UserTableViewController.m */; };
 		10BCC4241675451000CCB5A9 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 10BCC4231675451000CCB5A9 /* User.m */; };
-		10BCC49A1675842A00CCB5A9 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 10BCC4881675842A00CCB5A9 /* AFHTTPClient.m */; };
-		10BCC49B1675842A00CCB5A9 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 10BCC48A1675842A00CCB5A9 /* AFHTTPRequestOperation.m */; };
-		10BCC49C1675842A00CCB5A9 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 10BCC48C1675842A00CCB5A9 /* AFImageRequestOperation.m */; };
-		10BCC49D1675842A00CCB5A9 /* AFJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 10BCC48E1675842A00CCB5A9 /* AFJSONRequestOperation.m */; };
-		10BCC49E1675842A00CCB5A9 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 10BCC4901675842A00CCB5A9 /* AFNetworkActivityIndicatorManager.m */; };
-		10BCC49F1675842A00CCB5A9 /* AFPropertyListRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 10BCC4931675842A00CCB5A9 /* AFPropertyListRequestOperation.m */; };
-		10BCC4A01675842A00CCB5A9 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 10BCC4951675842A00CCB5A9 /* AFURLConnectionOperation.m */; };
-		10BCC4A11675842A00CCB5A9 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 10BCC4971675842A00CCB5A9 /* AFXMLRequestOperation.m */; };
-		10BCC4A21675842A00CCB5A9 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 10BCC4991675842A00CCB5A9 /* UIImageView+AFNetworking.m */; };
 		10CB25B61675B51D00A33C32 /* RepositoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10CB25B51675B51D00A33C32 /* RepositoryTableViewController.m */; };
 		10CB25B91675B55C00A33C32 /* Repository.m in Sources */ = {isa = PBXBuildFile; fileRef = 10CB25B81675B55C00A33C32 /* Repository.m */; };
 		10CB25BC16762FF500A33C32 /* BranchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10CB25BB16762FF500A33C32 /* BranchTableViewController.m */; };
@@ -163,25 +154,6 @@
 		10BCC41F167541CE00CCB5A9 /* UserTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTableViewController.m; sourceTree = "<group>"; };
 		10BCC4221675451000CCB5A9 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		10BCC4231675451000CCB5A9 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		10BCC4871675842A00CCB5A9 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
-		10BCC4881675842A00CCB5A9 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
-		10BCC4891675842A00CCB5A9 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
-		10BCC48A1675842A00CCB5A9 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
-		10BCC48B1675842A00CCB5A9 /* AFImageRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFImageRequestOperation.h; sourceTree = "<group>"; };
-		10BCC48C1675842A00CCB5A9 /* AFImageRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFImageRequestOperation.m; sourceTree = "<group>"; };
-		10BCC48D1675842A00CCB5A9 /* AFJSONRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFJSONRequestOperation.h; sourceTree = "<group>"; };
-		10BCC48E1675842A00CCB5A9 /* AFJSONRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFJSONRequestOperation.m; sourceTree = "<group>"; };
-		10BCC48F1675842A00CCB5A9 /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
-		10BCC4901675842A00CCB5A9 /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkActivityIndicatorManager.m; sourceTree = "<group>"; };
-		10BCC4911675842A00CCB5A9 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
-		10BCC4921675842A00CCB5A9 /* AFPropertyListRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFPropertyListRequestOperation.h; sourceTree = "<group>"; };
-		10BCC4931675842A00CCB5A9 /* AFPropertyListRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFPropertyListRequestOperation.m; sourceTree = "<group>"; };
-		10BCC4941675842A00CCB5A9 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
-		10BCC4951675842A00CCB5A9 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
-		10BCC4961675842A00CCB5A9 /* AFXMLRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFXMLRequestOperation.h; sourceTree = "<group>"; };
-		10BCC4971675842A00CCB5A9 /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
-		10BCC4981675842A00CCB5A9 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
-		10BCC4991675842A00CCB5A9 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		10CB25B41675B51D00A33C32 /* RepositoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepositoryTableViewController.h; sourceTree = "<group>"; };
 		10CB25B51675B51D00A33C32 /* RepositoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepositoryTableViewController.m; sourceTree = "<group>"; };
 		10CB25B71675B55C00A33C32 /* Repository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Repository.h; sourceTree = "<group>"; };
@@ -349,7 +321,6 @@
 			isa = PBXGroup;
 			children = (
 				10DEF1C81684300000970EFF /* QuartzCore.framework */,
-				10BCC4861675842A00CCB5A9 /* AFNetworking */,
 				10BCC3F21675411900CCB5A9 /* Frameworks */,
 				10BCC3F91675411900CCB5A9 /* HubView */,
 				1030296F167C28DE0056B9AC /* MobileCoreServices.framework */,
@@ -406,33 +377,6 @@
 				103375201682D4B000291D98 /* Menlo.ttc */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		10BCC4861675842A00CCB5A9 /* AFNetworking */ = {
-			isa = PBXGroup;
-			children = (
-				10BCC4871675842A00CCB5A9 /* AFHTTPClient.h */,
-				10BCC4881675842A00CCB5A9 /* AFHTTPClient.m */,
-				10BCC4891675842A00CCB5A9 /* AFHTTPRequestOperation.h */,
-				10BCC48A1675842A00CCB5A9 /* AFHTTPRequestOperation.m */,
-				10BCC48B1675842A00CCB5A9 /* AFImageRequestOperation.h */,
-				10BCC48C1675842A00CCB5A9 /* AFImageRequestOperation.m */,
-				10BCC48D1675842A00CCB5A9 /* AFJSONRequestOperation.h */,
-				10BCC48E1675842A00CCB5A9 /* AFJSONRequestOperation.m */,
-				10BCC48F1675842A00CCB5A9 /* AFNetworkActivityIndicatorManager.h */,
-				10BCC4901675842A00CCB5A9 /* AFNetworkActivityIndicatorManager.m */,
-				10BCC4911675842A00CCB5A9 /* AFNetworking.h */,
-				10BCC4921675842A00CCB5A9 /* AFPropertyListRequestOperation.h */,
-				10BCC4931675842A00CCB5A9 /* AFPropertyListRequestOperation.m */,
-				10BCC4941675842A00CCB5A9 /* AFURLConnectionOperation.h */,
-				10BCC4951675842A00CCB5A9 /* AFURLConnectionOperation.m */,
-				10BCC4961675842A00CCB5A9 /* AFXMLRequestOperation.h */,
-				10BCC4971675842A00CCB5A9 /* AFXMLRequestOperation.m */,
-				10BCC4981675842A00CCB5A9 /* UIImageView+AFNetworking.h */,
-				10BCC4991675842A00CCB5A9 /* UIImageView+AFNetworking.m */,
-			);
-			name = AFNetworking;
-			path = AFNetworking/AFNetworking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -528,15 +472,6 @@
 				10BCC4041675411900CCB5A9 /* AppDelegate.m in Sources */,
 				10BCC420167541CE00CCB5A9 /* UserTableViewController.m in Sources */,
 				10BCC4241675451000CCB5A9 /* User.m in Sources */,
-				10BCC49A1675842A00CCB5A9 /* AFHTTPClient.m in Sources */,
-				10BCC49B1675842A00CCB5A9 /* AFHTTPRequestOperation.m in Sources */,
-				10BCC49C1675842A00CCB5A9 /* AFImageRequestOperation.m in Sources */,
-				10BCC49D1675842A00CCB5A9 /* AFJSONRequestOperation.m in Sources */,
-				10BCC49E1675842A00CCB5A9 /* AFNetworkActivityIndicatorManager.m in Sources */,
-				10BCC49F1675842A00CCB5A9 /* AFPropertyListRequestOperation.m in Sources */,
-				10BCC4A01675842A00CCB5A9 /* AFURLConnectionOperation.m in Sources */,
-				10BCC4A11675842A00CCB5A9 /* AFXMLRequestOperation.m in Sources */,
-				10BCC4A21675842A00CCB5A9 /* UIImageView+AFNetworking.m in Sources */,
 				10CB25B61675B51D00A33C32 /* RepositoryTableViewController.m in Sources */,
 				10CB25B91675B55C00A33C32 /* Repository.m in Sources */,
 				10CB25BC16762FF500A33C32 /* BranchTableViewController.m in Sources */,

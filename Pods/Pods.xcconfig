@@ -1,7 +1,7 @@
 ALWAYS_SEARCH_USER_PATHS = YES
 HEADER_SEARCH_PATHS = ${PODS_HEADERS_SEARCH_PATHS} "${PODS_ROOT}/GHMarkdownParser/discount"
-OTHER_LDFLAGS = -ObjC -ObjC -all_load -framework Security
-PODS_BUILD_HEADERS_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/GHMarkdownParser" "${PODS_ROOT}/BuildHeaders/SSKeychain"
+OTHER_LDFLAGS = -ObjC -ObjC -all_load -framework MobileCoreServices -framework Security -framework SystemConfiguration
+PODS_BUILD_HEADERS_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/AFNetworking" "${PODS_ROOT}/BuildHeaders/GHMarkdownParser" "${PODS_ROOT}/BuildHeaders/SSKeychain"
 PODS_HEADERS_SEARCH_PATHS = ${PODS_PUBLIC_HEADERS_SEARCH_PATHS}
-PODS_PUBLIC_HEADERS_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/GHMarkdownParser" "${PODS_ROOT}/Headers/SSKeychain"
+PODS_PUBLIC_HEADERS_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/AFNetworking" "${PODS_ROOT}/Headers/GHMarkdownParser" "${PODS_ROOT}/Headers/SSKeychain"
 PODS_ROOT = ${SRCROOT}/Pods
