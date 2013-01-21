@@ -9,7 +9,7 @@
 {
     NSMutableArray *commentsArray = [[NSMutableArray alloc] initWithCapacity:comments.count];
     for (Comment *comment in comments) {
-        if (comment.path && comment.position) { [commentsArray addObject:comment]; }
+        if (!comment.path && !comment.position) { [commentsArray addObject:comment]; }
     }
     return commentsArray;
 }
