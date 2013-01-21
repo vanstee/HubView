@@ -35,6 +35,7 @@
 {
     _fileContentView = fileContentView;
     self.beforeLineNumberView.fileContentView = fileContentView;
+    self.afterLineNumberView.fileContentView = fileContentView;
 }
 
 @end
