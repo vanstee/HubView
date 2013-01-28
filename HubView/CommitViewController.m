@@ -1,11 +1,21 @@
 #import "CommitViewController.h"
 
+#import "Comment.h"
 #import "CommitView.h"
+#import "CommentFormViewController.h"
+#import "File.h"
+#import "GitHubCredentials.h"
+#import "Line.h"
+#import "LineLabel.h"
+#import "Patch.h"
+#import "User.h"
 
 @interface CommitViewController () {
     UIBarButtonItem *loginButton;
     LoginViewController *loginViewController;
     UIPopoverController *loginPopoverController;
+    CommentFormViewController *commentFormViewController;
+    UIPopoverController *commentFormPopoverController;
 }
 @end
 
@@ -72,13 +82,57 @@
     [(CommitView *)self.view refresh];
 }
 
+- (void)displayCommentFormForLineLabel:(LineLabel *)lineLabel
+{
+    commentFormViewController = [[CommentFormViewController alloc] initWithNibName:@"CommentFormViewController" bundle:nil];
+    commentFormViewController.delegate = self;
+    commentFormViewController.line = lineLabel.line;
+    commentFormPopoverController = [[UIPopoverController alloc] initWithContentViewController:commentFormViewController];
+    [commentFormPopoverController presentPopoverFromRect:lineLabel.bounds inView:lineLabel permittedArrowDirections:UIPopoverArrowDirectionDown|UIPopoverArrowDirectionUp animated:YES];
+}
+
 #pragma mark - Login View Controller Delegate
+
 - (void)loginViewController:(LoginViewController *)loginViewController wasSaved:(id)sender {
     [loginPopoverController dismissPopoverAnimated:YES];
 }
 
 - (void)loginViewController:(LoginViewController *)loginViewController wasCancelled:(id)sender {
     [loginPopoverController dismissPopoverAnimated:YES];
+}
+
+#pragma mark - CommentFormViewControllerDelegate
+
+
+- (void)commentFormViewController:(CommentFormViewController *)controller wasSubmitted:(id)sender withLine:(Line *)line
+{
+    File *file = line.patch.file;
+    Commit *commit = file.commit;
+    Comment *comment = [[Comment alloc] initWithDictionary:@{
+                            @"commit": commit,
+                            @"path": file.filename,
+                            @"line": @(line.beforeLineNumber),
+                            @"position": @([file.patch.lines indexOfObject:line]),
+                            @"body": controller.commentBody.text
+                        }];
+    comment.createdAt = [NSDate date];
+    comment.user = [[User alloc] initWithDictionary:@{@"login": [GitHubCredentials sharedCredentials].username}];
+
+    [Comment submitComment:comment completionBlock:^(bool successful) {
+        if (successful) {
+            [commentFormPopoverController dismissPopoverAnimated:YES];
+            NSMutableArray *comments = [NSMutableArray arrayWithArray:self.commitView.comments];
+            [comments addObject:comment];
+            self.commitView.comments = comments;
+        } else {
+            [[[UIAlertView alloc] initWithTitle:@"Error" message:@"There were problems submitting your comment. Please try again." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+        }
+    }];
+}
+
+- (void)commentFormViewController:(CommentFormViewController *)commentFormViewController wasCancelled:(id)sender
+{
+    [commentFormPopoverController dismissPopoverAnimated:YES];
 }
 
 @end

@@ -21,6 +21,7 @@
     if (self) {
         self.filename = attributes[@"filename"];
         self.patch = [[Patch alloc] initWithRawPatch:attributes[@"patch"]];
+        self.patch.file = self;
     }
     return self;
 }

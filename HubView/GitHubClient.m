@@ -18,7 +18,9 @@
     self = [super initWithBaseURL:url];
     if (self) {
         [self registerHTTPOperationClass:[AFJSONRequestOperation class]];
+        [self setParameterEncoding:AFJSONParameterEncoding];
         [self setDefaultHeader:@"Accept" value:@"application/json"];
+        [self setDefaultHeader:@"Content-Type" value:@"application/json"];
     }
     return self;
 }

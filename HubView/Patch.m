@@ -10,7 +10,13 @@
 {
     self = [super init];
     if (self) {
-        self.lines = [LineFactory createLinesWithRawLines:[rawPatch componentsSeparatedByString:@"\n"]];
+        NSArray *lines = [LineFactory createLinesWithRawLines:[rawPatch componentsSeparatedByString:@"\n"]];
+
+        for (Line *line in lines) {
+            line.patch = self;
+        }
+
+        self.lines = lines;
     }
     return self;
 }

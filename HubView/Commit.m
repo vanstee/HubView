@@ -31,6 +31,10 @@
         if (attributes[@"author"] != [NSNull null]) { self.author = [[User alloc] initWithDictionary:attributes[@"author"]]; }
         if (attributes[@"committer"] != [NSNull null]) { self.committer = [[User alloc] initWithDictionary:attributes[@"committer"]]; }
         if (attributes[@"files"] != [NSNull null]) { self.files = [File initWithArrayOfDictionaries:attributes[@"files"]]; }
+
+        for (File *file in self.files) {
+            file.commit = self;
+        }
     }
     return self;
 }
