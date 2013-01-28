@@ -1,5 +1,6 @@
 #import "GitHubCredentials.h"
 
+#import "GitHubClient.h"
 #import <SSKeychain.h>
 
 #define HUBVIEW_KEYCHAIN_SERVICE @"HubView"
@@ -23,6 +24,7 @@
     BOOL success = [SSKeychain setPassword:password forService:HUBVIEW_KEYCHAIN_SERVICE account:username];
     if (success) {
         [[NSNotificationCenter defaultCenter] postNotificationName:kCredentialsChangedNotification object:self];
+        [[GitHubClient sharedClient] setAuthorizationHeaderWithUsername:username password:password];
     }
     
     return success;
