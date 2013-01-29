@@ -13,5 +13,6 @@
 
 - (void)setCommit:(Commit *)commit;
 - (void)displayCommentFormForLineLabel:(LineLabel *)lineLabel;
+- (void)displayCommentFormForButton:(UIButton *)button line:(Line *)line;
 
 @end

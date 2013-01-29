@@ -91,6 +91,15 @@
     [commentFormPopoverController presentPopoverFromRect:lineLabel.bounds inView:lineLabel permittedArrowDirections:UIPopoverArrowDirectionDown|UIPopoverArrowDirectionUp animated:YES];
 }
 
+- (void)displayCommentFormForButton:(UIButton *)button line:(Line *)line
+{
+    commentFormViewController = [[CommentFormViewController alloc] initWithNibName:@"CommentFormViewController" bundle:nil];
+    commentFormViewController.delegate = self;
+    commentFormViewController.line = line;
+    commentFormPopoverController = [[UIPopoverController alloc] initWithContentViewController:commentFormViewController];
+    [commentFormPopoverController presentPopoverFromRect:button.bounds inView:button permittedArrowDirections:UIPopoverArrowDirectionDown|UIPopoverArrowDirectionUp animated:YES];
+}
+
 #pragma mark - Login View Controller Delegate
 
 - (void)loginViewController:(LoginViewController *)loginViewController wasSaved:(id)sender {
