@@ -14,5 +14,7 @@
 - (void)setCommit:(Commit *)commit;
 - (void)displayCommentFormForLineLabel:(LineLabel *)lineLabel;
 - (void)displayCommentFormForButton:(UIButton *)button line:(Line *)line;
+- (void)keyboardWillShow:(NSNotification *)notification;
+- (void)keyboardWillHide:(NSNotification *)notification;
 
 @end

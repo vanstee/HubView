@@ -93,6 +93,7 @@
     originY = previous ? previous.frame.origin.y + previous.frame.size.height + FILE_MARGIN : 0;
     self.scrollView.contentSize = CGSizeMake(self.frame.size.width, originY);
     [self addSubview:self.scrollView];
+    [self.scrollView setContentOffset:CGPointMake(0, 0) animated:YES];
 }
 
 - (void)hideCommit

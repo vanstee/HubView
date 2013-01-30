@@ -16,6 +16,7 @@
     UIPopoverController *loginPopoverController;
     CommentFormViewController *commentFormViewController;
     UIPopoverController *commentFormPopoverController;
+    bool keyboardIsShown;
 }
 @end
 
@@ -142,6 +143,60 @@
 - (void)commentFormViewController:(CommentFormViewController *)commentFormViewController wasCancelled:(id)sender
 {
     [commentFormPopoverController dismissPopoverAnimated:YES];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:self.commitView.window];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:self.commitView.window];
+
+    keyboardIsShown = NO;
+}
+
+
+- (void)viewDidUnload {
+    [super viewDidUnload];
+
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+}
+
+- (void)keyboardWillHide:(NSNotification *)notification
+{
+    NSDictionary* userInfo = [notification userInfo];
+    CGSize keyboardSize = [[userInfo objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    CGRect viewFrame = self.commitView.scrollView.frame;
+    viewFrame.size.height += keyboardSize.height;
+
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationBeginsFromCurrentState:YES];
+    [UIView setAnimationDuration:0.3];
+    [self.commitView.scrollView setFrame:viewFrame];
+    [UIView commitAnimations];
+
+    keyboardIsShown = NO;
+}
+
+- (void)keyboardWillShow:(NSNotification *)notification
+{
+    if (keyboardIsShown) { return; }
+
+    NSDictionary* userInfo = [notification userInfo];
+    CGSize keyboardSize = [[userInfo objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    CGRect viewFrame = self.commitView.scrollView.frame;
+    viewFrame.size.height -= keyboardSize.height;
+
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationBeginsFromCurrentState:YES];
+    [UIView setAnimationDuration:0.3];
+    [self.commitView.scrollView setFrame:viewFrame];
+    [UIView commitAnimations];
+    CGPoint bottomOffset = CGPointMake(0, [self.commitView.scrollView contentSize].height - self.commitView.scrollView.frame.size.height);
+    [self.commitView.scrollView setContentOffset:bottomOffset animated:YES];
+
+    keyboardIsShown = YES;
 }
 
 @end
