@@ -24,7 +24,7 @@
         difference = round(seconds / MINUTE);
         unit = @"minute";
     } else if (seconds < DAY) {
-        difference = round(seconds / MINUTE);
+        difference = round(seconds / HOUR);
         unit = @"hour";
     } else if (seconds < WEEK) {
         difference = round(seconds / DAY);

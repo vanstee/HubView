@@ -1,11 +1,11 @@
 #import <Foundation/Foundation.h>
 
 #define MINUTE 60
-#define HOUR 3600
-#define DAY 86400
-#define WEEK 604800
-#define MONTH 2592000
-#define YEAR 31557600
+#define HOUR (MINUTE * 60)
+#define DAY (HOUR * 24)
+#define WEEK (DAY * 7)
+#define MONTH (DAY * 30)
+#define YEAR (DAY * 365.25)
 
 @interface NSDate (Formatting)
 
