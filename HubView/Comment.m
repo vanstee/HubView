@@ -41,12 +41,14 @@
 
 - (NSDictionary *)attributes
 {
-    return @{
-        @"body": self.body,
-        @"line": @(self.line),
-        @"path": self.path,
-        @"position": @(self.position)
-    };
+    NSMutableDictionary *attributes = [[NSMutableDictionary alloc] initWithCapacity:4];
+
+    if (self.body)     { attributes[@"body"]     = self.body; }
+    if (self.line)     { attributes[@"line"]     = @(self.line); }
+    if (self.position) { attributes[@"position"] = @(self.position); }
+    if (self.path)     { attributes[@"path"]     = self.path; }
+    
+    return attributes;
 }
 
 + (void)submitComment:(Comment *)comment completionBlock:(void (^)(bool))block
