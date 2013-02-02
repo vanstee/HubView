@@ -9,6 +9,7 @@
 
 @property (nonatomic, strong) NSString *sha;
 @property (nonatomic, strong) NSString *message;
+@property (nonatomic, strong) NSString *fullMessage;
 @property (nonatomic, strong) GitUser *gitAuthor;
 @property (nonatomic, strong) GitUser *gitCommitter;
 @property (nonatomic, strong) User *author;

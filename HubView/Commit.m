@@ -25,6 +25,7 @@
     if (self) {
         self.sha = attributes[@"sha"];
         self.message = [attributes[@"commit"][@"message"] componentsSeparatedByString: @"\n"][0];
+        self.fullMessage = attributes[@"commit"][@"message"];
         self.gitAuthor = [[GitUser alloc] initWithDictionary:attributes[@"commit"][@"author"]];
         self.gitCommitter = [[GitUser alloc] initWithDictionary:attributes[@"commit"][@"committer"]];
         self.repository = attributes[@"repository"];

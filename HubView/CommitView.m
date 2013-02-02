@@ -3,6 +3,7 @@
 #import "Comment.h"
 #import "Commit.h"
 #import "CommitLevelCommentThreadView.h"
+#import "CommitMessageView.h"
 #import "FileView.h"
 #import <QuartzCore/QuartzCore.h>
 
@@ -71,9 +72,16 @@
 {
     UIView *previous = nil;
     CGFloat originY = 0;
-    
+
+    originY = previous ? previous.frame.origin.y + previous.frame.size.height + FILE_MARGIN : FILE_MARGIN;
+    CGRect commitMessageViewFrame = CGRectMake(FILE_MARGIN, originY, self.frame.size.width - (FILE_MARGIN * 2), 0);
+    CommitMessageView *commitMessageView = [[CommitMessageView alloc] initWithFrame:commitMessageViewFrame];
+    commitMessageView.commitMessage = self.commit.fullMessage;
+    [self.scrollView addSubview:commitMessageView];
+    originY += commitMessageView.frame.size.height;
+
     for (File *file in self.commit.files) {
-        originY = previous ? previous.frame.origin.y + previous.frame.size.height + FILE_MARGIN : FILE_MARGIN;
+        originY = previous ? previous.frame.origin.y + previous.frame.size.height + FILE_MARGIN : originY + FILE_MARGIN;
         CGRect fileViewFrame = CGRectMake(FILE_MARGIN, originY, self.frame.size.width - (FILE_MARGIN * 2), 0);
         FileView *fileView = [[FileView alloc] initWithFrame:fileViewFrame];
         fileView.commitView = self;

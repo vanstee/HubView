@@ -61,6 +61,7 @@
 		10CB25BC16762FF500A33C32 /* BranchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10CB25BB16762FF500A33C32 /* BranchTableViewController.m */; };
 		10CB25BF1676309400A33C32 /* Branch.m in Sources */ = {isa = PBXBuildFile; fileRef = 10CB25BE1676309400A33C32 /* Branch.m */; };
 		10CB25C216763EDA00A33C32 /* CommitTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10CB25C116763EDA00A33C32 /* CommitTableViewController.m */; };
+		10CFA23216BB9241003C67FE /* CommitMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10CFA23116BB9241003C67FE /* CommitMessageView.m */; };
 		10DD5CA9169BBD5D0048C53A /* GutterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DD5CA8169BBD5B0048C53A /* GutterView.m */; };
 		10DEF1C11683F8EF00970EFF /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DEF1C01683F8EF00970EFF /* Comment.m */; };
 		10DEF1C91684300000970EFF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10DEF1C81684300000970EFF /* QuartzCore.framework */; };
@@ -169,6 +170,8 @@
 		10CB25BE1676309400A33C32 /* Branch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Branch.m; sourceTree = "<group>"; };
 		10CB25C016763EDA00A33C32 /* CommitTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommitTableViewController.h; sourceTree = "<group>"; };
 		10CB25C116763EDA00A33C32 /* CommitTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommitTableViewController.m; sourceTree = "<group>"; };
+		10CFA23016BB9241003C67FE /* CommitMessageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommitMessageView.h; sourceTree = "<group>"; };
+		10CFA23116BB9241003C67FE /* CommitMessageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommitMessageView.m; sourceTree = "<group>"; };
 		10DD5CA7169BBD5A0048C53A /* GutterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GutterView.h; sourceTree = "<group>"; };
 		10DD5CA8169BBD5B0048C53A /* GutterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GutterView.m; sourceTree = "<group>"; };
 		10DEF1BF1683F8EF00970EFF /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
@@ -253,6 +256,8 @@
 				10B1D9A516A27AF9006B70F7 /* CommentView.m */,
 				10B1D9F616A39958006B70F7 /* CommitLevelCommentThreadView.h */,
 				10B1D9F716A39958006B70F7 /* CommitLevelCommentThreadView.m */,
+				10CFA23016BB9241003C67FE /* CommitMessageView.h */,
+				10CFA23116BB9241003C67FE /* CommitMessageView.m */,
 				1058B10F16815F5700EF2E93 /* CommitView.h */,
 				1058B11016815F5800EF2E93 /* CommitView.m */,
 				10B1D9AB16A27CD1006B70F7 /* FileContentView.h */,
@@ -522,6 +527,7 @@
 				10B1D9F816A39959006B70F7 /* CommitLevelCommentThreadView.m in Sources */,
 				106220FA16AC7FFB0095B211 /* CommentBodyParser.m in Sources */,
 				109D694E16B3A05C001CE31C /* CommentFormViewController.m in Sources */,
+				10CFA23216BB9241003C67FE /* CommitMessageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
