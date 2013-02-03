@@ -7,7 +7,9 @@
 - (id)initWithFrame:(CGRect)frame
 {
     if(self = [super initWithFrame:frame]) {
-        self.backgroundColor = [UIColor whiteColor];
+        self.layer.backgroundColor = [UIColor commitMessageViewBackgroundColor].CGColor;
+        self.layer.borderWidth = 1;
+        self.layer.borderColor = [UIColor commitMessageViewBorderColor].CGColor;
         self.layer.masksToBounds = NO;
         self.layer.cornerRadius = 0;
         self.layer.shadowOffset = CGSizeMake(0, 1);
@@ -54,27 +56,31 @@
     CGSize bodySize = [body sizeWithFont:bodyFont constrainedToSize:CGSizeMake(self.frame.size.width, 500) lineBreakMode:NSLineBreakByWordWrapping];
 
     CGRect subjectFrame = CGRectMake(COMMIT_MESSAGE_PADDING, COMMIT_MESSAGE_PADDING,  self.frame.size.width - (COMMIT_MESSAGE_PADDING * 2), subjectSize.height);
-    CGRect bodyFrame = CGRectMake(COMMIT_MESSAGE_PADDING, COMMIT_MESSAGE_PADDING + subjectSize.height + COMMIT_MESSAGE_PADDING, self.frame.size.width - (COMMIT_MESSAGE_PADDING * 2), bodySize.height);
+    CGRect bodyFrame = CGRectMake(COMMIT_MESSAGE_PADDING, (COMMIT_MESSAGE_PADDING / 2.0) + subjectSize.height + COMMIT_MESSAGE_PADDING, self.frame.size.width - (COMMIT_MESSAGE_PADDING * 2), bodySize.height);
 
     UILabel *subjectLabel = [[UILabel alloc] initWithFrame:subjectFrame];
     subjectLabel.font = subjectFont;
+    subjectLabel.textColor = [UIColor commitMessageFontColor];
     subjectLabel.lineBreakMode = NSLineBreakByWordWrapping;
     subjectLabel.numberOfLines = 0;
+    subjectLabel.backgroundColor = [UIColor clearColor];
     subjectLabel.text = subject;
     [self addSubview:subjectLabel];
 
     if (![body isEqualToString:@""]) {
         UILabel *bodyLabel = [[UILabel alloc] initWithFrame:bodyFrame];
         bodyLabel.font = bodyFont;
+        bodyLabel.textColor = [UIColor commitMessageFontColor];
         bodyLabel.lineBreakMode = NSLineBreakByWordWrapping;
         bodyLabel.numberOfLines = 0;
+        bodyLabel.backgroundColor = [UIColor clearColor];
         bodyLabel.text = body;
         [self addSubview:bodyLabel];
     }
 
     CGRect frame = self.frame;
     frame.size.height = COMMIT_MESSAGE_PADDING + subjectSize.height;
-    if (![body isEqualToString:@""]) { frame.size.height += COMMIT_MESSAGE_PADDING + bodySize.height; }
+    if (![body isEqualToString:@""]) { frame.size.height += (COMMIT_MESSAGE_PADDING / 2.0) + bodySize.height; }
     frame.size.height += COMMIT_MESSAGE_PADDING;
     self.frame = frame;
 }

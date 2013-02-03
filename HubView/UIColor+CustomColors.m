@@ -57,6 +57,21 @@
     return [UIColor colorWithRed:182.0/255.0 green:187.0/255.0 blue:204.0/255.0 alpha:1];
 }
 
++ (UIColor *)commitMessageFontColor
+{
+    return [UIColor colorWithRed:32.0/255.0 green:32.0/255.0 blue:32.0/255.0 alpha:1];
+}
+
++ (UIColor *)commitMessageViewBackgroundColor
+{
+    return [UIColor colorWithRed:244.0/255.0 green:245.0/255.0 blue:248.0/255.0 alpha:1];
+}
+
++ (UIColor *)commitMessageViewBorderColor
+{
+    return [UIColor colorWithRed:122.0/255.0 green:127.0/255.0 blue:144.0/255.0 alpha:1];
+}
+
 + (UIColor *)rangeLineBackgroundColor
 {
     return [UIColor colorWithRed:234.0/255.0 green:242.0/255.0 blue:245.0/255.0 alpha:1];

@@ -13,6 +13,9 @@
 + (UIColor *)lineNumberFontColor;
 + (UIColor *)lineNumberViewBackgroundColor;
 + (UIColor *)lineNumberViewBorderColor;
++ (UIColor *)commitMessageFontColor;
++ (UIColor *)commitMessageViewBackgroundColor;
++ (UIColor *)commitMessageViewBorderColor;
 + (UIColor *)rangeLineBackgroundColor;
 
 @end

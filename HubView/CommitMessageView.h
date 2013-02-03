@@ -1,6 +1,6 @@
 #import <UIKit/UIKit.h>
 
-#define COMMIT_MESSAGE_PADDING 10
+#define COMMIT_MESSAGE_PADDING 20
 
 @interface CommitMessageView : UIView
 
