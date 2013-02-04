@@ -6,6 +6,7 @@
 #import "CommitView.h"
 #import "GitHubCredentials.h"
 #import "PanelNavigationBar.h"
+#import "PrettyButton.h"
 #import "User.h"
 #import <QuartzCore/QuartzCore.h>
 
@@ -46,9 +47,8 @@
     [self addSubview:commentBody];
     position += commentBody.frame.size.height + COMMENT_THREAD_MARGIN;
     
-    UIButton *submitButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    UIButton *submitButton = [[PrettyButton alloc] initWithFrame:CGRectMake(0, 0, 64, 30)];
     [submitButton setTitle:@"Submit" forState:UIControlStateNormal];
-    [submitButton sizeToFit];
     CGPoint submitButtonPoint = CGPointMake(self.frame.size.width - COMMENT_THREAD_MARGIN - submitButton.frame.size.width, position + COMMENT_THREAD_MARGIN);
     submitButton.frame = CGRectMake(submitButtonPoint.x, submitButtonPoint.y, submitButton.frame.size.width, submitButton.frame.size.height);
     [submitButton addTarget:self action:@selector(touchButton:) forControlEvents:UIControlEventTouchUpInside];

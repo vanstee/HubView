@@ -6,6 +6,7 @@
 #import "FileView.h"
 #import "GutterView.h"
 #import "Line.h"
+#import "PrettyButton.h"
 
 @implementation CommentThreadView
 
@@ -25,9 +26,8 @@
         position += commentView.frame.size.height + COMMENT_THREAD_MARGIN;
     }
 
-    UIButton *replyButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    UIButton *replyButton = [[PrettyButton alloc] initWithFrame:CGRectMake(0, 0, 54, 30)];
     [replyButton setTitle:@"Reply" forState:UIControlStateNormal];
-    [replyButton sizeToFit];
     CGPoint replyButtonPoint = CGPointMake(width - COMMENT_THREAD_MARGIN - replyButton.frame.size.width, position + COMMENT_THREAD_MARGIN);
     replyButton.frame = CGRectMake(replyButtonPoint.x, replyButtonPoint.y, replyButton.frame.size.width, replyButton.frame.size.height);
 

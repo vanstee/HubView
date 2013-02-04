@@ -56,6 +56,7 @@
 		10BCC40D1675411900CCB5A9 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10BCC40B1675411900CCB5A9 /* MainStoryboard.storyboard */; };
 		10BCC420167541CE00CCB5A9 /* UserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10BCC41F167541CE00CCB5A9 /* UserTableViewController.m */; };
 		10BCC4241675451000CCB5A9 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 10BCC4231675451000CCB5A9 /* User.m */; };
+		10C229CF16BEF521002681CE /* PrettyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 10C229CE16BEF520002681CE /* PrettyButton.m */; };
 		10CB25B61675B51D00A33C32 /* RepositoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10CB25B51675B51D00A33C32 /* RepositoryTableViewController.m */; };
 		10CB25B91675B55C00A33C32 /* Repository.m in Sources */ = {isa = PBXBuildFile; fileRef = 10CB25B81675B55C00A33C32 /* Repository.m */; };
 		10CB25BC16762FF500A33C32 /* BranchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10CB25BB16762FF500A33C32 /* BranchTableViewController.m */; };
@@ -160,6 +161,8 @@
 		10BCC41F167541CE00CCB5A9 /* UserTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTableViewController.m; sourceTree = "<group>"; };
 		10BCC4221675451000CCB5A9 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		10BCC4231675451000CCB5A9 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		10C229CD16BEF520002681CE /* PrettyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrettyButton.h; sourceTree = "<group>"; };
+		10C229CE16BEF520002681CE /* PrettyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrettyButton.m; sourceTree = "<group>"; };
 		10CB25B41675B51D00A33C32 /* RepositoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepositoryTableViewController.h; sourceTree = "<group>"; };
 		10CB25B51675B51D00A33C32 /* RepositoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepositoryTableViewController.m; sourceTree = "<group>"; };
 		10CB25B71675B55C00A33C32 /* Repository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Repository.h; sourceTree = "<group>"; };
@@ -279,6 +282,8 @@
 				1032FDBD1694F08C00F55F2D /* PanelNavigationBar.m */,
 				1032FDB81694E80F00F55F2D /* PanelView.h */,
 				1032FDB91694E80F00F55F2D /* PanelView.m */,
+				10C229CD16BEF520002681CE /* PrettyButton.h */,
+				10C229CE16BEF520002681CE /* PrettyButton.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -528,6 +533,7 @@
 				106220FA16AC7FFB0095B211 /* CommentBodyParser.m in Sources */,
 				109D694E16B3A05C001CE31C /* CommentFormViewController.m in Sources */,
 				10CFA23216BB9241003C67FE /* CommitMessageView.m in Sources */,
+				10C229CF16BEF521002681CE /* PrettyButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

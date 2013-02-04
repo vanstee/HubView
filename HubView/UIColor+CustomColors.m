@@ -17,6 +17,31 @@
     return [UIColor colorWithRed:202.0/255.0 green:202.0/255.0 blue:202.0/255.0 alpha:1];
 }
 
++ (UIColor *)commentButtonBorderColor
+{
+    return [UIColor colorWithRed:202.0/255.0 green:202.0/255.0 blue:202.0/255.0 alpha:1];
+}
+
++ (UIColor *)commentButtonBackgroundGradientStartColor
+{
+    return [UIColor colorWithRed:247.0/255.0 green:248.0/255.0 blue:250.0/255.0 alpha:1];
+}
+
++ (UIColor *)commentButtonBackgroundGradientEndColor
+{
+    return [UIColor colorWithRed:209.0/255.0 green:212.0/255.0 blue:221.0/255.0 alpha:1];
+}
+
++ (UIColor *)commentButtonNormalFontColor
+{
+    return [UIColor colorWithRed:32.0/255.0 green:32.0/255.0 blue:32.0/255.0 alpha:1];
+}
+
++ (UIColor *)commentButtonHighlightedFontColor
+{
+    return [UIColor colorWithRed:82.0/255.0 green:82.0/255.0 blue:82.0/255.0 alpha:1];
+}
+
 + (UIColor *)commentHeaderGradientStartColor
 {
     return [UIColor colorWithRed:247.0/255.0 green:248.0/255.0 blue:250.0/255.0 alpha:1];

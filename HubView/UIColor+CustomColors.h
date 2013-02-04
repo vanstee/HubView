@@ -5,6 +5,11 @@
 + (UIColor *)additionLineBackgroundColor;
 + (UIColor *)commentBodyBackgroundColor;
 + (UIColor *)commentBorderColor;
++ (UIColor *)commentButtonBorderColor;
++ (UIColor *)commentButtonBackgroundGradientStartColor;
++ (UIColor *)commentButtonBackgroundGradientEndColor;
++ (UIColor *)commentButtonNormalFontColor;
++ (UIColor *)commentButtonHighlightedFontColor;
 + (UIColor *)commentHeaderGradientEndColor;
 + (UIColor *)commentHeaderGradientStartColor;
 + (UIColor *)commentLineBackgroundColor;
