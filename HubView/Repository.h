@@ -5,6 +5,7 @@
 @interface Repository : NSObject
 
 @property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *defaultBranch;
 @property (nonatomic, strong) NSDate *updatedAt;
 @property (nonatomic, strong) User *owner;
 
