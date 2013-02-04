@@ -18,6 +18,7 @@
 {
     if (self = [super initWithFrame:frame]) {
         self.title = @"Comments";
+        self.backgroundColor = [UIColor commitMessageViewBackgroundColor];
     }
 
     return self;
