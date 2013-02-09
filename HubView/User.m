@@ -1,6 +1,7 @@
 #import "User.h"
 
 #import "GitHubClient.h"
+#import "GitHubCredentials.h"
 #import "Repository.h"
 
 @implementation User
@@ -26,7 +27,8 @@
 - (void)repositoriesWithCompletionBlock:(void (^)(NSArray *repositories))block
 {
     [[[GitHubClient sharedClient] operationQueue] cancelAllOperations];
-    [[GitHubClient sharedClient] getPath:[NSString stringWithFormat:@"/users/%@/repos", self.login] parameters:@{@"per_page" : @"200", @"sort" : @"updated"} success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    NSString *path = [[[GitHubCredentials sharedCredentials].username lowercaseString] isEqualToString:[_login lowercaseString]] ? @"/user/repos" : [NSString stringWithFormat:@"/users/%@/repos", self.login];
+    [[GitHubClient sharedClient] getPath:path parameters:@{@"per_page" : @"200", @"sort" : @"updated"} success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSArray *repositories = [Repository initWithArrayOfDictionaries:responseObject];
         for (Repository *repository in repositories) { repository.owner = self; }
         if (block) { block(repositories); }
