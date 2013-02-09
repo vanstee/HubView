@@ -4,6 +4,7 @@
 #import "CommitView.h"
 #import "CommentFormViewController.h"
 #import "File.h"
+#import "GitHubClient.h"
 #import "GitHubCredentials.h"
 #import "Line.h"
 #import "LineLabel.h"
@@ -23,10 +24,16 @@
 @implementation CommitViewController
 
 - (void)loginButtonTapped:(id)sender {
-    [self makeLoginViewController];
-    [self makeLoginPopoverController];
-    
-    [loginPopoverController presentPopoverFromBarButtonItem:loginButton permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    if ([loginButton.title isEqualToString:@"Login"]) {
+        [self makeLoginViewController];
+        [self makeLoginPopoverController];
+        [loginPopoverController presentPopoverFromBarButtonItem:loginButton permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
+    } else {
+        [loginViewController clearInputs];
+        [[GitHubCredentials sharedCredentials] clearExistingAccounts];
+        [[GitHubClient sharedClient] clearAuthorizationHeader];
+        [loginButton setTitle:@"Login"];
+    }
 }
 
 - (void)makeLoginViewController {
@@ -105,6 +112,7 @@
 
 - (void)loginViewController:(LoginViewController *)loginViewController wasSaved:(id)sender {
     [loginPopoverController dismissPopoverAnimated:YES];
+    [loginButton setTitle:@"Logout"];
 }
 
 - (void)loginViewController:(LoginViewController *)loginViewController wasCancelled:(id)sender {

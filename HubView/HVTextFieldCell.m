@@ -14,6 +14,8 @@
         self.textField.autocorrectionType = UITextAutocorrectionTypeNo;
         self.textField.clearButtonMode = UITextFieldViewModeWhileEditing;
         self.textField.textColor = self.detailTextLabel.textColor;
+        self.textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+        self.textField.autocorrectionType = UITextAutocorrectionTypeNo;
         [self.contentView addSubview:self.textField];
     }
     

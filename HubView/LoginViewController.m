@@ -26,7 +26,7 @@ enum LoginViewCells {
         
         usernameCell = [[HVTextFieldCell alloc] initWithReuseIdentifier:@"UsernameCell"];
         usernameCell.textLabel.text = @"Username";
-        usernameCell.textField.placeholder = @"vanstee";
+        usernameCell.textField.placeholder = @"Required";
         
         passwordCell = [[HVTextFieldCell alloc] initWithReuseIdentifier:@"PasswordCell"];
         passwordCell.textLabel.text = @"Password";
@@ -118,6 +118,11 @@ enum LoginViewCells {
 
 - (NSString *)password {
     return passwordCell.textField.text;
+}
+
+- (void)clearInputs {
+    usernameCell.textField.text = @"";
+    passwordCell.textField.text = @"";
 }
 
 @end

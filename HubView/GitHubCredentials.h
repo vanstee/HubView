@@ -7,6 +7,7 @@ static NSString* const kCredentialsChangedNotification = @"CredentialsChangedNot
 + (GitHubCredentials *)sharedCredentials;
 
 - (BOOL)setUsername:(NSString *)username password:(NSString *)password;
+- (void)clearExistingAccounts;
 - (NSString *)username;
 - (NSString *)password;
     

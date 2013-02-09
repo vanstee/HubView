@@ -18,5 +18,6 @@
 
 - (IBAction)saveButtonTapped:(id)sender;
 - (IBAction)cancelButtonTouched:(id)sender;
+- (void)clearInputs;
 
 @end
