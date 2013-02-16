@@ -9,6 +9,7 @@
 
 + (NSArray *)initWithArrayOfDictionaries:(NSArray *)arrayOfDictionaries;
 - (id)initWithDictionary:(NSDictionary *)attributes;
+- (void)commitsAfterSHA:(NSString *)sha withCompletionBlock:(void (^)(NSArray *commits))block;
 - (void)commitsWithCompletionBlock:(void (^)(NSArray *commits))block;
 
 @end

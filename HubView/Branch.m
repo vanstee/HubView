@@ -26,10 +26,20 @@
     return self;
 }
 
+- (void)commitsAfterSHA:(NSString *)sha withCompletionBlock:(void (^)(NSArray *commits))block
+{
+    [[[GitHubClient sharedClient] operationQueue] cancelAllOperations];
+    [[GitHubClient sharedClient] getPath:[NSString stringWithFormat:@"/repos/%@/%@/commits", self.repository.owner.login, self.repository.name] parameters:@{@"sha" : self.name, @"per_page" : @(100), @"last_sha": sha, @"top" : self.name} success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSArray *commits = [Commit initWithArrayOfDictionaries:responseObject];
+        for (Commit *commit in commits) { commit.repository = self.repository; }
+        if (block) { block(commits); }
+    } failure:nil];
+}
+
 - (void)commitsWithCompletionBlock:(void (^)(NSArray *commits))block
 {
     [[[GitHubClient sharedClient] operationQueue] cancelAllOperations];
-    [[GitHubClient sharedClient] getPath:[NSString stringWithFormat:@"/repos/%@/%@/commits", self.repository.owner.login, self.repository.name] parameters:@{@"sha" : self.name} success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [[GitHubClient sharedClient] getPath:[NSString stringWithFormat:@"/repos/%@/%@/commits", self.repository.owner.login, self.repository.name] parameters:@{@"sha" : self.name, @"per_page" : @(100), @"top" : self.name} success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSArray *commits = [Commit initWithArrayOfDictionaries:responseObject];
         for (Commit *commit in commits) { commit.repository = self.repository; }
         if (block) { block(commits); }
