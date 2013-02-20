@@ -27,12 +27,20 @@
 - (void)repositoriesWithCompletionBlock:(void (^)(NSArray *repositories))block
 {
     [[[GitHubClient sharedClient] operationQueue] cancelAllOperations];
-    NSString *path = [[[GitHubCredentials sharedCredentials].username lowercaseString] isEqualToString:[_login lowercaseString]] ? @"/user/repos" : [NSString stringWithFormat:@"/users/%@/repos", self.login];
+    NSString *path = [self regularOrPersonalRepositoriesPath];
     [[GitHubClient sharedClient] getPath:path parameters:@{@"per_page" : @"100", @"sort" : @"updated"} success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSArray *repositories = [Repository initWithArrayOfDictionaries:responseObject];
         for (Repository *repository in repositories) { repository.owner = self; }
         if (block) { block(repositories); }
     } failure:nil];
+}
+
+- (NSString *)regularOrPersonalRepositoriesPath {
+    if ([[GitHubCredentials sharedCredentials].username.lowercaseString isEqualToString:self.login.lowercaseString] && [GitHubClient sharedClient].loggedIn) {
+        return @"/user/repos";
+    } else {
+        return [NSString stringWithFormat:@"/users/%@/repos", self.login];
+    }
 }
 
 @end
