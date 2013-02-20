@@ -35,7 +35,7 @@
 - (void)branchesWithCompletionBlock:(void (^)(NSArray *branches))block
 {
     [[[GitHubClient sharedClient] operationQueue] cancelAllOperations];
-    [[GitHubClient sharedClient] getPath:[NSString stringWithFormat:@"/repos/%@/%@/branches", self.owner.login, self.name] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [[GitHubClient sharedClient] getPath:[NSString stringWithFormat:@"/repos/%@/%@/branches", self.owner.login, self.name] parameters:@{@"per_page": @(100)} success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSArray *branches = [Branch initWithArrayOfDictionaries:responseObject];
         for (Branch *branch in branches) { branch.repository = self; }
         branches = [branches sortedArrayUsingComparator:^NSComparisonResult(Branch *a, Branch *b) {
