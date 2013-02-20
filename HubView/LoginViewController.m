@@ -86,7 +86,7 @@ enum LoginViewCells {
                 [self.delegate loginViewController:self wasSaved:sender];
             }
         } else {
-            [[[UIAlertView alloc] initWithTitle:@"Error" message:@"We could not save your credentials at this time. Please try again soon." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+            [[[UIAlertView alloc] initWithTitle:@"Error" message:@"We could not save your credentials at this time. Please try again." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
         }
     }
 }
