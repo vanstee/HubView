@@ -22,6 +22,9 @@
         [self setDefaultHeader:@"Accept" value:@"application/json"];
         [self setDefaultHeader:@"Content-Type" value:@"application/json"];
         self.loggedIn = NO;
+        [self setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+            [[[UIAlertView alloc] initWithTitle:@"Error" message:@"We could not connect to GitHub. Please check your network connection and try again soon." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+        }];
     }
     return self;
 }
