@@ -31,7 +31,7 @@
     } else {
         [loginViewController clearInputs];
         [[GitHubCredentials sharedCredentials] clearExistingAccounts];
-        [[GitHubClient sharedClient] clearAuthorizationHeader];
+        [[GitHubClient sharedClient] logout];
         [loginButton setTitle:@"Login"];
     }
 }

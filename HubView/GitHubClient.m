@@ -21,8 +21,19 @@
         [self setParameterEncoding:AFJSONParameterEncoding];
         [self setDefaultHeader:@"Accept" value:@"application/json"];
         [self setDefaultHeader:@"Content-Type" value:@"application/json"];
+        self.loggedIn = NO;
     }
     return self;
+}
+
+- (void)loginWithUsername:(NSString *)username password:(NSString *)password {
+    [self setAuthorizationHeaderWithUsername:username password:password];
+    self.loggedIn = YES;
+}
+
+- (void)logout {
+    [[GitHubClient sharedClient] clearAuthorizationHeader];
+    self.loggedIn = NO;
 }
 
 @end
