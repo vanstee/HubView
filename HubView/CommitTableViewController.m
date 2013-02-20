@@ -100,7 +100,7 @@
 
         return MIN(lineSize.height * 3, textSize.height) + detailTextSize.height + PADDING;
     } else {
-        return 100;
+        return 0;
     }
 }
 
