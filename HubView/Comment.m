@@ -36,7 +36,7 @@
 
 - (NSString *)parsedBody
 {
-    return [CommentBodyParser htmlForMarkdownString:self.body];
+    return [CommentBodyParser flavoredHtmlForMarkdownString:self.body];
 }
 
 - (NSDictionary *)attributes

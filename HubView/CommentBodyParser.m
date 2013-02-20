@@ -4,9 +4,9 @@
 
 @implementation CommentBodyParser
 
-+ (id)htmlForMarkdownString:(NSString *)markdownString
++ (id)flavoredHtmlForMarkdownString:(NSString *)markdownString
 {
-    NSString *htmlString = markdownString.HTMLStringFromMarkdown;
+    NSString *htmlString = markdownString.flavoredHTMLStringFromMarkdown;
     return [@[self.htmlHeader, htmlString, self.htmlFooter] componentsJoinedByString:@"\n"];
 }
 

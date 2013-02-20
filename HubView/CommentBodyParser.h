@@ -2,6 +2,6 @@
 
 @interface CommentBodyParser : NSObject
 
-+ (id)htmlForMarkdownString:(NSString *)markdownString;
++ (id)flavoredHtmlForMarkdownString:(NSString *)markdownString;
 
 @end
