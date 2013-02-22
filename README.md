@@ -2,6 +2,11 @@
 
 A tiny iPad app for viewing and commenting on commits!
 
+## Beta
+
+Try it out before it's released! Visit the [HubView app on TestFlight](http://tflig.ht/YKi3GP)
+from your iPad to get access.
+
 ## Build
 
 Build using `HubView.xcworkspace`, *not* `HubView.xcodeproj`. Otherwise,
