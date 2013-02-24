@@ -12,7 +12,7 @@
 #import "User.h"
 
 @interface CommitViewController () {
-    UIBarButtonItem *loginButton;
+    __weak IBOutlet UIBarButtonItem *loginButton;
     LoginViewController *loginViewController;
     UIPopoverController *loginPopoverController;
     CommentFormViewController *commentFormViewController;
@@ -23,7 +23,7 @@
 
 @implementation CommitViewController
 
-- (void)loginButtonTapped:(id)sender {
+- (IBAction)loginButtonTapped:(id)sender {
     if ([loginButton.title isEqualToString:@"Login"]) {
         [self makeLoginViewController];
         [self makeLoginPopoverController];
@@ -60,16 +60,8 @@
     barButtonItem.title = @"Users";
     [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
     
-    [self makeLoginButton];
-    [self.navigationItem setRightBarButtonItem:loginButton animated:YES];
     
     self.masterPopoverController = popoverController;
-}
-
-- (void)makeLoginButton {
-    if (!loginButton) {
-        loginButton = [[UIBarButtonItem alloc] initWithTitle:@"Login" style:UIBarButtonItemStyleBordered target:self action:@selector(loginButtonTapped:)];
-    }
 }
 
 - (void)splitViewController:(UISplitViewController *)splitController willShowViewController:(UIViewController *)viewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
