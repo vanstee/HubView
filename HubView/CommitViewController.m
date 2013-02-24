@@ -166,9 +166,11 @@
 - (void)keyboardWillHide:(NSNotification *)notification
 {
     NSDictionary* userInfo = [notification userInfo];
-    CGSize keyboardSize = [[userInfo objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    CGRect keyboardSize = [[userInfo objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue];
+    keyboardSize = [self.view convertRect:keyboardSize toView:nil];
     CGRect viewFrame = self.commitView.scrollView.frame;
-    viewFrame.size.height += keyboardSize.height;
+    
+    viewFrame.size.height += keyboardSize.size.height;
 
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationBeginsFromCurrentState:YES];
@@ -184,9 +186,10 @@
     if (keyboardIsShown) { return; }
 
     NSDictionary* userInfo = [notification userInfo];
-    CGSize keyboardSize = [[userInfo objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    CGRect keyboardSize = [[userInfo objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue];
+    keyboardSize = [self.view convertRect:keyboardSize toView:nil];
     CGRect viewFrame = self.commitView.scrollView.frame;
-    viewFrame.size.height -= keyboardSize.height;
+    viewFrame.size.height -= keyboardSize.size.height;
 
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationBeginsFromCurrentState:YES];
