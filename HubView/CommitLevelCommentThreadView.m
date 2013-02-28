@@ -44,6 +44,7 @@
     commentBody.font = [UIFont fontWithName:@"Helvetica" size:14];
     commentBody.layer.borderColor = [UIColor commentBorderColor].CGColor;
     commentBody.layer.borderWidth = 1;
+    commentBody.delegate = self;
     
     [self addSubview:commentBody];
     position += commentBody.frame.size.height + COMMENT_THREAD_MARGIN;
@@ -82,6 +83,12 @@
             [[[UIAlertView alloc] initWithTitle:@"Error" message:@"There were problems submitting your comment. Please try again." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
         }
     }];
+}
+
+-(void)textViewDidBeginEditing:(UITextView *)textView
+{
+    CGPoint bottomOffset = CGPointMake(0, [self.commitView.scrollView contentSize].height - self.commitView.scrollView.frame.size.height);
+    [self.commitView.scrollView setContentOffset:bottomOffset animated:YES];
 }
 
 @end

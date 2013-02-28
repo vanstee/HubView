@@ -169,7 +169,6 @@
     CGRect keyboardSize = [[userInfo objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue];
     keyboardSize = [self.view convertRect:keyboardSize toView:nil];
     CGRect viewFrame = self.commitView.scrollView.frame;
-    
     viewFrame.size.height += keyboardSize.size.height;
 
     [UIView beginAnimations:nil context:NULL];
@@ -196,9 +195,7 @@
     [UIView setAnimationDuration:0.3];
     [self.commitView.scrollView setFrame:viewFrame];
     [UIView commitAnimations];
-    CGPoint bottomOffset = CGPointMake(0, [self.commitView.scrollView contentSize].height - self.commitView.scrollView.frame.size.height);
-    [self.commitView.scrollView setContentOffset:bottomOffset animated:YES];
-
+    
     keyboardIsShown = YES;
 }
 
